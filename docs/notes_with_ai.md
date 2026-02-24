@@ -137,9 +137,9 @@ The assistant provides eight total items, ending with an overarching conclusion:
 
 The final step is to correct any obvious errors and request a formal document for downloading and sharing. 
 
-[Code Review Weekly Workshop Final Document](docs/Code_Review_Weekly_Workshop_Final_Document)
+[Code Review Weekly Workshop Final Document](docs/Code_Review_Weekly_Workshop_Final_Document.pdf)
 
 ### Conclusion
-Applying this AI-assisted method ensures that I recover all relevant details and accurately capture the major themes of each for reference when creating documentation.
+Applying this AI-assisted method ensures that I recover all relevant details and accurately capture the major themes of each meeting for reference when creating documentation.
 
 
