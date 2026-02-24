@@ -1,5 +1,5 @@
 ---
-title: Crafting Highly-Specific, Contextually-Accurate Notes from Engineering Meetings
+title: Crafting High-Quality, Actionable Notes from Engineering Meetings
 ---
 ### Introduction
 Technical writers attend many meetings throughout the week. 
