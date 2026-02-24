@@ -1,3 +1,7 @@
+---
+title: Chain-Of-Thought (CoT) Prompting
+---
+
 ## Chain-Of-Thought (CoT) Prompting: 
 
 > User:
