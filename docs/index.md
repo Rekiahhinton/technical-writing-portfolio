@@ -13,6 +13,6 @@ title: Portfolio
 
 ## API/Developer Documentation Mastery 
 
-## Additonal Skills
+## Additional Skills
 ### Python 
 ### MadCap Flare
