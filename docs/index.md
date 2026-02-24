@@ -5,6 +5,6 @@ title: Portfolio
 
 # My Technical Writing Portfolio
 
-- [API Documentation](api-docs.md)
-- [User Guide](user-guide.md)
-- [Process Documentation](process.md)
+- [Chain of Thought Prompting](chain_of_thought_prompting.md)
+- [Information Extraction Prompting](information_extraction_prompting.md)
+- [Text Summarization Prompting](text_summarization_prompting.md)
