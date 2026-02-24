@@ -4,7 +4,7 @@ title: Portfolio
 ---
 
 # My Technical Writing Portfolio 
-Learn More [About Me](README.md)
+Learn More [About Me](README)
 
 ## Advanced AI Augmentation + Efficiency Gains
 
