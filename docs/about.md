@@ -5,7 +5,7 @@ title: About
 
 ## About
 
-Rekiah Hinton, Technical Writer | AI-Augmented Documentation Specialist 
+**Rekiah Hinton, Technical Writer | AI-Augmented Documentation Specialist** 
 
 With 4+ years of technical writing experience, I utilize AI tools (ChatGPT, Claude, Gemini, and NotebookLM) to accelerate drafting, improve clarity, validate accuracy, and adapt content for engineering teams--cutting iteration time while maintaining human oversight for precision and tonal fit. 
 
