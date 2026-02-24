@@ -4,8 +4,11 @@ title: Portfolio
 ---
 
 # My Technical Writing Portfolio 
+Learn More [About Me](README.md)
 
 ## Advanced AI Augmentation + Efficiency Gains
+
+### Prompt Engineering 
 
 - [Chain of Thought Prompting](chain_of_thought_prompting)
 - [Information Extraction Prompting](information_extraction_prompting)
