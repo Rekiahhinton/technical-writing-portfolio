@@ -11,7 +11,7 @@ title: Portfolio
 - [Information Extraction Prompting](information_extraction_prompting)
 - [Text Summarization Prompting](text_summarization_prompting)
 
-## API/Developer Documentation Mastery 
+## API Documentation Mastery 
 
 ## Additional Skills
 ### Python 
