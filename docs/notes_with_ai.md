@@ -8,8 +8,8 @@ It can be challenging to keep track of all of the relevant information a writer 
 
 In this example, I show my process for gathering relevant information from an engineering meeting to create notes to be used for documentation projects.
 
-### Sample Meeting
-The sample meeting is a weekly code review workshop. Find the engineering meeting used in this example on [YouTube](https://www.youtube.com/watch?v=1lzK6EYO800).
+### Example Meeting
+The example meeting is a weekly code review workshop. Find the engineering meeting used in this example on [YouTube](https://www.youtube.com/watch?v=1lzK6EYO800).
 
 ### Workflow
 
