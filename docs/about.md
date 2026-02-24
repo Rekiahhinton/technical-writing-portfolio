@@ -20,7 +20,7 @@ With 4+ years of technical writing experience, I utilize AI tools (ChatGPT, Clau
 ### How I Work 
 My AI-augmented skillset creates efficiency gains that transform documentation workflows for SaaS (Software-as-a-Service) and engineering teams. 
 
-### Contact:
+### Contact
 
 [LinkedIn](https://www.linkedin.com/in/rekiah-hinton-5202701a4/)
 
