@@ -10,7 +10,7 @@ Learn More [About Me](about)
 
 ### Prompt Engineering 
 
-- [Chain of Thought Prompting](chain_of_thought_prompting)
+- [Chain of Thought (CoT) Prompting](chain_of_thought_prompting)
 - [Information Extraction Prompting](information_extraction_prompting)
 - [Text Summarization Prompting](text_summarization_prompting)
 
