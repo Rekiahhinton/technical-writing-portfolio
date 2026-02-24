@@ -1,10 +1,5 @@
 #### README.md
 
----
-layout: default
-title: About
----
-
 ## About
 
 Rekiah Hinton, Technical Writer | AI-Augmented Documentation Specialist 
