@@ -8,6 +8,10 @@ Learn More [About Me](about)
 
 ## Advanced AI Augmentation + Efficiency Gains
 
+### A Typical Day 
+
+- [Crafting Highly Specific, Contextually-Accurate Notes from Engineering Meetings](notes_with_ai)
+
 ### Prompt Engineering 
 
 - [Chain of Thought (CoT) Prompting](chain_of_thought_prompting)
