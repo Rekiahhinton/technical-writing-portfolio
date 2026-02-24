@@ -9,7 +9,7 @@ It can be challenging to keep track of all of the relevant information a writer 
 In this example, I show my process for gathering relevant information from an engineering meeting to create notes to be used for documentation projects.
 
 ### Sample Meeting
-Find the engineering meeting used in this example on [YouTube](https://www.youtube.com/watch?v=1lzK6EYO800). The sample meeting is a weekly code review workshop.
+The sample meeting is a weekly code review workshop. Find the engineering meeting used in this example on [YouTube](https://www.youtube.com/watch?v=1lzK6EYO800).
 
 ### Workflow
 
@@ -140,6 +140,6 @@ The final step is to correct any obvious errors and request a formal document fo
 [Code Review Weekly Workshop Final Document](Code_Review_Weekly_Workshop_Final_Document.pdf)
 
 ### Conclusion
-Applying this AI-assisted method ensures that I recover all relevant details and accurately capture the major themes of each meeting for reference when creating documentation.
+Applying this AI-assisted method ensures I recover all relevant details and accurately capture the major themes of each meeting for reference when creating documentation.
 
 
