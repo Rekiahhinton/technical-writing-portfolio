@@ -20,6 +20,11 @@ Learn More [About Me](about)
 
 ## API Documentation Mastery 
 
+- API Reference
+- How-To
+- Troubleshooting Guide 
+- Release Notes
+
 ## Additional Skills
 ### Python 
 ### MadCap Flare
