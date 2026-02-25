@@ -110,6 +110,7 @@ Lastly, I prompt the assistant to create a long, structure summary:
 > **Comprehensive Transcript Summary**
 >
 > **1. Opening Context**
+> 
 > The workshop centered on improving code review practices, with a heavy focus on security considerations—particularly around dependency management. What began as a question about what reviewers should watch for quickly evolved into a deep discussion about supply chain risk, architectural defense strategies, vulnerability disclosure processes, and the long-term cost of technical decisions.
 >
 > A recurring theme throughout the session was:
