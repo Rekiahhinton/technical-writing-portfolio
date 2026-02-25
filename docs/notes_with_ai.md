@@ -17,7 +17,7 @@ The example meeting is a weekly code review workshop. Find the engineering meeti
 
 I begin by recording the meeting using an application like Google Meet. 
 
-Then, I take the recorded meeting and extract a transcript called _Code Review Weekly Workshop Transcript_ which I load into an AI in PDF format. 
+Then, I take the recorded meeting and extract a transcript. Finally, I load the transcript (_Code Review Weekly Workshop Transcript_) into the prompting interface in PDF format. 
 
 I start prompting by establishing role and context before issuing the following commands to the assistant:  
 
