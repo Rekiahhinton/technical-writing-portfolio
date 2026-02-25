@@ -4,7 +4,7 @@ title: Crafting High-Quality, Actionable Notes from Engineering Meetings
 ### Introduction
 Technical writers attend many meetings throughout the week. 
 
-It can be challenging to keep track of all of the relevant information a writer would need to craft high-quality work when these meetings pile up; important details can be lost. By utilizing an AI-augmented workflow, I can extract every meaningful detail and theme from an engineering standup to understand how to serve the documentation needs of the team and create better documentation deliverables.
+It can be challenging to keep track of all of the relevant information a writer would need to craft high-quality work when these meetings pile up; important details can be lost. By utilizing an AI-augmented workflow, I can extract every meaningful detail and theme from an engineering standup to understand how to serve the documentation needs of the team and create better deliverables.
 
 In this example, I show my process for gathering relevant information from an engineering meeting and creating high-quality notes for reference in my documentation projects.
 
