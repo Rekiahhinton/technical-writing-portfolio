@@ -14,9 +14,9 @@ Learn More [About Me](about)
 
 ### Prompt Engineering 
 
-- [Chain of Thought (CoT) Prompting](chain_of_thought_prompting)
-- [Information Extraction Prompting](information_extraction_prompting)
-- [Text Summarization Prompting](text_summarization_prompting)
+- [Chain of Thought (CoT) Prompting](prompt_engineering/chain_of_thought_prompting)
+- [Information Extraction Prompting](prompt_engineering/information_extraction_prompting)
+- [Text Summarization Prompting](prompt_engineering/text_summarization_prompting)
 
 ## API Documentation Mastery 
 
