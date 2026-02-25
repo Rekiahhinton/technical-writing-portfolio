@@ -4,9 +4,9 @@ title: Crafting High-Quality, Actionable Notes from Engineering Meetings
 ### Introduction
 Technical writers attend many meetings throughout the week. 
 
-It can be challenging to keep track of all of the relevant information a writer would need to craft high-quality work when these meetings pile up; important details can be lost. By utilizing an AI-augmented workflow, I can extract every meaningful detail from an engineering standup to better understand how to serve the documentation needs of the team and create more accurate documentation deliverables.
+It can be challenging to keep track of all of the relevant information a writer would need to craft high-quality work when these meetings pile up; important details can be lost. By utilizing an AI-augmented workflow, I can extract every meaningful detail and theme from an engineering standup to understand how to serve the documentation needs of the team and create better documentation deliverables.
 
-In this example, I show my process for gathering relevant information from an engineering meeting to create notes to be used for documentation projects.
+In this example, I show my process for gathering relevant information from an engineering meeting and creating high-quality notes for reference in my documentation projects.
 
 ### Example Meeting
 The example meeting is a weekly code review workshop. Find the engineering meeting used in this example on [YouTube](https://www.youtube.com/watch?v=1lzK6EYO800).
@@ -140,6 +140,6 @@ The final step is to correct any obvious errors and request a formal document fo
 [Code Review Weekly Workshop Final Document](Code_Review_Weekly_Workshop_Final_Document.pdf)
 
 ### Conclusion
-Applying this AI-assisted method ensures I recover all relevant details and accurately capture the major themes of each meeting for reference when creating documentation.
+Applying this AI-augmented workflow ensures I recover all relevant details and accurately capture the major themes of each meeting for reference when creating documentation.
 
 
