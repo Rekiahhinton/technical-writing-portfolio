@@ -60,3 +60,5 @@ I provide the Support documentation.
 > Together, these resources form a layered support ecosystem that scales from self-service documentation, to community forums, to paid direct support — a model common among mature open-source projects.
 
 ### Maintaining Truthfulness 
+
+Receiving our summarized analysis leads us to the final step of comparing the original support document to the prompting responses. This is necessary to ensure the language model (LM) completes the assigned task without excessive bias that would distort the original purpose.  
