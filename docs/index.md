@@ -10,7 +10,7 @@ Learn More [About Me](about)
 
 ### A Typical Day 
 
-- [Crafting High-Quality, Actionable Notes from Engineering Meetings](notes_with_ai)
+- [Crafting High-Quality, Actionable Notes from Engineering Meetings](prompt_engineering/notes_with_ai)
 
 ### Prompt Engineering 
 
