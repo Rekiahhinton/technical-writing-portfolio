@@ -8,7 +8,7 @@ title: Text Summarization Prompting
 
 Language models (LMs) excel at text summarization. 
 
-With a few simple prompts, I can analyze and summarize a document while still maintaining high ethical standards. 
+With a few simple prompts, I can analyze and summarize a document while maintaining quality and clarity. 
 
 ### Resources
 
