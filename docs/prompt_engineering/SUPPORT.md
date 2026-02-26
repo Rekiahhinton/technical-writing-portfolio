@@ -1,3 +1,4 @@
+# (Example Document)
 # How to get support for Ghost 👨‍👩‍👧‍👦
 
 For **help**, **support**, **questions** and **ideas** please use **[our forum](https://forum.ghost.org)**  🚑.
