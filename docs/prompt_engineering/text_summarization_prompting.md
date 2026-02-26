@@ -12,7 +12,7 @@ With a few simple prompts, I can analyze and summarize a document while maintain
 
 ### Resources
 
-This example borrows the [Support](SUPPORT) documentation from an open-source Node.js CMS application called [Ghost](https://github.com/TryGhost/Ghost/tree/main) and utilizes Claude Sonnet 4.6. 
+This example borrows the [Support](SUPPORT) documentation from an open-source Node.js CMS application called [Ghost](https://github.com/TryGhost/Ghost/tree/main). This example also utilizes Claude Sonnet 4.6 for prompting. 
 
 ### Workflow
 
