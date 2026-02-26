@@ -61,4 +61,4 @@ I provide the Support documentation.
 
 ### Maintaining Truthfulness 
 
-Receiving our summarized analysis leads us to the final step of comparing the original support document to the prompting responses. This is necessary to ensure the language model (LM) completes the assigned task without excessive bias that would distort the original purpose.  
+Receiving our summarized analysis leads us to the final step of comparing the original support document to the prompting responses. This is necessary to ensure the language model (LM) completes the assigned task without excessive bias that would yield an inaccurate response. 
