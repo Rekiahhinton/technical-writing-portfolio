@@ -59,7 +59,7 @@ After assigning role and establishing context, I request the first extraction:
 
 Next, I compile the information from the __Client__ entity into a configuration table.
 
-> User: For the Client entity, draft a configuration table. List the parameter name, whether it's required, and a brief description of what it does. 
+> User: Draft a configuration table for the Client entity. List the parameter name, whether it's required, and a brief description of what it does. 
 >
 > Assistant: Based on the initialization section of the SDK, the __Client__ entity is configured primarily through chained setter methods. The README shows two required configuration parameters used to establish communication with the Appwrite server.
 >
