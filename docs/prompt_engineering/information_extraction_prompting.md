@@ -68,7 +68,10 @@ Next, I compile the information from the __Client__ entity into a configuration 
 > | Parameter | Required | Description |
 > | ----------| ---------|-------------|
 > | ```endpoint```| Yes | The base URL of the Appwrite server API that the SDK will communicate with. This tells the client where to send all backend requests. |
-> | ```project``` | Yes | The unique identifier for the Appwrite project. It associates all requests from the client with the correct project configuration on the Appwrite server. | 
+> | ```project``` | Yes | The unique identifier for the Appwrite project. It associates all requests from the client with the correct project configuration on the Appwrite server. |
+
+
+
 ### Conclusion 
 
 
