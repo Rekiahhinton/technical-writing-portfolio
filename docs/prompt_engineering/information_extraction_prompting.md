@@ -6,7 +6,7 @@ title: Information Extraction Prompting
 
 ### Introduction 
 
-Information extraction is useful in fast-paced environments where documentation must be updated immediately to meet standards. If a developer changes a parameter in the source code of software, the technical writer capable of AI-assisted information extraction can act quickly to maintain uniformity acrosss documentation.
+Information extraction is useful in fast-paced environments where documentation must be updated immediately to meet standards. If a developer changes a parameter in the source code of a spec, for instance, the technical writer capable of AI-assisted information extraction can act quickly to maintain uniformity acrosss documentation.
 
 In this example, I demonstrate how to extract information from a document to obtain meaningful information for use in a documentation project. 
 
