@@ -110,12 +110,30 @@ It establishes the connection between your frontend application and the Appwrite
 > Once configured, the client can be used to initialize services:
 
 >
+>
 > ```import { Account } from "appwrite";
-> 
->    const account = new Account(client);```
+>    const account = new Account(client);
 >
 
-> __Key Takeaways__ 
-### Conclusion 
+> __Key Takeaways__
+>
+> - The __Client__ is the root object of the SDK.
+> - It stores the __API endpoint__ and __project context__.
+> - Every Appwrite service must receive the configured client.
+> - Without initializing the client, __no backend calls can be made__.
+>
+> In one sentence:
+> 
+> The Client entity is the connection layer that authenticates your app with an Appwrite project and routes all SDK requests to the correct backend API.
+>
+The following table summarizes each stage of the information extraction process: 
+>
+> 
+> | Original State | Extraction Process | Resulting Value |
+> | -------------- | ------------------ | --------------- |
+> | __Monolithic README__: The ```Client``` configuration was embedded within general narrative text and mixed with various installation paths. | __Entity Isolation__: Identified and isolated the ```Client``` as the core object. Extracted only the mandatory methods ```(setEndpoint, setProject)``` and their required string arguments. | __Zero-Friction Setup__: Created a "Single Source of Truth" for the Client entity, allowing developers to configure the SDK core in seconds without parsing secondary service logic. |
 
+
+### Conclusion 
+By utilizing information extracting with prompt engineering, I can extract relevant details from complex documents for simplified consumption.  
 
