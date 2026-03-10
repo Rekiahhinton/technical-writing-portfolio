@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Markdown Cheat Sheet — Complex Tasks</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;1,9..144,300&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #1a1410;
+    --paper: #f7f3ed;
+    --cream: #ede8e0;
+    --rust: #c4491a;
+    --gold: #b8860b;
+    --sage: #4a6741;
+    --muted: #7a6f65;
+    --border: #d4cdc4;
+    --code-bg: #2a2420;
+    --code-text: #e8e0d4;
+  }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    padding: 48px 24px;
+  }
+
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  /* Header */
+  header {
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 24px;
+    margin-bottom: 48px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .header-left h1 {
+    font-family: 'Fraunces', serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  .header-left h1 em {
+    font-style: italic;
+    color: var(--rust);
+  }
+
+  .header-left p {
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 14px;
+  }
+
+  .badge {
+    background: var(--ink);
+    color: var(--paper);
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    padding: 6px 12px;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* Complexity level labels */
+  .level {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border: 1px solid currentColor;
+    margin-bottom: 20px;
+  }
+  .level.orange { color: var(--rust); border-color: var(--rust); }
+  .level.red { color: #8b1a1a; border-color: #8b1a1a; }
+
+  /* Cards */
+  .card {
+    background: white;
+    border: 1px solid var(--border);
+    margin-bottom: 28px;
+    overflow: hidden;
+  }
+
+  .card-header {
+    padding: 18px 24px 14px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+
+  .card-header h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+
+  .card-header .subtitle {
+    font-size: 13px;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  .card-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+
+  .col-syntax {
+    padding: 20px 24px;
+    border-right: 1px solid var(--border);
+    background: #faf8f5;
+  }
+
+  .col-result {
+    padding: 20px 24px;
+    background: white;
+  }
+
+  .col-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+
+  /* Code blocks */
+  pre {
+    background: var(--code-bg);
+    color: var(--code-text);
+    font-family: 'DM Mono', monospace;
+    font-size: 12.5px;
+    line-height: 1.7;
+    padding: 14px 16px;
+    overflow-x: auto;
+    border-radius: 2px;
+  }
+
+  code {
+    font-family: 'DM Mono', monospace;
+    font-size: 12.5px;
+    background: var(--cream);
+    padding: 2px 6px;
+    border-radius: 2px;
+    color: var(--rust);
+  }
+
+  /* Tip boxes */
+  .tip {
+    background: #f0ede8;
+    border-left: 3px solid var(--gold);
+    padding: 10px 16px;
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 12px;
+  }
+  .tip strong { color: var(--ink); }
+
+  /* Result previews */
+  .preview-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .preview-table th {
+    background: var(--cream);
+    padding: 7px 12px;
+    text-align: left;
+    font-weight: 500;
+    border: 1px solid var(--border);
+    font-size: 12px;
+  }
+  .preview-table th.center { text-align: center; }
+  .preview-table th.right { text-align: right; }
+  .preview-table td {
+    padding: 7px 12px;
+    border: 1px solid var(--border);
+    font-size: 13px;
+  }
+  .preview-table td.center { text-align: center; }
+  .preview-table td.right { text-align: right; }
+
+  .preview-code {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    padding: 12px 14px;
+    font-family: 'DM Mono', monospace;
+    font-size: 12.5px;
+    line-height: 1.7;
+    color: var(--ink);
+    border-radius: 2px;
+  }
+
+  .preview-code .keyword { color: #7c3aed; }
+  .preview-code .string { color: var(--sage); }
+  .preview-code .comment { color: var(--muted); font-style: italic; }
+
+  .preview-nested ul {
+    list-style: disc;
+    padding-left: 20px;
+    font-size: 14px;
+    line-height: 1.9;
+  }
+  .preview-nested ul ul {
+    list-style: circle;
+    margin-top: 2px;
+  }
+  .preview-nested ul ul ul {
+    list-style: square;
+  }
+
+  .preview-linked-img {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--cream);
+    padding: 8px 14px;
+    border: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--sage);
+    text-decoration: none;
+    border-radius: 2px;
+  }
+  .preview-linked-img .img-box {
+    width: 28px;
+    height: 20px;
+    background: var(--border);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+  }
+
+  /* Step annotations */
+  .steps {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 8px;
+  }
+  .step {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    font-size: 13px;
+  }
+  .step-num {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--ink);
+    color: var(--paper);
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* Section divider */
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 40px 0 20px;
+  }
+  .section-title h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 1rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  .section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  footer {
+    margin-top: 48px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    font-size: 12px;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media (max-width: 600px) {
+    .card-body { grid-template-columns: 1fr; }
+    .col-syntax { border-right: none; border-bottom: 1px solid var(--border); }
+    header { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="header-left">
+      <h1>Markdown<br><em>Complex Tasks</em></h1>
+      <p>A beginner's guide to the hardest formatting — with real previews</p>
+    </div>
+    <div class="badge">🔴 Advanced + Expert</div>
+  </header>
+
+  <!-- ADVANCED SECTION -->
+  <div class="level orange">⬡ Advanced — Multi-line structures</div>
+
+  <!-- Inline Images -->
+  <div class="card">
+    <div class="card-header">
+      <h2>Inline Images</h2>
+      <span class="subtitle">Like a link, but starts with !</span>
+    </div>
+    <div class="card-body">
+      <div class="col-syntax">
+        <div class="col-label">You type</div>
+        <pre>![description](image-url.png)
+
+![alt text](photo.jpg "Hover text")</pre>
+        <div class="steps" style="margin-top:14px">
+          <div class="step"><div class="step-num">1</div><span>Start with <code>!</code> — this tells Markdown it's an image</span></div>
+          <div class="step"><div class="step-num">2</div><span><code>[description]</code> — text shown if image fails to load</span></div>
+          <div class="step"><div class="step-num">3</div><span><code>(url)</code> — the image address. Add <code>"text"</code> inside for hover tooltip</span></div>
+        </div>
+      </div>
+      <div class="col-result">
+        <div class="col-label">You get</div>
+        <div style="background: var(--cream); border: 1px solid var(--border); border-radius:2px; padding: 14px; display:flex; flex-direction:column; gap:10px;">
+          <div style="display:flex; align-items:center; gap:10px; font-size:13px;">
+            <div style="width:80px; height:52px; background: linear-gradient(135deg, #d4cdc4, #b8b0a4); border-radius:2px; display:flex; align-items:center; justify-content:center; color:white; font-size:18px;">🖼</div>
+            <span style="color:var(--muted); font-size:12px; font-style:italic;">← image renders here</span>
+          </div>
+          <div style="font-size:12px; color:var(--muted);">If the image can't load, the description text appears instead.</div>
+        </div>
+        <div class="tip"><strong>Key insight:</strong> A regular link is <code>[text](url)</code>. An image is just <code>![text](url)</code> — same pattern, add the <code>!</code>.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Code Blocks -->
+  <div class="card">
+    <div class="card-header">
+      <h2>Code Blocks</h2>
+      <span class="subtitle">Wrap any code in triple backticks</span>
+    </div>
+    <div class="card-body">
+      <div class="col-syntax">
+        <div class="col-label">You type</div>
+        <pre>```
+your code goes here
+multiple lines work too
+```
+
+With syntax highlighting:
+``` python
+def greet(name):
+    print("Hello, " + name)
+```</pre>
+        <div class="tip" style="margin-top:12px"><strong>Tip:</strong> The 3 backticks must be on their own line, above and below your code.</div>
+      </div>
+      <div class="col-result">
+        <div class="col-label">You get</div>
+        <div class="preview-code">your code goes here<br>multiple lines work too</div>
+        <div style="margin-top:12px;">
+          <div style="font-size:11px; font-family:'DM Mono',monospace; color:var(--muted); margin-bottom:6px; letter-spacing:0.08em;">WITH PYTHON HIGHLIGHTING:</div>
+          <div class="preview-code">
+            <span class="keyword">def</span> greet(name):<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(<span class="string">"Hello, "</span> + name)
+          </div>
+        </div>
+        <div class="tip"><strong>Supported languages include:</strong> python, javascript, go, sql, bash, java, css, and 15+ more.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EXPERT SECTION -->
+  <div class="section-title"><h3>stepping up the complexity</h3></div>
+  <div class="level red">⬟ Expert — Structural formatting</div>
+
+  <!-- Tables -->
+  <div class="card">
+    <div class="card-header">
+      <h2>Tables</h2>
+      <span class="subtitle">The most visual gap between syntax and result</span>
+    </div>
+    <div class="card-body">
+      <div class="col-syntax">
+        <div class="col-label">You type</div>
+        <pre>| Name    | Score | Grade |
+| :------ | :---: | ----: |
+| Alice   |  95   |   A   |
+| Bob     |  82   |   B   |
+| Carol   |  74   |   C   |</pre>
+        <div class="steps" style="margin-top:14px">
+          <div class="step"><div class="step-num">1</div><span><strong>Row 1</strong> — your column headers, wrapped in <code>|</code> pipes</span></div>
+          <div class="step"><div class="step-num">2</div><span><strong>Row 2</strong> — dashes <code>---</code> under each header. This is required.</span></div>
+          <div class="step"><div class="step-num">3</div><span><strong>Row 3+</strong> — your data, same pipe structure</span></div>
+        </div>
+        <div class="tip" style="margin-top:12px">
+          <strong>Alignment with colons:</strong><br>
+          <code>:---</code> = left &nbsp;|&nbsp; <code>:---:</code> = center &nbsp;|&nbsp; <code>---:</code> = right
+        </div>
+      </div>
+      <div class="col-result">
+        <div class="col-label">You get</div>
+        <table class="preview-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th class="center">Score</th>
+              <th class="right">Grade</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Alice</td><td class="center">95</td><td class="right">A</td></tr>
+            <tr><td>Bob</td><td class="center">82</td><td class="right">B</td></tr>
+            <tr><td>Carol</td><td class="center">74</td><td class="right">C</td></tr>
+          </tbody>
+        </table>
+        <div class="tip"><strong>Don't panic:</strong> The columns don't need to line up perfectly in your raw text — Markdown still renders the table correctly.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Nested Lists -->
+  <div class="card">
+    <div class="card-header">
+      <h2>Nested Lists</h2>
+      <span class="subtitle">Indentation is everything</span>
+    </div>
+    <div class="card-body">
+      <div class="col-syntax">
+        <div class="col-label">You type</div>
+        <pre>* Fruits
+  * Citrus
+    * Lemon
+    * Lime
+  * Berries
+* Vegetables
+  * Root vegetables</pre>
+        <div class="steps" style="margin-top:14px">
+          <div class="step"><div class="step-num">1</div><span>Top level: <code>*</code> or <code>-</code> at the start of the line</span></div>
+          <div class="step"><div class="step-num">2</div><span>Sub-item: add <strong>2 spaces</strong> before the bullet</span></div>
+          <div class="step"><div class="step-num">3</div><span>Sub-sub-item: add <strong>4 spaces</strong> (2 more per level)</span></div>
+        </div>
+        <div class="tip" style="margin-top:12px"><strong>Common mistake:</strong> Using 1 space or a tab instead of exactly 2 spaces — this breaks the nesting.</div>
+      </div>
+      <div class="col-result">
+        <div class="col-label">You get</div>
+        <div class="preview-nested">
+          <ul>
+            <li>Fruits
+              <ul>
+                <li>Citrus
+                  <ul>
+                    <li>Lemon</li>
+                    <li>Lime</li>
+                  </ul>
+                </li>
+                <li>Berries</li>
+              </ul>
+            </li>
+            <li>Vegetables
+              <ul>
+                <li>Root vegetables</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="tip"><strong>Rule of thumb:</strong> Each level deeper = 2 more spaces at the front of the line.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Linked Images -->
+  <div class="card">
+    <div class="card-header">
+      <h2>Linked Images</h2>
+      <span class="subtitle">A clickable image — combining two patterns in one</span>
+    </div>
+    <div class="card-body">
+      <div class="col-syntax">
+        <div class="col-label">You type</div>
+        <pre>[![alt text](image.png)](https://example.com)</pre>
+        <div class="steps" style="margin-top:14px">
+          <div class="step"><div class="step-num">1</div><span>Write a normal image: <code>![alt](image.png)</code></span></div>
+          <div class="step"><div class="step-num">2</div><span>Wrap the whole thing in a link: <code>[…](url)</code></span></div>
+          <div class="step"><div class="step-num">3</div><span>The <code>!</div></span></div>
+          <div class="step"><div class="step-num">4</div><span>The outer <code>(url)</code> is where the click takes you</span></div>
+        </div>
+        <div class="tip" style="margin-top:12px">
+          <strong>Memory trick:</strong> Think of it as putting an image <em>inside</em> a link.<br>
+          Link = <code>[content](url)</code> → make the content an image.
+        </div>
+      </div>
+      <div class="col-result">
+        <div class="col-label">You get</div>
+        <div style="padding: 8px 0;">
+          <a class="preview-linked-img" href="#">
+            <div class="img-box">🖼</div>
+            <span>Clicking this image opens a link →</span>
+          </a>
+        </div>
+        <div style="margin-top: 16px; padding: 12px; background: var(--cream); border: 1px solid var(--border); font-size: 13px;">
+          <strong>Pattern breakdown:</strong><br><br>
+          <span style="font-family:'DM Mono',monospace; font-size:12px; line-height:2;">
+            <span style="color:var(--rust);">[![</span><span style="color:var(--sage);">alt text</span><span style="color:var(--rust);">]</span><span style="color:#7c3aed;">(image.png)</span><span style="color:var(--rust);">]</span><span style="color:#b8860b;">(destination-url)</span>
+          </span><br><br>
+          <span style="color:var(--rust); font-family:'DM Mono',monospace; font-size:11px;">RED</span> = image + link brackets &nbsp;|&nbsp;
+          <span style="color:var(--sage); font-family:'DM Mono',monospace; font-size:11px;">GREEN</span> = alt text &nbsp;|&nbsp;
+          <span style="color:#7c3aed; font-family:'DM Mono',monospace; font-size:11px;">PURPLE</span> = image file &nbsp;|&nbsp;
+          <span style="color:#b8860b; font-family:'DM Mono',monospace; font-size:11px;">GOLD</span> = link URL
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span>markdown-cheatsheet · complex tasks</span>
+    <span>preview required for all items on this sheet</span>
+  </footer>
+
+</div>
+</body>
+</html>
