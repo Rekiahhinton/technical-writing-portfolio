@@ -54,6 +54,8 @@ Next, I continue the logical process by requesting a categorization of the Markd
 > - Expert — Structural/tabular formatting
 >
 
+Then, I ask the language model (LM) to determine which categories are complex enoguht to require an introductory preview.
+
 > User: Evaluate the conclusions you drew from the previous prompt. Determine which sections need a "Result" preview to be understood.
 >
 > Assistant: Great question. Let me critically evaluate each category and determine where a __rendered preview__ is essential for comprehension vs. where the syntax speaks for itself.
@@ -77,12 +79,10 @@ Finally, I request a cheat sheet for the beginner Markdown user.
 
 The language model (LM) renders a downloadable file:
 
-
-
-
-
+[Markdown Cheatsheet](sample-documents/markdown-cheatsheet)
 
 ### Conclusion 
+Chain-of-Thought (CoT) prompting turns complex logical sequences into small tasks, while keeping the language model (LM) engaged with the most relevant task at hand. This skill is especially useful in technical writing for the ability to break down large documents. 
 
 
 
