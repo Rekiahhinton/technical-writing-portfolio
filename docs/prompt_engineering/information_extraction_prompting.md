@@ -42,14 +42,15 @@ After assigning role and establishing context, I request the first extraction:
 > 
 > __Example__
 > 
-> const client = new Client();
+> ```const client = new Client();
 >
 > client
 > 
 > .setEndpoint('http://localhost/v1')
 > 
 > .setProject('455x34dfkj');
-> 
+>
+ 
 > __Extracted Entity Attributes__
 >
 > * Endpoint URL
@@ -95,8 +96,26 @@ It establishes the connection between your frontend application and the Appwrite
 > 3. Configure the __endpoint__ and __project ID__.
 > 4. Pass the configured client into Appwrite services.
 >
+> __Minimal Example__
 >
->>
+> ```import { Client } from "appwrite";
+>
+> const client = new Client();
+>
+> client
+>   .setEndpoint("http://localhost/v1") 
+>   .setProject("455x34dfkj");
+>
+
+> Once configured, the client can be used to initialize services:
+
+>
+> ```import { Account } from "appwrite";
+> 
+>    const account = new Account(client);```
+>
+
+> __Key Takeaways__ 
 ### Conclusion 
 
 
