@@ -12,7 +12,7 @@ In this example, I demonstrate how to extract information from a document to obt
 
 ### Resources
 
-This example borrows the [Appwrite Web SDK ReadME](docs/sample-documents/README_Appwrite.md) document from [Appwrite](https://github.com/appwrite), an open-source cloud platform. 
+This example borrows the [Appwrite Web SDK ReadME](sample-documents/README_Appwrite) document from [Appwrite](https://github.com/appwrite), an open-source cloud platform. 
 
 ### Workflow
 
