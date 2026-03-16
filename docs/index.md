@@ -11,6 +11,7 @@ Learn More [About Me](about)
 ### A Typical Day 
 
 - [Crafting High-Quality, Actionable Notes from Engineering Meetings](prompt_engineering/notes_with_ai)
+- [Reverse Engineering Prompting to Produce Documentation](prompt_engineering/reverse_engineering.md)
 
 ### Prompt Engineering 
 
