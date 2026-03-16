@@ -1,5 +1,5 @@
 ---
-title: Reverse Engineering Prompting to Produce Documentation
+title: Meta Prompting for Documentation
 ---
 
 ### Introduction
