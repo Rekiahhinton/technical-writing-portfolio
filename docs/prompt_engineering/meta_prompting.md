@@ -9,7 +9,7 @@ In this example, I explore the process for creating high-quality documentation u
 
 ### Resources
 
-This example uses the Netlify README document which explains how to deploy a static site to Netlify, a hosting provider. 
+This example uses the Netlify [README document](prompt_engineering/README_Netlify) which explains how to deploy a static site to Netlify, a hosting provider. 
 
 ### Workflow
 
