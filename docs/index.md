@@ -19,13 +19,4 @@ Learn More [About Me](about)
 - [Information Extraction Prompting](prompt_engineering/information_extraction_prompting)
 - [Text Summarization Prompting](prompt_engineering/text_summarization_prompting)
 
-## API Documentation Mastery 
 
-- API Reference
-- How-To
-- Troubleshooting Guide 
-- Release Notes
-
-## Additional Skills
-### Python 
-### MadCap Flare
