@@ -6,9 +6,9 @@ title: Text Summarization Prompting
 
 ### Introduction
 
-Language models (LMs) excel at text summarization. 
+Language models (LMs) excel at text summarization, which is highly useful to technical writers for reducing the time spent reading documents. 
 
-Through structured prompting techniques, I can analyze and summarize documents with 3x the efficiency of manual summarization. 
+Through structured prompting techniques, I can analyze and summarize documents for consumption with 3x the efficiency of manual summarization. 
 
 ### Resources
 
@@ -59,11 +59,7 @@ The second step is to provide the documentation.
 >
 > Together, these resources form a layered support ecosystem that scales from self-service documentation, to community forums, to paid direct support — a model common among mature open-source projects.
 
-### Efficiency Gains
-
-- Reduced documentation review time from 35 minutes to 12 minutes per document.
-
-### Checking for Truthfulness 
+### Output Accuracy Review
 
 The final step is to conduct an output accuracy review. The review occurs by comparing the summarized analysis to the original support document and checking for accuracy. 
 
@@ -74,3 +70,8 @@ The summarized analysis is accurate because it draws upon multiple themes from t
 The analysis maintains the content quality of the original document, which indicates the text summarization was successful. 
 
 This comparison is necessary to ensure the language model (LM) completes the process without excessive bias that would distort the information of the original document and yield an inaccurate result. 
+
+### Efficiency Gains
+
+- Reduced documentation analysis time from 35 minutes to 12 minutes per document using this methodology.
+
