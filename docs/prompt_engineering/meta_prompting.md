@@ -3,9 +3,10 @@ title: Meta Prompting for Documentation
 ---
 
 ### Introduction
-Meta prompting is a useful tactic for extrapolating specific responses from a language model (LM) by asking the model to create a prompt which would yield the desired response. By requesting the language model (LM) to create a prompt to yield a particular result, the skilled technical writer can "reverse engineer" documentation by using samples of documentation that have already proven successful. This method is also useful for complex tools and large repositories in which a technical writer would need the model to systematically interpret material. 
 
-In this example, I explore the process for creating high-quality documentation using meta prompting. I run the initial prompts through Chat GPT-5.3 to generate our prompt for recreating our sample document. Then, I run the prompt through Chat GPT-5.3 to recreate a similar document. This allows me to assess the general effectiveness of the prompt, essentially reverse engineering the documentation process. 
+Meta prompting is a useful tactic for extrapolating specific responses from a language model (LM) by using the model to create a prompt which would yield the desired response. By requesting the language model to create a prompt to yield a particular response, a technical writer can "reverse engineer" documentation by using samples to create new documentation. This method is also useful for large repositories within an Agile environment in which a technical writer would need the model to systematically interpret and parse material. 
+
+In this example, I demonstrate the process for using meta prompting to reverse engineer documentation. I run the samplpe and initial requests through Claude Sonnet 4.6 to generate a prompt that would yield a similar document to the sample document. Then, I run the prompt through Chat GPT-5.3 to create a similar document with the same parameters from new source material. This allows me to assess the general effectiveness of the prompt and receive a new output, essentially reverse engineering the documentation process. 
 
 ### Resources
 
