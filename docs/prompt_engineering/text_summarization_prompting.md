@@ -63,7 +63,7 @@ The second step is to provide the documentation.
 
 The final step is to conduct an output accuracy review. The review occurs by comparing the summarized analysis to the original support document and checking for accuracy. 
 
-#### Result
+### Result
 
 The summarized analysis is accurate because it draws upon multiple themes from the original document as requested. It also cites each resource the user could access from the document while including context and inferring the intention behind each resource.
 
@@ -73,5 +73,5 @@ This comparison is necessary to ensure the language model (LM) completes the pro
 
 ### Efficiency Gains
 
-- Reduced documentation analysis time from 35 minutes to 12 minutes per document using this methodology.
+Reduced documentation analysis time from 35 minutes to 12 minutes per document using this methodology.
 
