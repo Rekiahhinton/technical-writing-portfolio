@@ -144,4 +144,4 @@ The extracted output is accurate because the output included the relevant elemen
 
 ### Efficiency Gains
 
-Reduced information extraction time from 52 minutes to 21 minutes using this methodology.
+AI-assisted information extraction significantly reduces the time required to identify and isolate relevant data from complex documents compared to manual extraction.
