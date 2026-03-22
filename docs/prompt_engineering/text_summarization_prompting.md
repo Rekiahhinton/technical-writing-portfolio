@@ -8,7 +8,7 @@ title: Text Summarization Prompting
 
 Language models (LMs) excel at text summarization, which is highly useful to technical writers for reducing the time spent reading documents. 
 
-Through structured prompting techniques, I can analyze and summarize documents for consumption 65% faster than manual summarization. 
+Through structured prompting techniques, I can analyze and summarize documents for consumption significantly faster than manual summarization.
 
 ### Resources
 
@@ -71,5 +71,5 @@ The analysis maintains the content quality of the original document, which indic
 
 ### Efficiency Gains
 
-Reduced documentation analysis time from 35 minutes to 12 minutes per document using this methodology.
+Structured prompting significantly reduces documentation analysis time compared to manual summarization, allowing technical writers to process more content in less time.
 
