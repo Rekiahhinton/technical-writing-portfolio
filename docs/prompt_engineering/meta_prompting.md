@@ -6,7 +6,7 @@ title: Meta Prompting for Documentation
 
 Meta prompting is a useful tactic for extrapolating specific responses from a language model (LM) by using the model to create a prompt which would yield the desired response. By requesting the language model to create a prompt to yield a particular response, a technical writer can "reverse engineer" documentation by using samples to create new documentation. This method is also useful for large repositories within an Agile environment in which a technical writer would need the model to systematically interpret and parse material. 
 
-In this example, I demonstrate the process for using meta prompting to reverse engineer documentation. I run the samplpe and initial requests through Claude Sonnet 4.6 to generate a prompt that would yield a similar document to the sample document. Then, I run the prompt through Chat GPT-5.3 to create a similar document with the same parameters from new source material. This allows me to assess the general effectiveness of the prompt and receive a new output, essentially reverse engineering the documentation process. 
+In this example, I demonstrate the process for using meta prompting to reverse engineer documentation. I run the samplpe and initial requests through Claude Sonnet 4.6 to generate a prompt that would yield a similar section of the document to the section of the sample document. Then, I run the prompt through Chat GPT-5.3 to create a similar section with the same parameters from new source material. This allows me to assess the general effectiveness of the prompt and receive a new output, essentially reverse engineering the documentation process. 
 
 ### Resources
 
