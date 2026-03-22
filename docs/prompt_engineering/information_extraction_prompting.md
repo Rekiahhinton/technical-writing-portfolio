@@ -6,17 +6,17 @@ title: Information Extraction Prompting
 
 ### Introduction 
 
-Information extraction is useful in fast-paced environments where documentation must be updated immediately to meet standards. If a developer changes a parameter in the source code of a spec, for instance, the technical writer capable of AI-assisted information extraction can act quickly to maintain uniformity across documentation.
+Information extraction is a critical skill for technical writers working in active development environments. When a developer updates a parameter in a source code spec, I can use AI-assisted extraction to quickly identify and isolate the change — maintaining uniformity across documentation without interrupting the development workflow.
 
-In this example, I demonstrate how to extract information from a document to obtain meaningful information for use in a documentation project. 
+In this example, I demonstrate how to extract structured, meaningful information from a complex document for use in a documentation project.
 
 ### Resources
 
-This example borrows the [Appwrite Web SDK ReadME](sample-documents/README_Appwrite) document from [Appwrite](https://github.com/appwrite), an open-source cloud platform. 
+This example uses the [Appwrite Web SDK ReadME](sample-documents/README_Appwrite) document from [Appwrite](https://github.com/appwrite), an open-source cloud platform. 
 
 ### Workflow
 
-After assigning role and establishing context, I request the first extraction: 
+The first step is to assign role and establish context before requesting the first extraction: 
 
 > User: You are my technical assistant tasked with extracting information from the attached document, [README_Appwrite.md]. Identify the necessary data by extracting the Entities, the building blocks of the Appwrite tool.
 >
@@ -58,7 +58,7 @@ After assigning role and establishing context, I request the first extraction:
 > * SDK initialization state
 >
 
-Next, I compile the information from the __Client__ entity into a configuration table.
+The second step is to compile the information from the __Client__ entity into a configuration table.
 
 > User: Draft a configuration table for the Client entity. List the parameter name, whether it's required, and a brief description of what it does. 
 >
@@ -71,7 +71,7 @@ Next, I compile the information from the __Client__ entity into a configuration 
 > | ```endpoint```| Yes | The base URL of the Appwrite server API that the SDK will communicate with. This tells the client where to send all backend requests. |
 > | ```project``` | Yes | The unique identifier for the Appwrite project. It associates all requests from the client with the correct project configuration on the Appwrite server. |
 
-Finally, I request a quick integration sheet that a developer could quickly reference for understanding the __Client__ entity.
+The third step is to request a quick integration sheet that a developer could quickly reference for understanding the __Client__ entity.
 >
 > Great! Now create a quick integration sheet based only on the Client entity configuration table. A developer should be able read it to understand the Client entity quickly.
 >
@@ -134,6 +134,14 @@ The following table summarizes each stage of the information extraction process:
 > | __Monolithic README__: The ```Client``` configuration was embedded within general narrative text and mixed with various installation paths. | __Entity Isolation__: Identified and isolated the ```Client``` as the core object. Extracted only the mandatory methods ```(setEndpoint, setProject)``` and their required string arguments. | __Zero-Friction Setup__: Created a "Single Source of Truth" for the Client entity, allowing developers to configure the SDK core in seconds without parsing secondary service logic. |
 
 
-### Conclusion 
-By utilizing information extracting with prompt engineering, I can extract relevant details from complex documents for simplified consumption.  
+### Validation
 
+The final step is to validate the information extraction. The validation occurs by comparing the original source document to the specific elements of the output and checking for relevancy. This process ensures the model extracts the relevant information according to the prompt without including bias that would distort the output.
+
+#### Results
+
+The validation is accurate because the output included the relevant elements of the original document according to the initial prompt. These elements are highly relevant because they provide a logical overview of the **Client** entity and how it is necessary to make backend calls. 
+
+### Efficiency Gains
+
+Reduced information extraction time from 52 minutes to 21 minutes using this methodology.
