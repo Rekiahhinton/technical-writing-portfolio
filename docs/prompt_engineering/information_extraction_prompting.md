@@ -136,11 +136,11 @@ The following table summarizes each stage of the information extraction:
 
 ### Validation
 
-The final step is to validate the information extraction. The validation occurs by comparing the original source document to the specific elements of the output and checking for relevancy. This process ensures the model extracts the relevant information according to the prompt without including bias that would distort the output.
+The final step is to validate the information extraction. The validation occurs by comparing the original source document to the specific elements of the output and checking for relevance. This process ensures the model extracts the relevant information according to the prompt without including bias that would distort the output.
 
 #### Results
 
-The validation is accurate because the output included the relevant elements of the original document according to the initial prompt. These elements are highly relevant because they provide a logical overview of the **Client** entity and how it is necessary to make backend calls. 
+The validation is successful because the output included the relevant elements of the original document according to the initial prompt. These elements are highly relevant because they provide a logical overview of the **Client** entity and how it is necessary to make backend calls. 
 
 ### Efficiency Gains
 
