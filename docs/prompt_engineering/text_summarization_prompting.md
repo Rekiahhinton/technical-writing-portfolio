@@ -61,7 +61,7 @@ The second step is to provide the documentation.
 
 ### Output Accuracy Review
 
-The final step is to conduct an output accuracy review. The review occurs by comparing the summarized analysis to the original support document and checking for accuracy. This comparison ensures the language model (LM) completes the process without excessive bias that would distort the information of the original document and yield an inaccurate result. 
+The final step is to conduct an output accuracy review. The review occurs by comparing the summarized analysis to the original support document and checking for accuracy. This comparison ensures the language model (LM) summarizes the document without excessive bias that would distort the meaning of the original document and yield an inaccurate result. 
 
 #### Result
 
