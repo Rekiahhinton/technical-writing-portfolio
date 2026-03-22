@@ -10,17 +10,17 @@ In this example, I demonstrate the process for using meta prompting to reverse e
 
 ### Resources
 
-This example uses the Netlify [README document](prompt_engineering/README_Netlify) which explains how to deploy a static site to Netlify, a hosting provider. 
+This example uses the Netlify [README document](prompt_engineering/README_Netlify), which explains how to deploy a static site to Netlify, a hosting provider. 
 
 ### Workflow
 
-I start by providing context and role to Claude Sonnet 4.6 before providing the procedural guide: 
+I start by providing context and role to Claude Sonnet 4.6 before providing the sample procedural guide: 
 
-> User: You are a prompt engineer who will reverse engineer a prompt from some provided content. In this scenario, you will reverse engineer a prompt for a procedural guide, a Netlify README that explains how to deploy a static site to Netlify's platform. Although you will reverse engineer the prompt from specific content, the prompts you develop should be more generalized and not specific to the particular procedural guide I will show you. Analyze the sample procedural guide, then wait for further instructions.
+> User: You are a prompt engineer who will create a prompt using some provided content. In this scenario, you will reverse engineer a prompt for a procedural guide, a Netlify README that explains how to deploy a static site to Netlify's platform. Although you will reverse engineer the prompt from specific content, the prompts you develop should be generalized and not specific to the particular procedural guide I will provide. Analyze the sample procedural guide, then wait for further instructions.
 >
 > Assistant: I've carefully analyzed the Netlify README. Ready for your next instructions — whether that's drafting a generalized prompt, producing variations, or something else.
 >
-> User: Develop a prompt that would yield content for the section titled, "Create a Netlify site and publish the first build." Be specific about which instructions to provide to help a language model produce another step-by-step guide like this one. Include sentence style, structure, and length.
+> User: Develop a prompt that would yield content for the section titled, "Create a Netlify site and publish the first build." Be specific about which instructions to provide to help a language model produce a similar step-by-step guide like this one. Include sentence style, structure, and length.
 > 
 > Assistant:
 > PROMPT: Write a step-by-step procedural guide section for a technical README that walks a developer through a single, discrete setup task within a larger deployment or configuration workflow.
