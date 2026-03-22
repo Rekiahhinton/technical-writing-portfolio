@@ -12,18 +12,18 @@ With a few simple prompts, I can analyze and summarize a document while maintain
 
 ### Resources
 
-This example borrows the [Support](SUPPORT) documentation from an open-source Node.js CMS application called [Ghost](https://github.com/TryGhost/Ghost/tree/main). This example also utilizes Claude Sonnet 4.6 for prompting. 
+This example uses the [Support](SUPPORT) documentation from an open-source Node.js CMS application called [Ghost](https://github.com/TryGhost/Ghost/tree/main). 
 
 ### Workflow
 
-The text summarization begins with assigning role and providing context. This makes it easier to establish a foundation logic and avoid hallucinations. 
+The first step of the text summarization process is to assign role and provide context. This helps to establish foundational logic and avoid hallucinations. 
 
->User: You are a highly technical assistant, especially adept at analysis and text summarization for software products.
+>User: You are a highly technical writing assistant, especially adept at analysis and text summarization for software products.
 >
 >Assistant: Got it! I'm ready to help with technical analysis, text summarization, documentation review, code analysis, or anything else software-related. What are you working on?
 >
 
-I provide the Support documentation. 
+The second step is to provide the documentation. 
 
 >User: Analyze this document. Then, in no fewer than 250 words, summarize the primary themes and directives of the document. List the resources and links included with a brief explanation of how they relate to the rest of the document.
 >
@@ -59,6 +59,10 @@ I provide the Support documentation.
 >
 > Together, these resources form a layered support ecosystem that scales from self-service documentation, to community forums, to paid direct support — a model common among mature open-source projects.
 
-### Maintaining Truthfulness 
+### Efficiency Gains
 
-Receiving our summarized analysis leads us to the final step of comparing the original support document to the prompting responses. This is necessary to ensure the language model (LM) completes the assigned task without excessive bias that would yield an inaccurate response. 
+- Reduced documentation review time from 35 minutes to 12 minutes per document.
+
+### Checking for Truthfulness 
+
+The final step is to conduct an output accuracy review. The review occurs by comparing the summarized analysis to the original support document. If the analysis maintains the content quality of the original document, the text summarization was successful. This comparison is necessary to ensure the language model (LM) completes the process without excessive bias that would distort the intention of the original document. 
