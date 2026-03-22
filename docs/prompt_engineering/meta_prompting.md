@@ -23,6 +23,7 @@ I start by providing context and role to Claude Sonnet 4.6 before providing the 
 > User: Develop a prompt that would yield content for the section titled, "Create a Netlify site and publish the first build." Be specific about which instructions to provide to help a language model produce a similar step-by-step guide like this one. Include sentence style, structure, and length.
 > 
 > Assistant:
+> 
 > PROMPT: Write a step-by-step procedural guide section for a technical README that walks a developer through a single, discrete setup task within a larger deployment or configuration workflow.
 >
 > Content requirements:
