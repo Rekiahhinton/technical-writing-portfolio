@@ -63,13 +63,13 @@ The second step is to provide the documentation.
 
 The final step is to conduct an output accuracy review. The review occurs by comparing the summarized analysis to the original support document and checking for accuracy. 
 
-### Result
+#### Result
 
 The summarized analysis is accurate because it draws upon multiple themes from the original document as requested. It also cites each resource the user could access from the document while including context and inferring the intention behind each resource.
 
 The analysis maintains the content quality of the original document, which indicates the text summarization was successful. 
 
-This comparison is necessary to ensure the language model (LM) completes the process without excessive bias that would distort the information of the original document and yield an inaccurate result. 
+This comparison ensures the language model (LM) completes the process without excessive bias that would distort the information of the original document and yield an inaccurate result. 
 
 ### Efficiency Gains
 
