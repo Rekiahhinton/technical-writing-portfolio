@@ -126,7 +126,7 @@ It establishes the connection between your frontend application and the Appwrite
 > 
 > The Client entity is the connection layer that authenticates your app with an Appwrite project and routes all SDK requests to the correct backend API.
 >
-The following table summarizes each stage of the information extraction process: 
+The following table summarizes each stage of the information extraction: 
 >
 > 
 > | Original State | Extraction Process | Resulting Value |
