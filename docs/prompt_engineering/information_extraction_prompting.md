@@ -140,7 +140,7 @@ The final step is to validate the information extraction. The validation occurs 
 
 #### Results
 
-The validation is successful because the output included the relevant elements of the original document according to the initial prompt. These elements are highly relevant because they provide a logical overview of the **Client** entity and how it is necessary to make backend calls. 
+The extracted output is accurate because the output included the relevant elements of the original document according to the initial prompt. These elements are highly relevant because they provide a logical overview of the **Client** entity and how it is necessary to make backend calls. 
 
 ### Efficiency Gains
 
