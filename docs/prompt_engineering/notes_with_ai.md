@@ -4,7 +4,7 @@ title: Crafting High-Quality, Actionable Notes from Engineering Meetings
 ### Introduction
 Technical writers attend many meetings throughout the week. 
 
-It can be challenging to keep track of all of the relevant information a writer would need to craft high-quality work when these meetings pile up; important details can be lost. By utilizing an AI-augmented workflow, I can extract every meaningful detail and theme from an engineering standup to understand how to serve the documentation needs of the team and create better deliverables.
+It can be challenging to keep track of all of the relevant information a writer would need to craft high-quality work when meetings pile up; important details can be lost. However, by using an AI-augmented workflow to extract meaningful information from a meeting, I can understand how to serve the documentation needs of the team and create better deliverables.
 
 In this example, I show my process for gathering relevant information from an engineering meeting and creating high-quality notes for reference in my documentation projects.
 
@@ -15,11 +15,11 @@ The example meeting is a weekly code review workshop. Find the engineering meeti
 
 #### Recording and Transcribing
 
-I begin by recording the meeting using an application like Google Meet. 
+I begin by recording the meeting using a recording application. Google Meet is an effective solution. 
 
-Then, I take the recorded meeting and extract a transcript. Finally, I load the transcript (_Code Review Weekly Workshop Transcript_) into the prompting interface in PDF format. 
+Then, after recording the meeting and extracting a transcript, I load the transcript (_Code Review Weekly Workshop Transcript_) into the prompting interface in PDF format. 
 
-I start prompting by establishing role and context before issuing the following commands to the assistant:  
+I start prompting by establishing role and context before issuing the following requests to the assistant:  
 
 > User: You are an AI assistant tasked with creating a detailed and actionable summary from the provided meeting transcription, indicated with {Code Review Weekly Workshop Transcript}. First, analyze the entire transcript and identify the major themes or topics discussed therein. Generate the primary themes and list them.
 
@@ -94,7 +94,8 @@ Then I instruct the assistant to create a list of action items, decisions, and o
 > **Deadline**
 > * Ongoing — applies to all new dependency additions.
 
-Lastly, I prompt the assistant to create a long, structure summary: 
+Lastly, I prompt the assistant to create a comprehensive, structured summary:
+
 > User:
 >
 > Compile all responses into one long summary of the transcript.
@@ -141,6 +142,6 @@ The final step is to correct any obvious errors and request a formal document fo
 [Code Review Weekly Workshop Final Document](Code_Review_Weekly_Workshop_Final_Document.pdf)
 
 ### Conclusion
-Applying this AI-augmented workflow ensures I recover all relevant details and accurately capture the major themes of each meeting for reference when creating documentation.
+By applying this workflow to my daily processes as a technical writer, I can recover any relevant details that may slip away during live conversation. Then, I can confidently use this information for my documentation projects knowing that I have all the necessary insight to create exceptional work. 
 
 
