@@ -2,10 +2,10 @@
 title: Chain-Of-Thought (CoT) Prompting
 ---
 
-## Chain-Of-Thought (CoT) Prompting: 
+## Chain-Of-Thought (CoT) Prompting
 
 ### Introduction
-Chain-of-Thought (CoT) prompting turns complex problems into workable processes. By prompting the language model (LM) to logically work through each step of the problem, the model can solve problems that require difficult reasoning. Chain-of-Thought prompting breaks big problems into small ones, safeguarding against hallucinations and excessive bias that would distort the logical flow. 
+Chain-of-Thought (CoT) prompting turns complex problems into workable processes. By prompting the language model to logically work through each step of the problem, the model can solve problems that require difficult reasoning. Chain-of-Thought prompting breaks big problems into small ones, safeguarding against hallucinations and excessive bias that would distort the logical flow. 
 
 ### Resources 
 This example borrows the [Markdown Help](sample-documents/Markdown) document from the [Favorite Medium](https://github.com/favoritemedium) Mattermost repository. The document lists helpful tips and examples for learning Markdown.
@@ -54,7 +54,7 @@ Next, I continue the logical process by requesting a categorization of the Markd
 > - Expert — Structural/tabular formatting
 >
 
-Then, I ask the language model (LM) to determine which categories are complex enough to require an introductory preview.
+Then, I ask the language model to determine which categories are complex enough to require an introductory preview.
 
 > User: Evaluate the conclusions you drew from the previous prompt. Determine which sections need a "Result" preview to be understood.
 >
@@ -77,7 +77,7 @@ Finally, I request a cheat sheet for the beginner Markdown user.
 > Each card follows the same structure: syntax on the left, rendered result on the right, with beginner-friendly tips below.
 >
 
-The language model (LM) renders a downloadable file:
+The language model renders a downloadable file:
 
 [Markdown Cheatsheet](sample-documents/markdown-cheatsheet)
 
