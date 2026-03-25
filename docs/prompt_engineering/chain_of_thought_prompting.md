@@ -9,7 +9,7 @@ Chain-of-Thought (CoT) prompting turns complex problems into workable processes.
 
 ### Workflow
 
-I begin by establishing role and providing the Markdown document for quick contextual analysis. 
+The first step is to establish role and provide the Markdown document for quick contextual analysis. 
 
 > User:
 >
@@ -21,7 +21,7 @@ I begin by establishing role and providing the Markdown document for quick conte
 >
 > I’m ready for your next instruction.
 > 
-Then, I begin the first logical step.
+The next step is to begin logical reasoning.
 
 > User: What is the intention of the user reading this document?
 >
@@ -38,7 +38,7 @@ Then, I begin the first logical step.
 > The document's tone — with side-by-side examples of syntax and rendered output — strongly suggests it's meant as a __practical, hands-on guide__ rather than a theoretical one. The reader's goal is to __immediately__ apply what they're reading.
 >
 > 
-Next, I continue the logical process by requesting a categorization of the Markdown tasks in the document by complexity. 
+Next, I request a categorization of the Markdown tasks in the document by complexity. 
 
 >
 > User: Categorize the various Markdown tasks by complexity. Group simpler things together first. Then, more complex tasks later.
@@ -51,7 +51,7 @@ Next, I continue the logical process by requesting a categorization of the Markd
 > - Expert — Structural/tabular formatting
 >
 
-Then, I ask the language model to determine which categories are complex enough to require an introductory preview.
+Then, I request the language model to determine which categories are complex enough to require an introductory preview.
 
 > User: Evaluate the conclusions you drew from the previous prompt. Determine which sections need a "Result" preview to be understood.
 >
@@ -64,7 +64,8 @@ Then, I ask the language model to determine which categories are complex enough 
 >
 > The core principle: the greater the gap between raw syntax and rendered output, the more essential a preview becomes. Beginner syntax resembles its output. Expert syntax does not.
 >
-Finally, I request a cheat sheet for the beginner Markdown user.
+
+The final step is to request a cheat sheet for the beginner Markdown user.
 
 >
 > User: Create a simplified cheat sheet that a beginner Markdown user could quickly read to understand how to perform the most complex tasks in the document.
