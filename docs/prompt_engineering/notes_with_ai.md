@@ -64,9 +64,9 @@ The assistant provides several themes from the transcript. Then, I prompt the as
 > * The reviewer cannot realistically inspect all of it.
 > * It may introduce invisible risk beyond the immediate change.
 
-The assistant provides several themes, then a detailed, logical breakdown of each theme with direct quotes and explanations.
+The assistant provides several themes; then a detailed, logical breakdown of each theme with direct quotes and explanations.
 
-Then I instruct the assistant to create a list of action items, decisions, and ownership: 
+Then, I instruct the assistant to create a list of action items, decisions, and ownership: 
 
 > User: Now create a list of all action items, decisions, and their corresponding owners or deadlines. If no specific person was assigned, determine the most appropriate person to be responsible.
 > 
