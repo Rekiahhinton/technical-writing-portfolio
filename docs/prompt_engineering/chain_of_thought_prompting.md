@@ -33,7 +33,7 @@ The next step is to begin logical reasoning.
 >
 > The document's tone — with side-by-side examples of syntax and rendered output — strongly suggests it's meant as a __practical, hands-on guide__ rather than a theoretical one. The reader's goal is to __immediately__ apply what they're reading.
 >
-> 
+
 The next step is to request a categorization of the Markdown tasks in the document by complexity. 
 
 >
