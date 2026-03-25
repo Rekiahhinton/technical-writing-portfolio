@@ -78,7 +78,7 @@ The language model renders a downloadable file:
 [Markdown Cheatsheet](sample-documents/markdown-cheatsheet)
 
 ### Conclusion 
-Chain-of-Thought (CoT) prompting turns complex logical sequences into small tasks, while keeping the language model engaged with the most relevant task at hand, which helps to prevent hallucinations and excessive bias that would distort the output. This skill is especially useful in technical writing for the ability to break down large documents. 
+Chain-of-Thought (CoT) prompting turns complex logical sequences into small tasks, while keeping the language model engaged with the most relevant task at hand, which helps to prevent hallucinations and excessive bias that would distort the output. This skill is especially useful in technical writing for breaking down information in large repositories into digestable fragments for iterating through vast amounts of information.
 
 ### Resources 
 This example borrows the [Markdown Help](sample-documents/Markdown) document from the [Favorite Medium](https://github.com/favoritemedium) Mattermost repository. The document lists helpful tips and examples for learning Markdown.
