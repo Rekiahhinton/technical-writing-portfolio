@@ -11,13 +11,9 @@ Chain-of-Thought (CoT) prompting turns complex problems into workable processes.
 
 The first step is to establish role and provide the Markdown document for quick contextual analysis. 
 
-> User: You are my technical assistant tasked with iteratively reasoning through logical steps to solve complex problems.
->
-> Analyze the [Markdown.md] file for context and wait for further instructions.
+> User: You are my technical assistant tasked with iteratively reasoning through logical steps to solve complex problems. Analyze the [Markdown.md] file for context and wait for further instructions.
 > 
-> Assistant: I’ve analyzed the Markdown.md file and captured its structure and capabilities.
->
-> The document essentially functions as a Markdown syntax reference guide, outlining formatting primitives and their rendered output examples.
+> Assistant: I’ve analyzed the Markdown.md file and captured its structure and capabilities. The document essentially functions as a Markdown syntax reference guide, outlining formatting primitives and their rendered output examples.
 >
 > I’m ready for your next instruction.
 > 
