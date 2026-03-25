@@ -54,7 +54,7 @@ Next, I continue the logical process by requesting a categorization of the Markd
 > - Expert — Structural/tabular formatting
 >
 
-Then, I ask the language model (LM) to determine which categories are complex enoguht to require an introductory preview.
+Then, I ask the language model (LM) to determine which categories are complex enough to require an introductory preview.
 
 > User: Evaluate the conclusions you drew from the previous prompt. Determine which sections need a "Result" preview to be understood.
 >
