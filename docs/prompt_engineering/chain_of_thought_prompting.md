@@ -7,9 +7,6 @@ title: Chain-Of-Thought (CoT) Prompting
 ### Introduction
 Chain-of-Thought (CoT) prompting turns complex problems into workable processes. By prompting the language model to logically work through each step of the problem, the model can solve problems that require difficult reasoning. Chain-of-Thought prompting breaks big problems into small ones, safeguarding against hallucinations and excessive bias that would distort the logical flow. 
 
-### Resources 
-This example borrows the [Markdown Help](sample-documents/Markdown) document from the [Favorite Medium](https://github.com/favoritemedium) Mattermost repository. The document lists helpful tips and examples for learning Markdown.
-
 ### Workflow
 
 I begin by establishing role and providing the Markdown document for quick contextual analysis. 
@@ -83,6 +80,9 @@ The language model renders a downloadable file:
 
 ### Conclusion 
 Chain-of-Thought (CoT) prompting turns complex logical sequences into small tasks, while keeping the language model (LM) engaged with the most relevant task at hand. This skill is especially useful in technical writing for the ability to break down large documents. 
+
+### Resources 
+This example borrows the [Markdown Help](sample-documents/Markdown) document from the [Favorite Medium](https://github.com/favoritemedium) Mattermost repository. The document lists helpful tips and examples for learning Markdown.
 
 
 
