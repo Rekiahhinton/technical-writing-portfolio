@@ -38,7 +38,7 @@ The next step is to begin logical reasoning.
 > The document's tone — with side-by-side examples of syntax and rendered output — strongly suggests it's meant as a __practical, hands-on guide__ rather than a theoretical one. The reader's goal is to __immediately__ apply what they're reading.
 >
 > 
-Next, I request a categorization of the Markdown tasks in the document by complexity. 
+The next step is to request a categorization of the Markdown tasks in the document by complexity. 
 
 >
 > User: Categorize the various Markdown tasks by complexity. Group simpler things together first. Then, more complex tasks later.
@@ -51,7 +51,7 @@ Next, I request a categorization of the Markdown tasks in the document by comple
 > - Expert — Structural/tabular formatting
 >
 
-Then, I request the language model to determine which categories are complex enough to require an introductory preview.
+The next step is to request the language model to determine which categories are complex enough to require an introductory preview.
 
 > User: Evaluate the conclusions you drew from the previous prompt. Determine which sections need a "Result" preview to be understood.
 >
@@ -70,7 +70,7 @@ The final step is to request a cheat sheet for the beginner Markdown user.
 >
 > User: Create a simplified cheat sheet that a beginner Markdown user could quickly read to understand how to perform the most complex tasks in the document.
 >
-> Assistant: Now I'll create a beautifully designed, beginner-friendly cheat sheet as an HTML artifact focused on the most complex Markdown tasks — with clear previews. Each card follows the same structure: syntax on the left, rendered result on the right, with beginner-friendly tips below.
+> Assistant: Here is a beginner-friendly cheat sheet organized by complexity, with syntax and rendered output shown side by side. Each card follows the same structure: syntax on the left, rendered result on the right, with beginner-friendly tips below.
 >
 
 The language model renders a downloadable file:
@@ -78,7 +78,7 @@ The language model renders a downloadable file:
 [Markdown Cheatsheet](sample-documents/markdown-cheatsheet)
 
 ### Conclusion 
-Chain-of-Thought (CoT) prompting turns complex logical sequences into small tasks, while keeping the language model engaged with the most relevant task at hand, which helps to prevent hallucinations and excessive bias that would distort the output. This skill is especially useful in technical writing for breaking down information in large repositories into digestable fragments for iterating through vast amounts of information.
+Chain-of-Thought (CoT) prompting turns complex logical sequences into small tasks, while keeping the language model engaged with the most relevant task at hand, which helps to prevent hallucinations and excessive bias that would distort the output. This skill is especially useful in technical writing for breaking down information in large repositories into digestible fragments for iteration.
 
 ### Resources 
 This example borrows the [Markdown Help](sample-documents/Markdown) document from the [Favorite Medium](https://github.com/favoritemedium) Mattermost repository. The document lists helpful tips and examples for learning Markdown.
