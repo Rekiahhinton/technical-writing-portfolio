@@ -1,8 +1,8 @@
 ---
-title: Chain-Of-Thought (CoT) Prompting
+title: Chain-of-Thought (CoT) Prompting
 ---
 
-## Chain-Of-Thought (CoT) Prompting
+## Chain-of-Thought (CoT) Prompting
 
 ### Introduction
 Chain-of-Thought (CoT) prompting turns complex problems into workable processes. By prompting the language model to logically work through each step of the problem, the model can solve problems that require difficult reasoning. Chain-of-Thought prompting breaks big problems into small ones, safeguarding against hallucinations and excessive bias that would distort the logical flow. 
@@ -51,7 +51,7 @@ The next step is to request the language model to determine which categories are
 
 > User: Evaluate the conclusions you drew from the previous prompt. Determine which sections need a "Result" preview to be understood.
 >
-> Assistant: Great question. Let me critically evaluate each category and determine where a __rendered preview__ is essential for comprehension vs. where the syntax speaks for itself.
+> Assistant: Let me critically evaluate each category and determine where a __rendered preview__ is essential for comprehension vs. where the syntax speaks for itself.
 >
 > - Beginner — Low need for previews
 > - Intermediate — Mixed need
