@@ -70,9 +70,7 @@ The final step is to request a cheat sheet for the beginner Markdown user.
 >
 > User: Create a simplified cheat sheet that a beginner Markdown user could quickly read to understand how to perform the most complex tasks in the document.
 >
-> Now I'll create a beautifully designed, beginner-friendly cheat sheet as an HTML artifact focused on the most complex Markdown tasks — with clear previews.
->
-> Each card follows the same structure: syntax on the left, rendered result on the right, with beginner-friendly tips below.
+> Assistant: Now I'll create a beautifully designed, beginner-friendly cheat sheet as an HTML artifact focused on the most complex Markdown tasks — with clear previews. Each card follows the same structure: syntax on the left, rendered result on the right, with beginner-friendly tips below.
 >
 
 The language model renders a downloadable file:
@@ -80,7 +78,7 @@ The language model renders a downloadable file:
 [Markdown Cheatsheet](sample-documents/markdown-cheatsheet)
 
 ### Conclusion 
-Chain-of-Thought (CoT) prompting turns complex logical sequences into small tasks, while keeping the language model (LM) engaged with the most relevant task at hand. This skill is especially useful in technical writing for the ability to break down large documents. 
+Chain-of-Thought (CoT) prompting turns complex logical sequences into small tasks, while keeping the language model engaged with the most relevant task at hand, which helps to prevent hallucinations and excessive bias that would confuse the model. This skill is especially useful in technical writing for the ability to break down large documents. 
 
 ### Resources 
 This example borrows the [Markdown Help](sample-documents/Markdown) document from the [Favorite Medium](https://github.com/favoritemedium) Mattermost repository. The document lists helpful tips and examples for learning Markdown.
