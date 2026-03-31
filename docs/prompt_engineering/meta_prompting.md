@@ -10,7 +10,7 @@ In this example, I demonstrate how to reverse engineer documentation with meta p
 
 ### Resources
 
-This example uses the Netlify [README document](prompt_engineering/README_Netlify), which explains how to deploy a static site to Netlify, a hosting provider. It also uses the Vercel (README document)[prompt_engineering/vercel_README.md] that explores how to deploy the Vercel cloud platform.
+This example uses the Netlify [README document](prompt_engineering/README_Netlify), which explains how to deploy a static site to Netlify, a hosting provider. It also uses the Vercel [README document](prompt_engineering/vercel_README.md) that explores how to deploy the Vercel cloud platform.
 
 ### Workflow
 
@@ -83,4 +83,4 @@ Once developed and tested, a meta prompt removes the need to manually construct 
 
 ### Conclusion 
 
-Meta prompting creates more efficient workflows within any documentation project by creating a reusable, model-agnostic prompt that can replicate the style, tone, and structure of any source material. This creates endless possibilities for producing new documentation while maintaining the essence of the original document.
+Meta prompting enables technical writers to systematize documentation style and structure into reusable, model-agnostic prompts — making AI-assisted documentation faster to deploy and easier to scale across teams and repositories.
