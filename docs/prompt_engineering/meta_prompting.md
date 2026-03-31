@@ -58,15 +58,15 @@ The next step is to run the prompt through Chat GPT with new source material (Ve
 > Assistant:
 >
 > __Deploy a project using the Vercel CLI__
-> 1. Log in to your Vercel account by running vercel login in your terminal and following the authentication prompts. This ensures your deployments are linked to the correct account.
-> 2. Navigate to your project directory using cd /path/to/project. If the project does not exist locally, clone it first using git clone <repository-url>.
-> 3. Install project dependencies by running pnpm install. This aligns with the repository’s package management setup and ensures consistent builds.
-> 4. Initialize the Vercel project by running vercel in the root directory. If this is your first deployment, respond to the prompts to link or create a project.
-> 5. Configure project settings when prompted, including Project Name, Scope, and Framework Preset. If a configuration file like vercel.json already exists, Vercel will use it automatically.
-> 6. Trigger the deployment by confirming the prompts or running vercel deploy. This uploads your project and begins the build process on Vercel’s infrastructure.
-> 7. Review the deployment output URL displayed in the terminal and open it in a browser to verify the build. If the deployment fails, append /_logs to the URL to inspect build errors.
+> 1. Log in to your Vercel account by running `vercel login` in your terminal and following the authentication prompts. This ensures your deployments are linked to the correct account.
+> 2. Navigate to your project directory using `cd /path/to/project`. If the project does not exist locally, clone it first using `git clone <repository-url>`.
+> 3. Install project dependencies by running `pnpm install`. This aligns with the repository’s package management setup and ensures consistent builds.
+> 4. Initialize the Vercel project by running `vercel` in the root directory. If this is your first deployment, respond to the prompts to link or create a project.
+> 5. Configure project settings when prompted, including `Project Name`, `Scope`, and `Framework Preset`. If a configuration file like `vercel.json` already exists, Vercel will use it automatically.
+> 6. Trigger the deployment by confirming the prompts or running `vercel deploy`. This uploads your project and begins the build process on Vercel’s infrastructure.
+> 7. Review the deployment output URL displayed in the terminal and open it in a browser to verify the build. If the deployment fails, append `/_logs` to the URL to inspect build errors.
 >
-> Once deployment is complete, Vercel automatically rebuilds and redeploys your project on each subsequent git push to the connected repository branch.
+> Once deployment is complete, Vercel automatically rebuilds and redeploys your project on each subsequent `git push` to the connected repository branch.
 
 ### Output Accuracy Review
 
