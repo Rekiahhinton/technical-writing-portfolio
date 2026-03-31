@@ -47,7 +47,8 @@ The first step is to provide context and role to Claude Sonnet 4.6 and attach th
 >
 > * Use an H3 heading that names the task as a noun phrase (e.g., "Create a site and publish the first build")
 > * Number each step sequentially starting at 1
-> * Do not use subheadings within the stepsDo not use callout boxes, bold warnings, or tip blocks — weave any caveats inline within the relevant step
+> * Do not use subheadings within the steps
+> * Do not use callout boxes, bold warnings, or tip blocks — weave any caveats inline within the relevant step
 >
 > This prompt can be reused for any procedural section by swapping in the specific task, platform, and tooling details while keeping all structural and stylistic rules intact.
 >
