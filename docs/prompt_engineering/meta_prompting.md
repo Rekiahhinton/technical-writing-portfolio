@@ -10,7 +10,7 @@ In this example, I demonstrate how to reverse engineer documentation with meta p
 
 ### Resources
 
-This example uses the Netlify [README document](prompt_engineering/README_Netlify), which explains how to deploy a static site to Netlify, a hosting provider. It also uses the Vercel (README document)[prompt_engineering/README_Vercel] that explores how to deploy the Vercel cloud platform.
+This example uses the Netlify [README document](prompt_engineering/README_Netlify), which explains how to deploy a static site to Netlify, a hosting provider. It also uses the Vercel (README document)[prompt_engineering/vercel_README.md] that explores how to deploy the Vercel cloud platform.
 
 ### Workflow
 
