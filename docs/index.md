@@ -19,8 +19,8 @@ Learn More [About Me](about)
 - [Information Extraction Prompting](prompt_engineering/information_extraction_prompting)
 - [Text Summarization Prompting](prompt_engineering/text_summarization_prompting)
 
-### API Documentation Mastery
+<!---### API Documentation Mastery
 
-- [Stripe Payment Intents API](api_mastery/stripe_payments_intents)
+- [Stripe Payment Intents API](api_mastery/stripe_payments_intents)--->
 
 
