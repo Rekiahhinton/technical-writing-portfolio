@@ -106,15 +106,15 @@ Token: sk_test_yourkeyhere
 
 ## Endpoint Reference
 
-### 1. POST v1/payment_intents - Create a Payment Intent
+#### 1. POST v1/payment_intents - Create a Payment Intent
 
-### 2. GET v1/payment_intents/{id} - Retrieve a Payment Intent
+#### 2. GET v1/payment_intents/{id} - Retrieve a Payment Intent
 
-### 3. GET v1/payment_intents - List All Payment Intents
+#### 3. GET v1/payment_intents - List All Payment Intents
 
-### 4. POST v1/payment_intents/{id}/confirm - Confirm a Payment Intent 
+#### 4. POST v1/payment_intents/{id}/confirm - Confirm a Payment Intent 
 
-### 5. POST v1/payment_intents/{id}/cancel - Cancel a Payment Intent
+#### 5. POST v1/payment_intents/{id}/cancel - Cancel a Payment Intent
 
 
 
