@@ -31,7 +31,7 @@ The Payment Intents API sits at the core of the business value of Stripe - creat
 6. The business server is notified about the payment success via a webhook, an automated HTTP request 
     Stripe sends to the business server when a payment event occurs.   
 
-**Note**: The ``client_secret`` key is a randomized token assigned to each transaction that the business server receives upon checkout. The Stripe API also includes an idempotency key that prevents a ``client_secret`` key from being used in multiple transactions if a network error occurs.
+**Note:** The ``client_secret`` key is a randomized token assigned to each transaction that the business server receives upon checkout. The Stripe API also includes an idempotency key that prevents a ``client_secret`` key from being used in multiple transactions if a network error occurs.
 
 ## Base URL
 
@@ -102,7 +102,7 @@ Token: sk_test_yourkeyhere
 4. Monitor your application for suspicious activity and respond immediately if breached.
 5. Embed your secret key into your environment variables. Never store it on any version control system.
 
-**Note**: Allowing your secret key to become public could make it possible for someone to make fraudulent API calls on your behalf. These calls could create charges, issue refunds, and access your customer data. If you accidentally expose your secret key, immediately roll your key in the Stripe dashboard to invalidate the compromised key and generate a new one.
+**Note:** Allowing your secret key to become public could make it possible for someone to make fraudulent API calls on your behalf. These calls could create charges, issue refunds, and access your customer data. If you accidentally expose your secret key, immediately roll your key in the Stripe dashboard to invalidate the compromised key and generate a new one.
 
 ## Endpoint Reference
 
@@ -126,7 +126,7 @@ Creates a PaymentIntent object, which initiates a ``client_secret`` key for the 
 ```
 curl --location --request POST "https://api.stripe.com/v1/payment_intents?amount=10000&currency=usd&description=Your%20transaction%20is%20secure\!" --header "Authorization: Bearer sk_test_your_Bearer_token" --data ""
 ```
-**Note**: This format is compatible with Windows devices. Linux and Mac devices use single quotes and the carot symbol (``^``) to nest data.
+**Note:** This format is compatible with Windows devices. Linux and Mac devices use single quotes and the carot symbol (``^``) to nest data.
 
 ##### Example JSON Response:
 ```
@@ -209,7 +209,7 @@ curl --location --request POST "https://api.stripe.com/v1/payment_intents?amount
 ```
 ##### Response Field Definitions
 
-**Note**: The following definitions include primary response fields. Additional fields are conditionally present depending on payment method configuration.
+**Note:** The following definitions include primary response fields. Additional fields are conditionally present depending on payment method configuration.
 
 | Name | Type | Required | Description |
 | ---- | ---- | ---- | ---- |
@@ -329,7 +329,7 @@ curl --location "https://api.stripe.com/v1/payment_intents/pi_3TJCpTILrYoCRvlE0M
 }
 ```
 
-**Note**: The following definitions include primary response fields. Additional fields are conditionally present depending on payment method configuration.
+**Note:** The following definitions include primary response fields. Additional fields are conditionally present depending on payment method configuration.
 
 | Name | Type | Required | Description |
 | ---- | ---- | ---- | ---- |
