@@ -108,10 +108,25 @@ Token: sk_test_yourkeyhere
 
 #### 1. POST v1/payment_intents - Create a Payment Intent
 
-Creates a PaymentIntent object, which initiates a ``client_secret`` key for the server to receive instead of sensitive financial details. 
+##### Description
+
+Creates a PaymentIntent object, which initiates a ``client_secret`` key for the server to receive instead of the customer's card information. This keeps the specific card numbers safe from misuse or fraud.
+
+| Parameter | Type | Required | Description |
+| ---- | ---- | ---- | ---- |
+| amount | string | Required | 
+| currency | integer | Required |
+| description | string | Optional |
+
+
+##### Example curl request:
 
 ```
-RESPONSE:
+curl --location --request POST 'https://api.stripe.com/v1/payment_intents?amount=10000&currency=usd&description=Your%20transaction%20is%20secure!' --header 'Authorization: Bearer sk_test_your_Bearer_token' --data ''
+```
+
+##### Example JSON Response:
+```
 {
     "id": "pi_3TJCpTILrYoCRvlE0Msv9vBA",
     "object": "payment_intent",
