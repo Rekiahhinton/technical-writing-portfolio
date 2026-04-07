@@ -108,6 +108,106 @@ Token: sk_test_yourkeyhere
 
 #### 1. POST v1/payment_intents - Create a Payment Intent
 
+Creates a PaymentIntent object, which initiates a ``client_secret`` key for the server to receive instead of sensitive financial details. 
+
+```
+RESPONSE:
+{
+    "id": "pi_3TJCpTILrYoCRvlE0Msv9vBA",
+    "object": "payment_intent",
+    "amount": 10000,
+    "amount_capturable": 0,
+    "amount_details": {
+        "tip": {}
+    },
+    "amount_received": 0,
+    "application": null,
+    "application_fee_amount": null,
+    "automatic_payment_methods": {
+        "allow_redirects": "always",
+        "enabled": true
+    },
+    "canceled_at": null,
+    "cancellation_reason": null,
+    "capture_method": "automatic_async",
+    "client_secret": "pi_3TJCpTILrYoCRvlE0Msv9vBA_secret_RRY7chZOsMHq7CVHNKivCjaay",
+    "confirmation_method": "automatic",
+    "created": 1775480675,
+    "currency": "usd",
+    "customer": null,
+    "customer_account": null,
+    "description": "Your transaction is secure!",
+    "excluded_payment_method_types": null,
+    "last_payment_error": null,
+    "latest_charge": null,
+    "livemode": false,
+    "metadata": {},
+    "next_action": null,
+    "on_behalf_of": null,
+    "payment_method": null,
+    "payment_method_configuration_details": {
+        "id": "pmc_1TIw4vILrYoCRvlETa4kE8w3",
+        "parent": null
+    },
+    "payment_method_options": {
+        "affirm": {},
+        "amazon_pay": {
+            "express_checkout_element_session_id": null
+        },
+        "card": {
+            "installments": null,
+            "mandate_options": null,
+            "network": null,
+            "request_three_d_secure": "automatic"
+        },
+        "cashapp": {},
+        "klarna": {
+            "preferred_locale": null
+        },
+        "link": {
+            "persistent_token": null
+        }
+    },
+    "payment_method_types": [
+        "card",
+        "klarna",
+        "link",
+        "affirm",
+        "cashapp",
+        "amazon_pay"
+    ],
+    "processing": null,
+    "receipt_email": null,
+    "review": null,
+    "setup_future_usage": null,
+    "shipping": null,
+    "source": null,
+    "statement_descriptor": null,
+    "statement_descriptor_suffix": null,
+    "status": "requires_payment_method",
+    "transfer_data": null,
+    "transfer_group": null
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #### 2. GET v1/payment_intents/{id} - Retrieve a Payment Intent
 
 #### 3. GET v1/payment_intents - List All Payment Intents
