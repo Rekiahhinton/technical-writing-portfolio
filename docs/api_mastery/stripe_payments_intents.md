@@ -114,16 +114,17 @@ Creates a PaymentIntent object, which initiates a ``client_secret`` key for the 
 
 | Parameter | Type | Required | Description |
 | ---- | ---- | ---- | ---- |
-| amount | string | Required | 
-| currency | integer | Required |
-| description | string | Optional |
-
+| amount | integer | Required | The value the PaymentIntent expects to collect for the transaction, represented by a positive integer in the smallest currency unit. e.g., 1000 cents to charge $10.00 usd. |
+| currency | integer | Required | The [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), represented by three lowercase letters. |
+| description | string | Optional | A string of text attached to the PaymentIntent, potentially to display to users. |
+| customer | string | Optional | An ID assigned to the Customer, if necessary to the transaction. |
 
 ##### Example curl request:
 
 ```
-curl --location --request POST 'https://api.stripe.com/v1/payment_intents?amount=10000&currency=usd&description=Your%20transaction%20is%20secure!' --header 'Authorization: Bearer sk_test_your_Bearer_token' --data ''
+curl --location --request POST "https://api.stripe.com/v1/payment_intents?amount=10000&currency=usd&description=Your%20transaction%20is%20secure\!" --header "Authorization: Bearer sk_test_your_Bearer_token" --data ""
 ```
+**Note:** This format is compatible with Windows devices. Linux and Mac devices use single quotes and the carot symbol (``^``) to nest data.
 
 ##### Example JSON Response:
 ```
@@ -204,7 +205,15 @@ curl --location --request POST 'https://api.stripe.com/v1/payment_intents?amount
     "transfer_group": null
 }
 ```
+##### Response Field Definitions
 
+**Note:** The following definitions include primary response fields. Additional fields are conditionally present depending on payment method configuration.
+
+| Name | Type | Required | Description |
+| ---- | ---- | ---- | ---- |
+| id | string | Required | The identifier of the PaymentIntent specific to each PaymentIntent. |
+| object | string | Required |
+| amount | integer | Required |
 
 
 
@@ -224,6 +233,87 @@ curl --location --request POST 'https://api.stripe.com/v1/payment_intents?amount
 
 
 #### 2. GET v1/payment_intents/{id} - Retrieve a Payment Intent
+
+##### Example JSON Response
+
+```
+{
+    "id": "pi_3TJCpTILrYoCRvlE0Msv9vBA",
+    "object": "payment_intent",
+    "amount": 10000,
+    "amount_capturable": 0,
+    "amount_details": {
+        "tip": {}
+    },
+    "amount_received": 0,
+    "application": null,
+    "application_fee_amount": null,
+    "automatic_payment_methods": {
+        "allow_redirects": "always",
+        "enabled": true
+    },
+    "canceled_at": null,
+    "cancellation_reason": null,
+    "capture_method": "automatic_async",
+    "client_secret": "pi_3TJCpTILrYoCRvlE0Msv9vBA_secret_RRY7chZOsMHq7CVHNKivCjaay",
+    "confirmation_method": "automatic",
+    "created": 1775480675,
+    "currency": "usd",
+    "customer": null,
+    "customer_account": null,
+    "description": "Your transaction is secure!",
+    "excluded_payment_method_types": null,
+    "last_payment_error": null,
+    "latest_charge": null,
+    "livemode": false,
+    "metadata": {},
+    "next_action": null,
+    "on_behalf_of": null,
+    "payment_method": null,
+    "payment_method_configuration_details": {
+        "id": "pmc_1TIw4vILrYoCRvlETa4kE8w3",
+        "parent": null
+    },
+    "payment_method_options": {
+        "affirm": {},
+        "amazon_pay": {
+            "express_checkout_element_session_id": null
+        },
+        "card": {
+            "installments": null,
+            "mandate_options": null,
+            "network": null,
+            "request_three_d_secure": "automatic"
+        },
+        "cashapp": {},
+        "klarna": {
+            "preferred_locale": null
+        },
+        "link": {
+            "persistent_token": null
+        }
+    },
+    "payment_method_types": [
+        "card",
+        "klarna",
+        "link",
+        "affirm",
+        "cashapp",
+        "amazon_pay"
+    ],
+    "processing": null,
+    "receipt_email": null,
+    "review": null,
+    "setup_future_usage": null,
+    "shipping": null,
+    "source": null,
+    "statement_descriptor": null,
+    "statement_descriptor_suffix": null,
+    "status": "requires_payment_method",
+    "transfer_data": null,
+    "transfer_group": null
+}
+```
 
 #### 3. GET v1/payment_intents - List All Payment Intents
 
