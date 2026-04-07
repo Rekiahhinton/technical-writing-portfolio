@@ -1,5 +1,5 @@
 ---
-title: Documenting Stripe Payment Intents API
+title: Documenting Stripe PaymentIntents API
 ---
 
 ### Conceptual Overview
@@ -116,10 +116,10 @@ Creates a PaymentIntent object, which initiates a ``client_secret`` key for the 
 
 | Parameter | Type | Required | Description |
 | ---- | ---- | ---- | ---- |
-| amount | integer | Required | The value the PaymentIntent expects to collect for the transaction, represented by a positive integer in the smallest currency unit. e.g., 1000 cents to charge $10.00 usd. |
-| currency | integer | Required | The [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), represented by three lowercase letters. |
-| description | string | Optional | A string of text attached to the PaymentIntent, potentially to display to users. |
-| customer | string | Optional | An ID assigned to the Customer, if necessary to the transaction. |
+| ``amount`` | integer | Required | The value the PaymentIntent expects to collect for the transaction, represented by a positive integer in the smallest currency unit. e.g., 1000 cents to charge $10.00 usd. |
+| ``currency`` | integer | Required | The [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), represented by three lowercase letters. |
+| ``description`` | string | Optional | A string of text attached to the PaymentIntent, potentially to display to users. |
+| ``customer`` | string | Optional | An ID assigned to the Customer, if necessary to the transaction. |
 
 ##### Example curl request:
 
@@ -213,9 +213,9 @@ curl --location --request POST "https://api.stripe.com/v1/payment_intents?amount
 
 | Name | Type | Required | Description |
 | ---- | ---- | ---- | ---- |
-| id | string | Required | The identifier of the PaymentIntent specific to each PaymentIntent. |
-| object | string | Required |
-| amount | integer | Required |
+| ``id`` | string | Required | The identifier of the PaymentIntent specific to each PaymentIntent. |
+| ``object`` | string | Required |
+| ``amount`` | integer | Required |
 
 
 
@@ -241,6 +241,10 @@ curl --location --request POST "https://api.stripe.com/v1/payment_intents?amount
 Returns the ``client_secret`` key of a PaymentIntent object. 
 
 ##### Parameters Table
+
+| Name | Type | Required | Description |
+|---- | ---- | ---- | ---- |
+| ``client_secret`` | string | Required | The |
 
 ##### Example curl Request
 
@@ -329,6 +333,8 @@ curl --location "https://api.stripe.com/v1/payment_intents/pi_3TJCpTILrYoCRvlE0M
 }
 ```
 
+##### Response Field Definitions
+
 **Note:** The following definitions include primary response fields. Additional fields are conditionally present depending on payment method configuration.
 
 | Name | Type | Required | Description |
@@ -339,9 +345,212 @@ curl --location "https://api.stripe.com/v1/payment_intents/pi_3TJCpTILrYoCRvlE0M
 
 #### 3. GET v1/payment_intents - List All Payment Intents
 
+##### Description 
+
+Returns all PaymentIntents for a particular ``customer`` or ``customer_account``.
+
+##### Parameters Table
+
+| Parameter | Type | Required | Description |
+| ---- | ---- | ---- | ---- |
+| ``limit`` | integer | Optional | The |
+| ``customer`` | string | Optional | The |
+| ``customer_account`` | string | Optional | The |
+
+##### Example curl Request
+
+```
+curl --location "https://api.stripe.com/v1/payment_intents?limit=2" --header "Authorization: Bearer sk_test_your_bearer_token"
+```
+
+##### Example JSON Response
+
+```
+{
+    "object": "list",
+    "data": [
+        {
+            "id": "pi_3TJb7eILrYoCRvlE1By25F2M",
+            "object": "payment_intent",
+            "amount": 10000,
+            "amount_capturable": 0,
+            "amount_details": {
+                "tip": {}
+            },
+            "amount_received": 0,
+            "application": null,
+            "application_fee_amount": null,
+            "automatic_payment_methods": {
+                "allow_redirects": "always",
+                "enabled": true
+            },
+            "canceled_at": null,
+            "cancellation_reason": null,
+            "capture_method": "automatic_async",
+            "client_secret": "pi_3TJb7eILrYoCRvlE1By25F2M_secret_AFVGiIShOUcML9aBs5pOHkOyg",
+            "confirmation_method": "automatic",
+            "created": 1775574058,
+            "currency": "usd",
+            "customer": null,
+            "customer_account": null,
+            "description": "Your transaction is secure\\!",
+            "excluded_payment_method_types": null,
+            "last_payment_error": null,
+            "latest_charge": null,
+            "livemode": false,
+            "metadata": {},
+            "next_action": null,
+            "on_behalf_of": null,
+            "payment_method": null,
+            "payment_method_configuration_details": {
+                "id": "pmc_1TIw4vILrYoCRvlETa4kE8w3",
+                "parent": null
+            },
+            "payment_method_options": {
+                "affirm": {},
+                "amazon_pay": {
+                    "express_checkout_element_session_id": null
+                },
+                "card": {
+                    "installments": null,
+                    "mandate_options": null,
+                    "network": null,
+                    "request_three_d_secure": "automatic"
+                },
+                "cashapp": {},
+                "klarna": {
+                    "preferred_locale": null
+                },
+                "link": {
+                    "persistent_token": null
+                }
+            },
+            "payment_method_types": [
+                "card",
+                "klarna",
+                "link",
+                "affirm",
+                "cashapp",
+                "amazon_pay"
+            ],
+            "processing": null,
+            "receipt_email": null,
+            "review": null,
+            "setup_future_usage": null,
+            "shipping": null,
+            "source": null,
+            "statement_descriptor": null,
+            "statement_descriptor_suffix": null,
+            "status": "requires_payment_method",
+            "transfer_data": null,
+            "transfer_group": null
+        },
+        {
+            "id": "pi_3TJCpTILrYoCRvlE0Msv9vBA",
+            "object": "payment_intent",
+            "amount": 10000,
+            "amount_capturable": 0,
+            "amount_details": {
+                "tip": {}
+            },
+            "amount_received": 0,
+            "application": null,
+            "application_fee_amount": null,
+            "automatic_payment_methods": {
+                "allow_redirects": "always",
+                "enabled": true
+            },
+            "canceled_at": null,
+            "cancellation_reason": null,
+            "capture_method": "automatic_async",
+            "client_secret": "pi_3TJCpTILrYoCRvlE0Msv9vBA_secret_RRY7chZOsMHq7CVHNKivCjaay",
+            "confirmation_method": "automatic",
+            "created": 1775480675,
+            "currency": "usd",
+            "customer": null,
+            "customer_account": null,
+            "description": "Your transaction is secure!",
+            "excluded_payment_method_types": null,
+            "last_payment_error": null,
+            "latest_charge": null,
+            "livemode": false,
+            "metadata": {},
+            "next_action": null,
+            "on_behalf_of": null,
+            "payment_method": null,
+            "payment_method_configuration_details": {
+                "id": "pmc_1TIw4vILrYoCRvlETa4kE8w3",
+                "parent": null
+            },
+            "payment_method_options": {
+                "affirm": {},
+                "amazon_pay": {
+                    "express_checkout_element_session_id": null
+                },
+                "card": {
+                    "installments": null,
+                    "mandate_options": null,
+                    "network": null,
+                    "request_three_d_secure": "automatic"
+                },
+                "cashapp": {},
+                "klarna": {
+                    "preferred_locale": null
+                },
+                "link": {
+                    "persistent_token": null
+                }
+            },
+            "payment_method_types": [
+                "card",
+                "klarna",
+                "link",
+                "affirm",
+                "cashapp",
+                "amazon_pay"
+            ],
+            "processing": null,
+            "receipt_email": null,
+            "review": null,
+            "setup_future_usage": null,
+            "shipping": null,
+            "source": null,
+            "statement_descriptor": null,
+            "statement_descriptor_suffix": null,
+            "status": "requires_payment_method",
+            "transfer_data": null,
+            "transfer_group": null
+        }
+    ],
+    "has_more": true,
+    "url": "/v1/payment_intents"
+}
+```
+
+ 
 #### 4. POST v1/payment_intents/{id}/confirm - Confirm a Payment Intent 
 
+##### Description 
+
+##### Example curl Request
+
+##### Example JSON Response
+
+##### Response Field Definitions
+
 #### 5. POST v1/payment_intents/{id}/cancel - Cancel a Payment Intent
+
+##### Description
+
+##### Parameters Table
+
+##### Example curl Request
+
+
+
+##### Example JSON Response
+
+##### Response Field Definitions
 
 
 
