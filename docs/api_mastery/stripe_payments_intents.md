@@ -347,15 +347,15 @@ curl --location "https://api.stripe.com/v1/payment_intents/pi_3TJCpTILrYoCRvlE0M
 
 ##### Description 
 
-Returns all PaymentIntents for a particular ``customer`` or ``customer_account``.
+Returns a list of most recent PaymentIntents up to a default of 10.
 
 ##### Parameters Table
 
 | Parameter | Type | Required | Description |
 | ---- | ---- | ---- | ---- |
-| ``limit`` | integer | Optional | The |
-| ``customer`` | string | Optional | The |
-| ``customer_account`` | string | Optional | The |
+| ``limit`` | integer | Optional | Sets a maximum number of PaymentIntents the call will return. |
+| ``customer`` | string | Optional | ID of the customer that has PaymentIntents. |
+| ``customer_account`` | string | Optional | ID of the customer account that has PaymentIntents. |
 
 ##### Example curl Request
 
@@ -526,6 +526,9 @@ curl --location "https://api.stripe.com/v1/payment_intents?limit=2" --header "Au
     "url": "/v1/payment_intents"
 }
 ```
+
+##### Response Field Definitions
+
 
  
 #### 4. POST v1/payment_intents/{id}/confirm - Confirm a Payment Intent 
