@@ -529,17 +529,121 @@ curl --location "https://api.stripe.com/v1/payment_intents?limit=2" --header "Au
 
 ##### Response Field Definitions
 
+Note: The following definitions include primary response fields. Additional fields are conditionally present depending on payment method configuration.
+
+| Name | Type | Required | Description |
+| ---- | ---- | ---- | ---- |
+| ``id`` | string | Required |
+| ``object`` | string | Required |
+| ``amount`` | integer | Required |
+| ``amount received`` | integer |
+| ``client_secret`` | integer |
+| ``currency`` | string |
+| ``description`` | string |
+| ``payment_method_types`` | string
+| ``status`` | string | 
+
 
  
 #### 4. POST v1/payment_intents/{id}/confirm - Confirm a Payment Intent 
 
 ##### Description 
 
+Indicates that the customer intends to pay with the current or provided payment method. A successful confirmation initiates a charge to the payment method. 
+
 ##### Example curl Request
+
+```
+curl --location "https://api.stripe.com/v1/payment_intents/pi_3TLYfPILrYoCRvlE0lj6Xh53/confirm" --header "Content-Type: application/x-www-form-urlencoded" --header "Authorization: Bearer sk_test_your_bearer_token" --data-urlencode "return_url=https://google.com"
+```
 
 ##### Example JSON Response
 
+```
+{
+    "id": "pi_3TLYfPILrYoCRvlE0lj6Xh53",
+    "object": "payment_intent",
+    "amount": 2000,
+    "amount_capturable": 0,
+    "amount_details": {
+        "tip": {}
+    },
+    "amount_received": 2000,
+    "application": null,
+    "application_fee_amount": null,
+    "automatic_payment_methods": {
+        "allow_redirects": "always",
+        "enabled": true
+    },
+    "canceled_at": null,
+    "cancellation_reason": null,
+    "capture_method": "automatic_async",
+    "client_secret": "pi_3TLYfPILrYoCRvlE0lj6Xh53_secret_VnRfFeluaWHVQRnOI3HvXROJ8",
+    "confirmation_method": "automatic",
+    "created": 1776041275,
+    "currency": "usd",
+    "customer": null,
+    "customer_account": null,
+    "description": null,
+    "excluded_payment_method_types": null,
+    "last_payment_error": null,
+    "latest_charge": "ch_3TLYfPILrYoCRvlE0KQfoPGh",
+    "livemode": false,
+    "managed_payments": {
+        "enabled": false
+    },
+    "metadata": {},
+    "next_action": null,
+    "on_behalf_of": null,
+    "payment_method": "pm_1TLYdKILrYoCRvlEbS42JYLi",
+    "payment_method_configuration_details": {
+        "id": "pmc_1TIw4vILrYoCRvlETa4kE8w3",
+        "parent": null
+    },
+    "payment_method_options": {
+        "amazon_pay": {
+            "express_checkout_element_session_id": null
+        },
+        "card": {
+            "installments": null,
+            "mandate_options": null,
+            "network": null,
+            "request_three_d_secure": "automatic"
+        },
+        "cashapp": {},
+        "klarna": {
+            "preferred_locale": null
+        },
+        "link": {
+            "persistent_token": null
+        }
+    },
+    "payment_method_types": [
+        "card",
+        "klarna",
+        "link",
+        "cashapp",
+        "amazon_pay"
+    ],
+    "processing": null,
+    "receipt_email": null,
+    "review": null,
+    "setup_future_usage": null,
+    "shipping": null,
+    "source": null,
+    "statement_descriptor": null,
+    "statement_descriptor_suffix": null,
+    "status": "succeeded",
+    "transfer_data": null,
+    "transfer_group": null
+}
+```
+
 ##### Response Field Definitions
+
+| Name | Type | Required | Description |
+| ---- | ---- | ---- | ---- |
+
 
 #### 5. POST v1/payment_intents/{id}/cancel - Cancel a Payment Intent
 
@@ -554,6 +658,9 @@ curl --location "https://api.stripe.com/v1/payment_intents?limit=2" --header "Au
 ##### Example JSON Response
 
 ##### Response Field Definitions
+
+| Name | Type | Required | Description |
+| ---- | ---- | ---- | ---- |
 
 
 
