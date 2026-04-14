@@ -535,7 +535,7 @@ Note: The following definitions include primary response fields. Additional fiel
 | ---- | ---- | ---- | ---- |
 | ``id`` | string | Required | The identifier of the PaymentIntent specific to each PaymentIntent. |
 | ``object`` | string | Required | The type of object Stripe returned. For this endpoint, the value is always ''payment intent''. |
-| ``amount`` | integer | Required | Monetary value the PaymentIntent expects to collect from the customer's payment method. |
+| ``amount`` | integer | Required | Monetary value of the transaction amount in the smallest current unit, e.g., ``2000``= $20.00 USD. The value is ``0`` when creating the PaymentIntent. |
 | ``amount_received`` | integer | Required | Monetary value the PaymentIntent successfully collects from the customer's payment method. |
 | ``client_secret`` | string | Required | A unique token attached to this PaymentIntent for the purpose of obscuring sensitive financial details. Each PaymentIntent receives only one token. Never expose or log this value. |
 | ``currency`` | string | Required | The [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), represented by three lowercase letters. |
