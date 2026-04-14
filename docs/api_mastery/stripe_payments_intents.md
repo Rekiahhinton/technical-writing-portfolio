@@ -533,15 +533,15 @@ Note: The following definitions include primary response fields. Additional fiel
 
 | Name | Type | Required | Description |
 | ---- | ---- | ---- | ---- |
-| ``id`` | string | Required |
-| ``object`` | string | Required |
-| ``amount`` | integer | Required |
-| ``amount received`` | integer | 
-| ``client_secret`` | integer |
-| ``currency`` | string |
-| ``description`` | string |
-| ``payment_method_types`` | string
-| ``status`` | string | 
+| ``id`` | string | Required | The identifier of the PaymentIntent specific to each PaymentIntent. |
+| ``object`` | string | Required | The type of object Stripe returned. For this endpoint, the value is always ''payment intent''. |
+| ``amount`` | integer | Required | Monetary value the PaymentIntent expects to collect from the customer's payment method. |
+| ``amount_received`` | integer | Required | Monetary value the PaymentIntent successfully collects from the customer's payment method. |
+| ``client_secret`` | string | Required | A unique token attached to this PaymentIntent for the purpose of obscuring sensitive financial details. Each PaymentIntent receives only one token. Never expose or log this value. |
+| ``currency`` | string | Required | The [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), represented by three lowercase letters. |
+| ``description`` | string | Optional | A string of text attached to the PaymentIntent, potentially to display to users. |
+| ``payment_method_types`` | array of strings | Required | An array of payment method types eligible to complete this PaymentIntent, such as ``card``, ``klarna``, or ``affirm``. |
+| ``status`` | string | Required | The current state of the PaymentIntent. Common values include ``requires_payment_method``, ``requires_confirmation``, ``processing``, and ``succeeded``. |
 
 
  
