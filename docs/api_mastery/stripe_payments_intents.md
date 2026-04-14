@@ -535,14 +535,13 @@ Note: The following definitions include primary response fields. Additional fiel
 | ---- | ---- | ---- | ---- |
 | ``id`` | string | Required | The identifier of the PaymentIntent specific to each PaymentIntent. |
 | ``object`` | string | Required | The type of object Stripe returned. For this endpoint, the value is always ''payment intent''. |
-| ``amount`` | integer | Required | Monetary value of the transaction amount in the smallest current unit, e.g., ``2000``= $20.00 USD. The value is ``0`` when creating the PaymentIntent. |
+| ``amount`` | integer | Required | The value the PaymentIntent expects to collect for the transaction, represented by a positive integer in the smallest currency unit. e.g., ``1000`` cents to charge $10.00 usd. The value is ``0`` when creating the PaymentIntent. |
 | ``amount_received`` | integer | Required | Monetary value the PaymentIntent successfully collects from the customer's payment method. |
 | ``client_secret`` | string | Required | A unique token attached to this PaymentIntent for the purpose of obscuring sensitive financial details. Each PaymentIntent receives only one token. Never expose or log this value. |
 | ``currency`` | string | Required | The [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), represented by three lowercase letters. |
 | ``description`` | string | Optional | A string of text attached to the PaymentIntent, potentially to display to users. |
 | ``payment_method_types`` | array of strings | Required | An array of payment method types eligible to complete this PaymentIntent, such as ``card``, ``klarna``, or ``affirm``. |
 | ``status`` | string | Required | The current state of the PaymentIntent. Common values include ``requires_payment_method``, ``requires_confirmation``, ``processing``, and ``succeeded``. |
-
 
  
 #### 4. POST v1/payment_intents/{id}/confirm - Confirm a Payment Intent 
@@ -558,7 +557,7 @@ Indicates that the customer intends to pay with the current or provided payment 
 | ``payment_method`` | string | Required | The ID of the payment method attached to this confirmation. |
 | ``return_url ``| string | Required | A HTTPS redirect URL for sending the customer after payment confirmation. |
 | ``receipt_email`` | string | Required | An email address for sending a confirmation email to the customer after payment confirmation. |
-| ``setup_future_usage`` | enum | Determines whether to save the payment method. Enum values include ``on_session``, which indicates the customer is present during the payment confirmation, and ``off_session``, which indicates the customer is not present during the payment confirmation. The ``off_session`` enum is useful for monthly subscription payments. |   
+| ``setup_future_usage`` | enum | Required | Determines whether to save the payment method. Enum values include ``on_session``, which indicates the customer is present during the payment confirmation, and ``off_session``, which indicates the customer is not present during the payment confirmation. The ``off_session`` enum is useful for monthly subscription payments. |   
 
 
 ##### Example curl Request
