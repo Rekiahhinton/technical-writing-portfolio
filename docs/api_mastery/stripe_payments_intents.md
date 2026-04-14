@@ -536,7 +536,7 @@ Note: The following definitions include primary response fields. Additional fiel
 | ``id`` | string | Required |
 | ``object`` | string | Required |
 | ``amount`` | integer | Required |
-| ``amount received`` | integer |
+| ``amount received`` | integer | 
 | ``client_secret`` | integer |
 | ``currency`` | string |
 | ``description`` | string |
@@ -550,6 +550,16 @@ Note: The following definitions include primary response fields. Additional fiel
 ##### Description 
 
 Indicates that the customer intends to pay with the current or provided payment method. A successful confirmation initiates a charge to the payment method. 
+
+##### Parameters Table 
+
+| Name | Type | Required | Description |
+| ---- | ---- | ---- | ---- |
+| ``payment_method`` | string | Required | The ID of the payment method attached to this confirmation. |
+| ``return_url ``| string | Required | A HTTPS redirect URL for sending the customer after payment confirmation. |
+| ``receipt_email`` | string | Required | An email address for sending a confirmation email to the customer after payment confirmation. |
+| ``setup_future_usage`` | enum | Determines whether to save the payment method. Enum values include ``on_session``, which indicates the customer is present during the payment confirmation, and ``off_session``, which indicates the customer is not present during the payment confirmation. The ``off_session`` enum is useful for monthly subscription payments. |   
+
 
 ##### Example curl Request
 
@@ -643,6 +653,9 @@ curl --location "https://api.stripe.com/v1/payment_intents/pi_3TLYfPILrYoCRvlE0l
 
 | Name | Type | Required | Description |
 | ---- | ---- | ---- | ---- |
+| ``id`` | 
+| ``object`` |
+| ``amount`` |
 
 
 #### 5. POST v1/payment_intents/{id}/cancel - Cancel a Payment Intent
