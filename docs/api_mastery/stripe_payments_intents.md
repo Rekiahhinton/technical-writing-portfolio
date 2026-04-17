@@ -706,12 +706,12 @@ curl --location "https://api.stripe.com/v1/payment_intents/pi_3TLYfPILrYoCRvlE0l
 | Idempotency Key | The property of certain operations within mathematics and computer science whereby they can be applied multiple times without changing the results beyond the initial application. This concept applies to the PaymentIntent API by ensuring each transaction only uses a single PaymentIntent so as not to risk multiple charges for the same order.|
 | ISO Currency Code | The three-letter code standard used internationally to identify almost 300 different currencies. The currencies are represented both alphabetically and numerically. E.g., The US dollar is represented by the code USD.|
 | Live Mode | The production environment where real, actionable transactions occur. |
-| Test Mode | The sandbox environment where simulated transactions occur. Live data is inaccessible in test mode.| 
 | PaymentIntent | A Stripe API object that tracks the lifecycle of a customer's checkout order. The PaymentIntent is created as an intention to collect payment by issuing a ``client_secret`` key.|
 | Publishable Key | A public, safe-to-share API key used in frontend code to identify the account user. |
 | PCI Compliance | A set of mandatory security standards designed to ensure all companies that accept, process, store, or transmit credit card information maintain a secure environment, protecting against data breaches and fraud. |
 | Redirect-based Payment Method | A checkout event in which the customer's browser is sent to a third-party site (bank or processor) to authorize transactions and returned to the merchant site upon completion (e.g., bank transfers, PayPal, Klarna). |
 | Secret Key | A private, confidential API key used in backend code to identify the account user. This key should be refreshed regularly and never shared or exposed in public. |
+| Test Mode | The sandbox environment where simulated transactions occur. Live data is inaccessible in test mode.| 
 | Webhook | A lightweight, event-driven HTTP callback that allows one application to send real-time data to another automatically when a specific event occurs. |
 
 
