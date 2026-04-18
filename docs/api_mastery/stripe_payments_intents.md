@@ -669,12 +669,98 @@ The PaymentIntent can only be cancelled in one of the following states: ``requir
 
 | Name | Type | Required | Description |
 | ---- | ---- | ---- | ---- |
+| ``cancellation_reason`` | string | Optional | The reason for cancelling the PaymentIntent. Possible values: ``duplicate``, ``fraudulent``, ``requested_by_customer``, or ``abandoned`` |
 
 ##### Example curl Request
 
+```
+curl --location --request POST "https://api.stripe.com/v1/payment_intents/pi_3TNMYgILrYoCRvlE159KaAai/cancel" --header "Authorization: Bearer sk_test_your_bearer_token"
+```
 
 
 ##### Example JSON Response
+
+```
+{
+    "id": "pi_3TNMYgILrYoCRvlE159KaAai",
+    "object": "payment_intent",
+    "amount": 10000,
+    "amount_capturable": 0,
+    "amount_details": {
+        "tip": {}
+    },
+    "amount_received": 0,
+    "application": null,
+    "application_fee_amount": null,
+    "automatic_payment_methods": {
+        "allow_redirects": "always",
+        "enabled": true
+    },
+    "canceled_at": 1776472241,
+    "cancellation_reason": null,
+    "capture_method": "automatic_async",
+    "client_secret": "pi_3TNMYgILrYoCRvlE159KaAai_secret_khZDpcsFJabWZE0kEYmkTjRgu",
+    "confirmation_method": "automatic",
+    "created": 1776471386,
+    "currency": "usd",
+    "customer": null,
+    "customer_account": null,
+    "description": "Your transaction is secure!",
+    "excluded_payment_method_types": null,
+    "last_payment_error": null,
+    "latest_charge": null,
+    "livemode": false,
+    "managed_payments": {
+        "enabled": false
+    },
+    "metadata": {},
+    "next_action": null,
+    "on_behalf_of": null,
+    "payment_method": null,
+    "payment_method_configuration_details": {
+        "id": "pmc_1TIw4vILrYoCRvlETa4kE8w3",
+        "parent": null
+    },
+    "payment_method_options": {
+        "affirm": {},
+        "amazon_pay": {
+            "express_checkout_element_session_id": null
+        },
+        "card": {
+            "installments": null,
+            "mandate_options": null,
+            "network": null,
+            "request_three_d_secure": "automatic"
+        },
+        "cashapp": {},
+        "klarna": {
+            "preferred_locale": null
+        },
+        "link": {
+            "persistent_token": null
+        }
+    },
+    "payment_method_types": [
+        "card",
+        "klarna",
+        "link",
+        "affirm",
+        "cashapp",
+        "amazon_pay"
+    ],
+    "processing": null,
+    "receipt_email": null,
+    "review": null,
+    "setup_future_usage": null,
+    "shipping": null,
+    "source": null,
+    "statement_descriptor": null,
+    "statement_descriptor_suffix": null,
+    "status": "canceled",
+    "transfer_data": null,
+    "transfer_group": null
+}
+```
 
 ##### Response Field Definitions
 
@@ -693,10 +779,11 @@ Errors happen, which is why we must know how to handle them. This section lists 
 
 | Error Type | Description |
 | ---- | ---- | 
-| ``api_error`` | An error indicating disruptions with the API itself (e.g. Stripe's servers are down.) This is unlikely to occur. |
-| ``card_error`` |  |
+| ``api_error`` | Indicates disruptions with the API itself (e.g. Stripe's servers are down.) This is unlikely to occur. |
+| ``card_error`` |  | Indicates a problem with the payment method. This is the error that is most likely to occur. |
 | ``idempotency error`` | the |
 | ``invalid_request_error`` | the |
+
 ### Create a Payment Intent
 
 ### Retrieve a Payment Intent
