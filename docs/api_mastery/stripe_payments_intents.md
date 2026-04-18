@@ -826,7 +826,7 @@ This example error message shows ``currency`` as the missing parameter.
 
 #### 401 Unauthorized
 
-This error occurs when the request does not include a valid API key for receiving authorization. 
+This error occurs when the request does not include a valid API key to authorize access to the PaymentIntents resource. 
 
 ```
 {
@@ -841,10 +841,9 @@ To fix this error, configure the authorization with the proper token to gain acc
 
 #### 404 Not Found
 
-Thiss error occurs when the request URL cannot return the resource. This is usually due to a typo. In this example, I threw error when I left a trailing slash at the end of the URL. 
+This error occurs when Stripe does not recognize the URL. This is usually due to a typo. This error occurred in this particular example because a trailing slash was appended at the end of the URL.
 
 ```
-{
     "error": {
         "message": "Unrecognized request URL (POST: /v1/payment_intents/). If you are trying to list objects, remove the trailing slash. If you are trying to retrieve an object, make sure you passed a valid (non-empty) identifier in your code. Please see https://stripe.com/docs or we can help at https://support.stripe.com/.",
         "type": "invalid_request_error"
