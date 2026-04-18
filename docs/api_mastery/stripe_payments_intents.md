@@ -222,7 +222,7 @@ curl --location --request POST "https://api.stripe.com/v1/payment_intents?amount
 | ``confirm`` | boolean | An optional setting to confirm the PaymentIntent immediately. Set to ``true`` to combine the creation and confirmation of a PaymentIntent. |
 | ``customer`` | string | The ID of the customer this PaymentIntent belongs to, if one exists. | 
 | ``receipt_email`` | string | An optional setting for sending a receipt message to the customer's email address. |
-| ``client_secret`` | string | Required | A unique token attached to this PaymentIntent for the purpose of obscuring sensitive financial details. Each PaymentIntent receives only one token. Never expose or log this value. |
+| ``client_secret`` | string | A unique token attached to this PaymentIntent for the purpose of obscuring sensitive financial details. Each PaymentIntent receives only one token. Never expose or log this value. |
 
 
 #### 2. GET v1/payment_intents/{id} - Retrieve a Payment Intent
@@ -328,8 +328,8 @@ curl --location "https://api.stripe.com/v1/payment_intents/pi_3TJCpTILrYoCRvlE0M
 
 **Note:** The following definitions include primary response fields. Additional fields are conditionally present depending on payment method configuration.
 
-| Name | Type | Required | Description |
-| ---- | ---- | ---- | ---- |
+| Name | Type | Description |
+| ---- | ---- | ---- |
 | ``id`` | string | The identifier of the PaymentIntent specific to each PaymentIntent. |
 | ``object`` | string | The type of object Stripe returned. For this endpoint, the value is always ''payment intent''.
 | ``currency`` | string | The [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), represented by three lowercase letters. |
