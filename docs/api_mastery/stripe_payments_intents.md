@@ -803,6 +803,55 @@ This section lists possible error scenarios for each endpoint and offers some us
 
 ### Create a Payment Intent
 
+#### 400 Bad Request
+
+This error occurs when the request is missing required parameters.
+
+```
+{
+    "error": {
+        "code": "parameter_missing",
+        "doc_url": "https://stripe.com/docs/error-codes/parameter-missing",
+        "message": "Missing required param: currency.",
+        "param": "currency",
+        "request_log_url": "https://dashboard.stripe.com/acct_1TIw4KILrYoCRvlE/test/workbench/logs?object=req_lKZob95PYelojc",
+        "type": "invalid_request_error"
+    }
+}
+```
+
+To fix this error, make sure to include all required parameters in the request. This error message shows ``currency`` as the missing parameter. 
+
+#### 401 Unauthorized
+
+This error occurs when the request does not include a valid API key for receiving authorization. 
+
+```
+{
+    "error": {
+        "message": "You did not provide an API key. You need to provide your API key in the Authorization header, using Bearer auth (e.g. 'Authorization: Bearer YOUR_SECRET_KEY'). See https://stripe.com/docs/api#authentication for details, or we can help at https://support.stripe.com/.",
+        "type": "invalid_request_error"
+    }
+}
+```
+
+To fix this error, make sure the authorization is properly configured to access the PaymentIntents resource. The ``curl`` request should show your bearer token in the command. 
+
+#### 404 Not Found
+
+Thiss error occurs when the request URL cannot return the resource. This is usually due to a typo. In this example, I threw error when I left a trailing slash at the end of the URL. 
+
+```
+{
+    "error": {
+        "message": "Unrecognized request URL (POST: /v1/payment_intents/). If you are trying to list objects, remove the trailing slash. If you are trying to retrieve an object, make sure you passed a valid (non-empty) identifier in your code. Please see https://stripe.com/docs or we can help at https://support.stripe.com/.",
+        "type": "invalid_request_error"
+    }
+}
+```
+
+To fix this error, check the URL for any spelling mistakes or trailing slashes. The ``message`` field always contains useful information to debugging the error. 
+
 ### Retrieve a Payment Intent
 
 ### List All Payment Intents
