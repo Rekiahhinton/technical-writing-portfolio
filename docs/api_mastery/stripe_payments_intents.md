@@ -778,7 +778,7 @@ Note: The following definitions include primary response fields. Additional fiel
 | ``amount`` | integer | The value the PaymentIntent expects to collect for the transaction, represented by a positive integer in the smallest currency unit. e.g., ``1000`` cents to charge $10.00 usd. The value is ``0`` when creating the PaymentIntent.
 | ``description`` | string | A string of text attached to the PaymentIntent, potentially to display to users.
 | ``status`` | string | The current state of the PaymentIntent. You can only cancel a PaymentIntent when the status has one of these values: ``requires_payment_method``, ``requires_capture``, ``requires_confirmation``, or ``processing``. |
-| ``client_secret`` | string | Required | A unique token attached to this PaymentIntent for the purpose of obscuring sensitive financial details. Each PaymentIntent receives only one token. Never expose or log this value. |
+| ``client_secret`` | string | A unique token attached to this PaymentIntent for the purpose of obscuring sensitive financial details. Each PaymentIntent receives only one token. Never expose or log this value. |
 | ``cancellation_reason`` | string | The reason for cancelling the PaymentIntent. Possible values: ``duplicate``, ``fraudulent``, ``requested_by_customer``, or ``abandoned``. This value is ``null`` if no reason is manually added.|
 
 
