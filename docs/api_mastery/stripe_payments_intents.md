@@ -219,10 +219,10 @@ curl --location --request POST "https://api.stripe.com/v1/payment_intents?amount
 | ``amount`` | integer | The value the PaymentIntent expects to collect for the transaction, represented by a positive integer in the smallest currency unit. e.g., ``1000`` cents to charge $10.00 usd. The value is ``0`` when creating the PaymentIntent.
 | ``description`` | string | A string of text attached to the PaymentIntent, potentially to display to users.
 | ``status`` | string | The current state of the PaymentIntent. Common values include ``requires_payment_method``, ``requires_confirmation``, ``processing``, and ``succeeded``. |
-| ``client_secret`` | string | Required | A unique token attached to this PaymentIntent for the purpose of obscuring sensitive financial details. Each PaymentIntent receives only one token. Never expose or log this value. |
 | ``confirm`` | boolean | An optional setting to confirm the PaymentIntent immediately. Set to ``true`` to combine the creation and confirmation of a PaymentIntent. |
 | ``customer`` | string | The ID of the customer this PaymentIntent belongs to, if one exists. | 
 | ``receipt_email`` | string | An optional setting for sending a receipt message to the customer's email address. |
+| ``client_secret`` | string | Required | A unique token attached to this PaymentIntent for the purpose of obscuring sensitive financial details. Each PaymentIntent receives only one token. Never expose or log this value. |
 
 
 #### 2. GET v1/payment_intents/{id} - Retrieve a Payment Intent
