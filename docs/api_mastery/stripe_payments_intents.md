@@ -661,7 +661,14 @@ curl --location "https://api.stripe.com/v1/payment_intents/pi_3TLYfPILrYoCRvlE0l
 
 ##### Description
 
+Indicates that the PaymentIntent is no longer functional and cannot be applied to any additional charges. Any operations made on the PaymentIntent fail and return an error. 
+
+The PaymentIntent can only be cancelled in one of the following states: ``requires_payment_method``, ``requires_capture``, ``requires_confirmation``, ``requires_action``, or rarely ``processing``.
+
 ##### Parameters Table
+
+| Name | Type | Required | Description |
+| ---- | ---- | ---- | ---- |
 
 ##### Example curl Request
 
@@ -679,6 +686,17 @@ curl --location "https://api.stripe.com/v1/payment_intents/pi_3TLYfPILrYoCRvlE0l
 ## Payment Intent Statuses
 
 ## Error Handling 
+
+### Overview
+
+Errors happen, which is why we must know how to handle them. This section lists possible error scenarios for each endpoint and offers some useful tips for successfully solving them according to error type.
+
+| Error Type | Description |
+| ---- | ---- | 
+| ``api_error`` | An error indicating disruptions with the API itself (e.g. Stripe's servers are down.) This is unlikely to occur. |
+| ``card_error`` |  |
+| ``idempotency error`` | the |
+| ``invalid_request_error`` | the |
 ### Create a Payment Intent
 
 ### Retrieve a Payment Intent
