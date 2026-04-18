@@ -820,7 +820,9 @@ This error occurs when the request is missing required parameters.
 }
 ```
 
-To fix this error, make sure to include all required parameters in the request. This error message shows ``currency`` as the missing parameter. 
+To fix this error, refer to the ``param`` field for information on which parameters are missing. The Create a PaymentIntent endpoint requires the ``amount`` and ``currency`` parameters.
+
+This example error message shows ``currency`` as the missing parameter. 
 
 #### 401 Unauthorized
 
@@ -835,7 +837,7 @@ This error occurs when the request does not include a valid API key for receivin
 }
 ```
 
-To fix this error, make sure the authorization is properly configured to access the PaymentIntents resource. The ``curl`` request should show your bearer token in the command. 
+To fix this error, configure the authorization with the proper token to gain access the PaymentIntents resource. The ``curl`` request should show your bearer token in the command. 
 
 #### 404 Not Found
 
