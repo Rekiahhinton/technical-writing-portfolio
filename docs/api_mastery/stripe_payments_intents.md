@@ -20,7 +20,7 @@ The Payment Intents API sits at the core of the business value of Stripe - creat
 
 ``POST /payment_intents``
 
-2. Stripe receives and acknowledges the request before returning a ``client_secret`` key.
+2. Stripe receives and acknowledges the request before returning a ```` key.
   
 3. The business website uses Stripe.js - Stripe's frontend JavaScript library - to collect the card credentials directly in the browser.
    
@@ -31,7 +31,7 @@ The Payment Intents API sits at the core of the business value of Stripe - creat
 6. The business server is notified about the payment success via a webhook, an automated HTTP request 
     Stripe sends to the business server when a payment event occurs.   
 
-**Note:** The ``client_secret`` key is a randomized token assigned to each transaction that the business server receives upon checkout. The Stripe API also includes an idempotency key that prevents a ``client_secret`` key from being used in multiple transactions if a network error occurs.
+**Note:** The ``client_secret`` key is a randomized token assigned to each transaction the backend server receives upon checkout. The Stripe API also includes an idempotency key that prevents a ``client_secret`` key from being used in multiple transactions if a network error occurs.
 
 ## Base URL
 
