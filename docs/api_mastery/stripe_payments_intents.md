@@ -788,9 +788,7 @@ Note: The following definitions include primary response fields. Additional fiel
 
 ### Overview
 
-Errors are common experiences, which means knowing how to fix them is essential.
-
-Stripe signals errors with HTTP statuses. The ``200`` HTTP response indicates the API returned a successful response. The ``4xx``responses indicate an error occurred and the request could not be completed. The ``5xx`` responses indicate the request could not complete because of an internal server error. This response is less likely to occur.
+Stripe signals errors with HTTP statuses. The ``2xx`` HTTP responses indicate the API returned a successful response. The ``4xx``responses indicate an error occurred and the request could not be completed. The ``5xx`` responses indicate the request could not complete because of an internal server error. This response is less likely to occur.
 
 The error message always follows a particular JSON structure which includes certains fields in the object: ``code``, ``type``, ``message``, ``param``, and ``doc_url``. Understanding these fields and the corresponding data within can help decode error messages and correct your requests sooner. 
 
@@ -798,8 +796,8 @@ The error message always follows a particular JSON structure which includes cert
 | ---- | ---- | 
 | ``api_error`` | Indicates disruptions with the API itself (e.g. Stripe's servers are down.) This is unlikely to occur. |
 | ``card_error`` | Indicates a problem with the payment method. This is the error that is most likely to occur. |
-| ``idempotency error`` | Occurs when an ``idempotency-key`` is used on another request with different parameters than the first. |
-| ``invalid_request_error`` | Occurs when the request contains invalid parameters. | 
+| ``idempotency_error`` | Occurs when an ``idempotency-key`` is used on another request with different parameters than the first. |
+| ``invalid_request_error`` | Occurs when the request contains invalid parameters. E.g., missing parameters, invalid values, unknown values. | 
 
 This section lists possible error scenarios for each endpoint and offers some useful tips for solving them according to the error type.
 
