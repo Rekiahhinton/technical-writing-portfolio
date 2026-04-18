@@ -645,8 +645,10 @@ curl --location "https://api.stripe.com/v1/payment_intents/pi_3TLYfPILrYoCRvlE0l
 
 ##### Response Field Definitions
 
-| Name | Type | Required | Description |
-| ---- | ---- | ---- | ---- |
+Note: The following definitions include primary response fields. Additional fields are conditionally present depending on payment method configuration.
+
+| Name | Type | Description |
+| ---- | ---- | ---- |
 | ``id`` | string | The identifier of the PaymentIntent specific to each PaymentIntent. |
 | ``object`` | string | The type of object Stripe returned. For this endpoint, the value is always ''payment intent''.
 | ``currency`` | string | The [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), represented by three lowercase letters. |
@@ -765,6 +767,8 @@ curl --location --request POST "https://api.stripe.com/v1/payment_intents/pi_3TN
 ```
 
 ##### Response Field Definitions
+
+Note: The following definitions include primary response fields. Additional fields are conditionally present depending on payment method configuration.
 
 | Name | Type | Description |
 | ---- | ---- | ---- |
