@@ -531,9 +531,9 @@ Note: The following definitions include primary response fields. Additional fiel
 | Name | Type | Description |
 | ---- | ---- | ---- |
 | ``id`` | string | The identifier of the PaymentIntent specific to each PaymentIntent. |
-| ``object`` | string | The type of object Stripe returned. For this endpoint, the value is always ''list'' **Note:** The object of each PaymentIntent listed will have the value of ``payment_intent``.
+| ``object`` | string | The type of object Stripe returned. For this endpoint, the value is always ''list'' **Note:** The object of each PaymentIntent listed will have the value of ``payment_intent``. |
 | ``currency`` | string | The [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), represented by three lowercase letters. |
-| ``amount`` | integer | The value the PaymentIntent expects to collect for the transaction, represented by a positive integer in the smallest currency unit. e.g., ``1000`` cents to charge $10.00 usd. The value is ``0`` when creating the PaymentIntent.
+| ``amount`` | integer | The value the PaymentIntent expects to collect for the transaction, represented by a positive integer in the smallest currency unit. e.g., ``1000`` cents to charge $10.00 usd. The value is ``0`` when creating the PaymentIntent. |
 | ``status`` | string | The current state of the PaymentIntent. Common values include ``requires_payment_method``, ``requires_confirmation``, ``processing``, and ``succeeded``. |
 | ``client_secret`` | string | A unique token attached to this PaymentIntent for the purpose of obscuring sensitive financial details. Each PaymentIntent receives only one token. Never expose or log this value. |
 | ``url`` | string | The endpoint path used to generate the list of PaymentIntents. |
@@ -650,15 +650,15 @@ Note: The following definitions include primary response fields. Additional fiel
 | Name | Type | Description |
 | ---- | ---- | ---- |
 | ``id`` | string | The identifier of the PaymentIntent specific to each PaymentIntent. |
-| ``object`` | string | The type of object Stripe returned. For this endpoint, the value is always ''payment intent''.
+| ``object`` | string | The type of object Stripe returned. For this endpoint, the value is always ''payment intent''. |
 | ``currency`` | string | The [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), represented by three lowercase letters. |
-| ``amount`` | integer | The value the PaymentIntent expects to collect for the transaction, represented by a positive integer in the smallest currency unit. e.g., ``1000`` cents to charge $10.00 usd. The value is ``0`` when creating the PaymentIntent.
-| ``description`` | string | A string of text attached to the PaymentIntent, potentially to display to users.
+| ``amount`` | integer | The value the PaymentIntent expects to collect for the transaction, represented by a positive integer in the smallest currency unit. e.g., ``1000`` cents to charge $10.00 usd. The value is ``0`` when creating the PaymentIntent. |
+| ``description`` | string | A string of text attached to the PaymentIntent, potentially to display to users. |
 | ``status`` | string | The current state of the PaymentIntent. Common values include ``requires_payment_method``, ``requires_confirmation``, ``processing``, and ``succeeded``. |
 | ``client_secret`` | string | A unique token attached to this PaymentIntent for the purpose of obscuring sensitive financial details. Each PaymentIntent receives only one token. Never expose or log this value. |
 | ``amount_received`` | integer | The monetary value successfully captured from the ``payment_method``. The value of ``amount_received`` is always ``0`` before the payment has been collected. |
 | ``payment_method`` | string | The opaque reference ID of the payment method typically created by Stripe.js on the client side. This is not the card numbers from the customer's payment method. **Note:** When calling this endpoint in test mode, you must manually create the payment method. |
-| ``payment_method_types`` | array of strings | 
+| ``payment_method_types`` | array of strings | The options of payment methods available to the customer. Possible values: ``card``, ``klarna``, ``link``, ``cashapp``, or ``amazon_pay``. |
 
 
 #### 5. POST v1/payment_intents/{id}/cancel - Cancel a Payment Intent
