@@ -211,27 +211,17 @@ curl --location --request POST "https://api.stripe.com/v1/payment_intents?amount
 
 **Note:** The following definitions include primary response fields. Additional fields are conditionally present depending on payment method configuration.
 
-| Name | Type | Required | Description |
-| ---- | ---- | ---- | ---- |
-| ``id`` | string | Required | The identifier of the PaymentIntent specific to each PaymentIntent. |
-| ``object`` | string | Required |
-| ``amount`` | integer | Required |
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+| Name | Type | Description |
+| ---- | ---- | ---- |
+| ``id`` | string | The identifier of the PaymentIntent specific to each PaymentIntent. |
+| ``object`` | string | The type of object Stripe returned. For this endpoint, the value is always ''payment intent''.
+| ``currency`` | string | The [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), represented by three lowercase letters. |
+| ``amount`` | integer | The value the PaymentIntent expects to collect for the transaction, represented by a positive integer in the smallest currency unit. e.g., ``1000`` cents to charge $10.00 usd. The value is ``0`` when creating the PaymentIntent.
+| ``description`` | string | A string of text attached to the PaymentIntent, potentially to display to users.
+| ``status`` | string | The current state of the PaymentIntent. Common values include ``requires_payment_method``, ``requires_confirmation``, ``processing``, and ``succeeded``. |
+| ``confirm`` | boolean | An optional setting to confirm the PaymentIntent immediately. Set to ``true`` to combine the creation and confirmation of a PaymentIntent. |
+| ``customer`` | string | The ID of the customer this PaymentIntent belongs to, if one exists. | 
+| ``receipt_email`` | string | An optional setting for sending a receipt message to the customer's email address. |
 
 
 #### 2. GET v1/payment_intents/{id} - Retrieve a Payment Intent
@@ -244,7 +234,7 @@ Returns the ``client_secret`` key of a PaymentIntent object.
 
 | Name | Type | Required | Description |
 |---- | ---- | ---- | ---- |
-| ``client_secret`` | string | Required | The |
+| ``client_secret`` | string | Required | A unique token attached to this PaymentIntent for the purpose of obscuring sensitive financial details. Each PaymentIntent receives only one token. Never expose or log this value. |
 
 ##### Example curl Request
 
@@ -339,9 +329,14 @@ curl --location "https://api.stripe.com/v1/payment_intents/pi_3TJCpTILrYoCRvlE0M
 
 | Name | Type | Required | Description |
 | ---- | ---- | ---- | ---- |
-| id | string | Required | The identifier of the PaymentIntent specific to each PaymentIntent. |
-| object | string | Required |
-| amount | integer | Required |
+| ``id`` | string | The identifier of the PaymentIntent specific to each PaymentIntent. |
+| ``object`` | string | The type of object Stripe returned. For this endpoint, the value is always ''payment intent''.
+| ``currency`` | string | The [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), represented by three lowercase letters. |
+| ``amount`` | integer | The value the PaymentIntent expects to collect for the transaction, represented by a positive integer in the smallest currency unit. e.g., ``1000`` cents to charge $10.00 usd. The value is ``0`` when creating the PaymentIntent.
+| ``status`` | string | The current state of the PaymentIntent. Common values include ``requires_payment_method``, ``requires_confirmation``, ``processing``, and ``succeeded``. |
+| ``client_secret`` | string | A unique token attached to this PaymentIntent for the purpose of obscuring sensitive financial details. Each PaymentIntent receives only one token. Never expose or log this value. |
+
+
 
 #### 3. GET v1/payment_intents - List All Payment Intents
 
@@ -354,8 +349,9 @@ Returns a list of most recent PaymentIntents up to a default of 10.
 | Parameter | Type | Required | Description |
 | ---- | ---- | ---- | ---- |
 | ``limit`` | integer | Optional | Sets a maximum number of PaymentIntents the call will return. |
-| ``customer`` | string | Optional | ID of the customer that has PaymentIntents. |
+| ``customer`` | string | Optional | ID of the customer the PaymentIntents are assigned. |
 | ``customer_account`` | string | Optional | ID of the customer account that has PaymentIntents. |
+
 
 ##### Example curl Request
 
@@ -531,17 +527,15 @@ curl --location "https://api.stripe.com/v1/payment_intents?limit=2" --header "Au
 
 Note: The following definitions include primary response fields. Additional fields are conditionally present depending on payment method configuration.
 
-| Name | Type | Required | Description |
-| ---- | ---- | ---- | ---- |
-| ``id`` | string | Required | The identifier of the PaymentIntent specific to each PaymentIntent. |
-| ``object`` | string | Required | The type of object Stripe returned. For this endpoint, the value is always ''payment intent''. |
-| ``amount`` | integer | Required | The value the PaymentIntent expects to collect for the transaction, represented by a positive integer in the smallest currency unit. e.g., ``1000`` cents to charge $10.00 usd. The value is ``0`` when creating the PaymentIntent. |
-| ``amount_received`` | integer | Required | Monetary value the PaymentIntent successfully collects from the customer's payment method. |
-| ``client_secret`` | string | Required | A unique token attached to this PaymentIntent for the purpose of obscuring sensitive financial details. Each PaymentIntent receives only one token. Never expose or log this value. |
-| ``currency`` | string | Required | The [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), represented by three lowercase letters. |
-| ``description`` | string | Optional | A string of text attached to the PaymentIntent, potentially to display to users. |
-| ``payment_method_types`` | array of strings | Required | An array of payment method types eligible to complete this PaymentIntent, such as ``card``, ``klarna``, or ``affirm``. |
-| ``status`` | string | Required | The current state of the PaymentIntent. Common values include ``requires_payment_method``, ``requires_confirmation``, ``processing``, and ``succeeded``. |
+| Name | Type | Description |
+| ---- | ---- | ---- |
+| ``id`` | string | The identifier of the PaymentIntent specific to each PaymentIntent. |
+| ``object`` | string | The type of object Stripe returned. For this endpoint, the value is always ''list'' **Note:** The object of each PaymentIntent listed will have the value of ``payment_intent``.
+| ``currency`` | string | The [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), represented by three lowercase letters. |
+| ``amount`` | integer | The value the PaymentIntent expects to collect for the transaction, represented by a positive integer in the smallest currency unit. e.g., ``1000`` cents to charge $10.00 usd. The value is ``0`` when creating the PaymentIntent.
+| ``status`` | string | The current state of the PaymentIntent. Common values include ``requires_payment_method``, ``requires_confirmation``, ``processing``, and ``succeeded``. |
+| ``client_secret`` | string | A unique token attached to this PaymentIntent for the purpose of obscuring sensitive financial details. Each PaymentIntent receives only one token. Never expose or log this value. |
+| ``url`` | string | The endpoint path used to generate the list of PaymentIntents. |
 
  
 #### 4. POST v1/payment_intents/{id}/confirm - Confirm a Payment Intent 
@@ -554,7 +548,7 @@ Indicates that the customer intends to pay with the current or provided payment 
 
 | Name | Type | Required | Description |
 | ---- | ---- | ---- | ---- |
-| ``payment_method`` | string | Required | The ID of the payment method attached to this confirmation. |
+| ``payment_method`` | string | Required | The opaque reference ID of the payment method typically created by Stripe.js on the client side. **Note:** When calling this endpoint in test mode, you must manually create the payment method.|
 | ``return_url ``| string | Required | A HTTPS redirect URL for sending the customer after payment confirmation. |
 | ``receipt_email`` | string | Required | An email address for sending a confirmation email to the customer after payment confirmation. |
 | ``setup_future_usage`` | enum | Required | Determines whether to save the payment method. Enum values include ``on_session``, which indicates the customer is present during the payment confirmation, and ``off_session``, which indicates the customer is not present during the payment confirmation. The ``off_session`` enum is useful for monthly subscription payments. |   
@@ -652,9 +646,16 @@ curl --location "https://api.stripe.com/v1/payment_intents/pi_3TLYfPILrYoCRvlE0l
 
 | Name | Type | Required | Description |
 | ---- | ---- | ---- | ---- |
-| ``id`` | 
-| ``object`` |
-| ``amount`` |
+| ``id`` | string | The identifier of the PaymentIntent specific to each PaymentIntent. |
+| ``object`` | string | The type of object Stripe returned. For this endpoint, the value is always ''payment intent''.
+| ``currency`` | string | The [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), represented by three lowercase letters. |
+| ``amount`` | integer | The value the PaymentIntent expects to collect for the transaction, represented by a positive integer in the smallest currency unit. e.g., ``1000`` cents to charge $10.00 usd. The value is ``0`` when creating the PaymentIntent.
+| ``description`` | string | A string of text attached to the PaymentIntent, potentially to display to users.
+| ``status`` | string | The current state of the PaymentIntent. Common values include ``requires_payment_method``, ``requires_confirmation``, ``processing``, and ``succeeded``. |
+| ``client_secret`` | string | A unique token attached to this PaymentIntent for the purpose of obscuring sensitive financial details. Each PaymentIntent receives only one token. Never expose or log this value. |
+| ``amount_received`` | integer | The monetary value successfully captured from the ``payment_method``. The value of ``amount_received`` is always ``0`` before the payment has been collected. |
+| ``payment_method`` | string | The opaque reference ID of the payment method typically created by Stripe.js on the client side. This is not the card numbers from the customer's payment method. **Note:** When calling this endpoint in test mode, you must manually create the payment method. |
+| ``payment_method_types`` | array of strings | 
 
 
 #### 5. POST v1/payment_intents/{id}/cancel - Cancel a Payment Intent
@@ -807,7 +808,7 @@ Errors happen, which is why we must know how to handle them. This section lists 
 | 3D Secure | A security protocol that adds an extra authentication step for online card payments, reducing fraud by verifying the cardholder's identity directly with the issuer. |
 | Bearer Token | An opaque string, such as a JSON Web Token (JWT), that acts as a digital key granting access to protected API resources to whoever holds it. Generally used with OAuth 2.0. |
 | Charge | The withdrawal transaction applied to the payment method for the PaymentIntent. |
-| ``client_secret`` | A unique key generated with each PaymentIntent. Used to complete a payment from the frontend of a browser without exposing sensitive financial details.| 
+| ``client_secret`` | A unique token attached to this PaymentIntent for the purpose of obscuring sensitive financial details. Each PaymentIntent receives only one token. Never expose or log this value. | 
 | Idempotency Key | An API key that guarantees each transaction only uses a single PaymentIntent and does not risk applying multiple charges to the same order.|
 | ISO Currency Code | The three-letter code standard used internationally to identify almost 300 different currencies. The currencies are represented both alphabetically and numerically. E.g., The US dollar is represented by the code USD.|
 | Live Mode | The production environment where real, actionable transactions occur. |
