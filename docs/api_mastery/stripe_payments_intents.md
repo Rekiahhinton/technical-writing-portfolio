@@ -1327,7 +1327,7 @@ In the ``Body`` tab, select ``x-www-form-urlencoded`` and add two parameters:
 | ``type`` | ``card`` |
 | ``card[token]`` | ``tok_visa`` |
 
-To create the simulated Payment Method, input the following command:
+To create the simulated Payment Method, send the following request:
 
 ##### Postman Request
 
