@@ -877,6 +877,28 @@ The ``request_log_url`` field also provides a link to the developer log for this
 
 ### List All Payment Intents
 
+#### 400 Bad Request
+
+This error occurs when an invalid ``customer`` ID is passed into the parameters.
+
+```
+{
+    "error": {
+        "code": "resource_missing",
+        "doc_url": "https://stripe.com/docs/error-codes/resource-missing",
+        "message": "No such customer: 'pi_83249u9fdf89suf89389u42'",
+        "param": "customer",
+        "request_log_url": "https://dashboard.stripe.com/acct_1TIw4KILrYoCRvlE/test/workbench/logs?object=req_62plfPg2ypuQgQ",
+        "type": "invalid_request_error"
+    }
+}
+```
+
+To fix this error, double-check the ``customer`` ID for typos. Also, be sure the ID does not belong to another Stripe account. 
+
+The List All PaymentIntents endpoint has limited error scenarios because it has no required parameters.
+
+
 ### Confirm a Payment Intent
 
 ### Cancel a Payment Intent
