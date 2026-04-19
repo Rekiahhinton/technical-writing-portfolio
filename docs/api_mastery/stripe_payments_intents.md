@@ -10,13 +10,13 @@ By creating a ``client_secret`` key when the business collects payment, the card
 
 For customers, this security is transformative at the most critical point of contact - checkout. This reduces friction that may deter them from purchasing an item or interacting with the business. The added protection removes a trust barrier that could discourage customers, especially if the business is new and lacks an established reputation.
 
-The Payment Intents API sits at the core of the business value of Stripe - creating trust and peace of mind by providing the means for businesses and customers to interact on digital platforms without apprehension.
+The PaymentIntents API sits at the core of the business value of Stripe - creating trust and peace of mind by providing the means for businesses and customers to interact on digital platforms without apprehension.
 
-## How Payment Intents Works
+## How PaymentIntents Works
 
 ``Customer → Business Server → Stripe → Bank → Stripe → Business Server``
 
-1. The business server creates a payment intent with a specific currency and value:
+1. The business server creates a PaymentIntent with a specific currency and value:
 
 ``POST /payment_intents``
 
@@ -26,7 +26,7 @@ The Payment Intents API sits at the core of the business value of Stripe - creat
    
 4. The credentials go to Stripe. The business server never sees them for security purposes.
    
-5. Stripe confirms the payment and charges the card the value recorded in the payment intent.
+5. Stripe confirms the payment and charges the card the value recorded in the .
 
 6. The business server is notified about the payment success via a webhook, an automated HTTP request 
     Stripe sends to the business server when a payment event occurs.   
@@ -106,7 +106,7 @@ Token: sk_test_yourkeyhere
 
 ## Endpoint Reference
 
-#### 1. POST v1/payment_intents - Create a Payment Intent
+#### 1. POST v1/payment_intents - Create a PaymentIntent
 
 ##### Description
 
@@ -214,7 +214,7 @@ curl --location --request POST "https://api.stripe.com/v1/payment_intents?amount
 | Name | Type | Description |
 | ---- | ---- | ---- |
 | ``id`` | string | The identifier of the PaymentIntent specific to each PaymentIntent. |
-| ``object`` | string | The type of object Stripe returned. For this endpoint, the value is always ''payment intent''.
+| ``object`` | string | The type of resource Stripe returned. For this endpoint, the value is always ``payment_intent``.
 | ``currency`` | string | The [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), represented by three lowercase letters. |
 | ``amount`` | integer | The value the PaymentIntent expects to collect for the transaction, represented by a positive integer in the smallest currency unit. e.g., ``1000`` cents to charge $10.00 usd. The value is ``0`` when creating the PaymentIntent.
 | ``description`` | string | A string of text attached to the PaymentIntent, potentially to display to users.
@@ -225,7 +225,7 @@ curl --location --request POST "https://api.stripe.com/v1/payment_intents?amount
 | ``client_secret`` | string | A unique token attached to this PaymentIntent for the purpose of obscuring sensitive financial details. Each PaymentIntent receives only one token. Never expose or log this value. |
 
 
-#### 2. GET v1/payment_intents/{id} - Retrieve a Payment Intent
+#### 2. GET v1/payment_intents/{id} - Retrieve a PaymentIntent
 
 ##### Description
 
@@ -331,7 +331,7 @@ curl --location "https://api.stripe.com/v1/payment_intents/pi_3TJCpTILrYoCRvlE0M
 | Name | Type | Description |
 | ---- | ---- | ---- |
 | ``id`` | string | The identifier of the PaymentIntent specific to each PaymentIntent. |
-| ``object`` | string | The type of object Stripe returned. For this endpoint, the value is always ''payment intent''.
+| ``object`` | string | The type of resource Stripe returned. For this endpoint, the value is always ``payment_intent``.
 | ``currency`` | string | The [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), represented by three lowercase letters. |
 | ``amount`` | integer | The value the PaymentIntent expects to collect for the transaction, represented by a positive integer in the smallest currency unit. e.g., ``1000`` cents to charge $10.00 usd. The value is ``0`` when creating the PaymentIntent.
 | ``status`` | string | The current state of the PaymentIntent. Common values include ``requires_payment_method``, ``requires_confirmation``, ``processing``, and ``succeeded``. |
@@ -339,7 +339,7 @@ curl --location "https://api.stripe.com/v1/payment_intents/pi_3TJCpTILrYoCRvlE0M
 
 
 
-#### 3. GET v1/payment_intents - List All Payment Intents
+#### 3. GET v1/payment_intents - List All PaymentIntents
 
 ##### Description 
 
@@ -531,7 +531,7 @@ Note: The following definitions include primary response fields. Additional fiel
 | Name | Type | Description |
 | ---- | ---- | ---- |
 | ``id`` | string | The identifier of the PaymentIntent specific to each PaymentIntent. |
-| ``object`` | string | The type of object Stripe returned. For this endpoint, the value is always ''list'' **Note:** The object of each PaymentIntent listed will have the value of ``payment_intent``. |
+| ``object`` | string | The type of resource Stripe returned. For this endpoint, the value is always ''list'' **Note:** The object of each PaymentIntent listed will have the value of ``payment_intent``. |
 | ``currency`` | string | The [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), represented by three lowercase letters. |
 | ``amount`` | integer | The value the PaymentIntent expects to collect for the transaction, represented by a positive integer in the smallest currency unit. e.g., ``1000`` cents to charge $10.00 usd. The value is ``0`` when creating the PaymentIntent. |
 | ``status`` | string | The current state of the PaymentIntent. Common values include ``requires_payment_method``, ``requires_confirmation``, ``processing``, and ``succeeded``. |
@@ -539,7 +539,7 @@ Note: The following definitions include primary response fields. Additional fiel
 | ``url`` | string | The endpoint path used to generate the list of PaymentIntents. |
 
  
-#### 4. POST v1/payment_intents/{id}/confirm - Confirm a Payment Intent 
+#### 4. POST v1/payment_intents/{id}/confirm - Confirm a PaymentIntent 
 
 ##### Description 
 
@@ -650,7 +650,7 @@ Note: The following definitions include primary response fields. Additional fiel
 | Name | Type | Description |
 | ---- | ---- | ---- |
 | ``id`` | string | The identifier of the PaymentIntent specific to each PaymentIntent. |
-| ``object`` | string | The type of object Stripe returned. For this endpoint, the value is always ``payment_intent``. |
+| ``object`` | string | The type of resource Stripe returned. For this endpoint, the value is always ``payment_intent``. |
 | ``currency`` | string | The [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), represented by three lowercase letters. |
 | ``amount`` | integer | The value the PaymentIntent expects to collect for the transaction, represented by a positive integer in the smallest currency unit. e.g., ``1000`` cents to charge $10.00 usd. The value is ``0`` when creating the PaymentIntent. |
 | ``description`` | string | A string of text attached to the PaymentIntent, potentially to display to users. |
@@ -661,7 +661,7 @@ Note: The following definitions include primary response fields. Additional fiel
 | ``payment_method_types`` | array of strings | The options of payment methods available to the customer. Possible values: ``card``, ``klarna``, ``link``, ``cashapp``, or ``amazon_pay``. |
 
 
-#### 5. POST v1/payment_intents/{id}/cancel - Cancel a Payment Intent
+#### 5. POST v1/payment_intents/{id}/cancel - Cancel a PaymentIntent
 
 ##### Description
 
@@ -773,7 +773,7 @@ Note: The following definitions include primary response fields. Additional fiel
 | Name | Type | Description |
 | ---- | ---- | ---- |
 | ``id`` | string | The identifier of the PaymentIntent specific to each PaymentIntent. |
-| ``object`` | string | The type of object Stripe returned. For this endpoint, the value is always ''payment intent''.
+| ``object`` | string | The type of resource Stripe returned. For this endpoint, the value is always ``payment_intent``.
 | ``currency`` | string | The [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), represented by three lowercase letters. |
 | ``amount`` | integer | The value the PaymentIntent expects to collect for the transaction, represented by a positive integer in the smallest currency unit. e.g., ``1000`` cents to charge $10.00 usd. The value is ``0`` when creating the PaymentIntent.
 | ``description`` | string | A string of text attached to the PaymentIntent, potentially to display to users.
@@ -799,7 +799,7 @@ The error message always follows a particular JSON structure which includes cert
 
 This section lists possible error scenarios for each endpoint and offers some useful tips for solving them according to the error type.
 
-### Create a Payment Intent
+### Create a PaymentIntent
 
 #### 400 Bad Request
 
@@ -851,7 +851,7 @@ This error occurs when Stripe does not recognize the URL. This is usually due to
 
 To fix this error, check the URL for any spelling mistakes or trailing slashes. The ``message`` field always contains useful information for debugging the error. 
 
-### Retrieve a Payment Intent
+### Retrieve a PaymentIntent
 
 #### 404 Not Found
 
@@ -873,7 +873,7 @@ The ``message`` field in this example reports the problem and provides relevant 
 The ``request_log_url`` field also provides a link to the developer log for this error message to examine the error further. 
 
 
-### List All Payment Intents
+### List All PaymentIntents
 
 #### 400 Bad Request
 
@@ -896,7 +896,7 @@ To fix this error, pass a valid customer ID beginning with ``cus``. Also, be sur
 
 The List All PaymentIntents endpoint has limited error scenarios because it has no required parameters.
 
-### Confirm a Payment Intent
+### Confirm a PaymentIntent
 
 #### 400 Bad Request
 
@@ -1090,7 +1090,7 @@ The ``message`` field explains that the PaymentIntent has already been confirmed
 
 Fix this error by refraining from sending another confirm request on a PaymentIntent that has already succeeded.
 
-### Cancel a Payment Intent
+### Cancel a PaymentIntent
 
 #### 400 Bad Request
 
