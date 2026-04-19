@@ -4,7 +4,7 @@ title: Stripe PaymentIntents API
 
 ### Conceptual Overview
 
-Stripe is not just a payment API interface. It is a trust infrastructure that ensures both businesses and customers can interact with each other safely. The Payments Intent API perfectly demonstrates this phenomenon. 
+Stripe is not just a payment API interface. It is a trust infrastructure that ensures both businesses and customers can interact with each other safely. The Payments Intent API perfectly demonstrates this idea. 
 
 By creating a ``client_secret`` key when the business collects payment, the card credentials flow directly to Stripe allowing the customer to feel secure knowing the business server will never have access to their sensitive information. This eliminates the risk of fraud for the customer and relieves the business of maintaining PCI compliance requirements, diminishing the legal liability that comes with storing sensitive financial data. 
 
@@ -20,7 +20,7 @@ The Payment Intents API sits at the core of the business value of Stripe - creat
 
 ``POST /payment_intents``
 
-2. Stripe receives and acknowledges the request before returning a ```` key.
+2. Stripe receives and acknowledges the request before returning a ``client_secret`` key.
   
 3. The business website uses Stripe.js - Stripe's frontend JavaScript library - to collect the card credentials directly in the browser.
    
@@ -96,7 +96,7 @@ Token: sk_test_yourkeyhere
 ```
 ### Security Best Practices
 
-1. Keep your secret key on the server-side and never exposing it to public access. Using the wrong key poses a great security risk.
+1. Keep your secret key on the server-side and never expose it to public access. Using the wrong key poses a great security risk.
 2. Use test keys during development.
 3. Regenerate your keys periodically.
 4. Monitor your application for suspicious activity and respond immediately if breached.
@@ -126,7 +126,7 @@ Creates a PaymentIntent object, which initiates a ``client_secret`` key for the 
 ```
 curl --location --request POST "https://api.stripe.com/v1/payment_intents?amount=10000&currency=usd&description=Your%20transaction%20is%20secure\!" --header "Authorization: Bearer sk_test_your_Bearer_token" --data ""
 ```
-**Note:** This format is compatible with Windows devices. Linux and Mac devices use single quotes and the carot symbol (``^``) to nest data.
+**Note:** This format is compatible with Windows devices. Linux and Mac devices use single quotes and the caret symbol (``^``) to nest data.
 
 ##### Example JSON Response:
 ```
@@ -229,18 +229,18 @@ curl --location --request POST "https://api.stripe.com/v1/payment_intents?amount
 
 ##### Description
 
-Returns the ``client_secret`` key of a PaymentIntent object. 
+Returns a PaymentIntent object. 
 
 ##### Parameters Table
 
 | Name | Type | Required | Description |
 |---- | ---- | ---- | ---- |
-| ``client_secret`` | string | Required | A unique token attached to this PaymentIntent for the purpose of obscuring sensitive financial details. Each PaymentIntent receives only one token. Never expose or log this value. |
+| PaymentIntent ID | string | Required | The identification key of the PaymentIntent which appends to the request URL. Never expose or log this value. |
 
 ##### Example curl Request
 
 ```
-curl --location "https://api.stripe.com/v1/payment_intents/pi_3TJCpTILrYoCRvlE0Msv9vBAclient_secret=pi_3TJCpTILrYoCRvlE0Msv9vBA_secret_RRY7chZOsMHq7CVHNKivCjaay" --header "Authorization: Bearer sk_test_your_bearer_token"
+curl --location "https://api.stripe.com/v1/payment_intents/pi_3TJCpTILrYoCRvlE0Msv9vBA?client_secret=pi_3TJCpTILrYoCRvlE0Msv9vBA_secret_RRY7chZOsMHq7CVHNKivCjaay" --header "Authorization: Bearer sk_test_your_bearer_token"
 ```
 
 ##### Example JSON Response
@@ -550,9 +550,9 @@ Indicates that the customer intends to pay with the current or provided payment 
 | Name | Type | Required | Description |
 | ---- | ---- | ---- | ---- |
 | ``payment_method`` | string | Required | The opaque reference ID of the payment method typically created by Stripe.js on the client side. **Note:** When calling this endpoint in test mode, you must manually create the payment method.|
-| ``return_url ``| string | Required | A HTTPS redirect URL for sending the customer after payment confirmation. |
-| ``receipt_email`` | string | Required | An email address for sending a confirmation email to the customer after payment confirmation. |
-| ``setup_future_usage`` | enum | Required | Determines whether to save the payment method. Enum values include ``on_session``, which indicates the customer is present during the payment confirmation, and ``off_session``, which indicates the customer is not present during the payment confirmation. The ``off_session`` enum is useful for monthly subscription payments. |   
+| ``return_url``| string | Optional | A HTTPS redirect URL for sending the customer after payment confirmation. |
+| ``receipt_email`` | string | Optional | An email address for sending a confirmation email to the customer after payment confirmation. |
+| ``setup_future_usage`` | enum | Optional | Determines whether to save the payment method. Enum values include ``on_session``, which indicates the customer is present during the payment confirmation, and ``off_session``, which indicates the customer is not present during the payment confirmation. The ``off_session`` enum is useful for monthly subscription payments. |   
 
 
 ##### Example curl Request
@@ -650,7 +650,7 @@ Note: The following definitions include primary response fields. Additional fiel
 | Name | Type | Description |
 | ---- | ---- | ---- |
 | ``id`` | string | The identifier of the PaymentIntent specific to each PaymentIntent. |
-| ``object`` | string | The type of object Stripe returned. For this endpoint, the value is always ''payment intent''. |
+| ``object`` | string | The type of object Stripe returned. For this endpoint, the value is always ``payment_intent``. |
 | ``currency`` | string | The [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), represented by three lowercase letters. |
 | ``amount`` | integer | The value the PaymentIntent expects to collect for the transaction, represented by a positive integer in the smallest currency unit. e.g., ``1000`` cents to charge $10.00 usd. The value is ``0`` when creating the PaymentIntent. |
 | ``description`` | string | A string of text attached to the PaymentIntent, potentially to display to users. |
@@ -782,15 +782,13 @@ Note: The following definitions include primary response fields. Additional fiel
 | ``cancellation_reason`` | string | The reason for cancelling the PaymentIntent. Possible values: ``duplicate``, ``fraudulent``, ``requested_by_customer``, or ``abandoned``. This value is ``null`` if no reason is manually added.|
 
 
-## Payment Intent Statuses
-
 ## Error Handling 
 
 ### Overview
 
-Stripe signals errors with HTTP statuses. The ``2xx`` HTTP responses indicate the API returned a successful response. The ``4xx``responses indicate an error occurred and the request could not be completed. The ``5xx`` responses indicate the request could not complete because of an internal server error. This response is less likely to occur.
+Stripe signals errors with HTTP statuses. The ``2xx`` HTTP responses indicate the API returned a successful response. The ``4xx`` responses indicate an error occurred and the request could not be completed. The ``5xx`` responses indicate the request could not complete because of an internal server error. This response is less likely to occur.
 
-The error message always follows a particular JSON structure which includes certains fields in the object: ``code``, ``type``, ``message``, ``param``, and ``doc_url``. Understanding these fields and the corresponding data within can help decode error messages and correct your requests sooner. 
+The error message always follows a particular JSON structure which includes certain fields in the object: ``code``, ``type``, ``message``, ``param``, and ``doc_url``. Understanding these fields and the corresponding data within can help decode error messages and correct your requests sooner. 
 
 | Error Type | Description |
 | ---- | ---- | 
@@ -837,7 +835,7 @@ This error occurs when the request does not include a valid API key to authorize
 }
 ```
 
-To fix this error, configure the authorization with the proper token to gain access the PaymentIntents resource. The ``curl`` request should show your bearer token in the command. 
+To fix this error, configure the authorization with the proper token to gain access to the PaymentIntents resource. The ``curl`` request should show your bearer token in the command. 
 
 #### 404 Not Found
 
