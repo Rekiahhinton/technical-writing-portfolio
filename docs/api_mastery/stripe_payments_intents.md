@@ -1640,11 +1640,11 @@ Stripe provides multiple test cards to simulate different outcomes. These cards 
 | ``4000 0000 0000 9995`` | Visa | Insufficient Funds Decline | ``card_declined`` |
 | ``4000 0000 0000 0069`` | Visa | Expired Card Decline | ``expired_card`` | 
 | ``4242 4242 4242 4241`` | Visa | Incorrect Number Decline | ``incorrect_number`` |
-| ``4000 0000 0000 0259`` | Visa | Fraudulent | The transaction succeeds with default settings, but is disputed as fraudulent. |
-| ``4000 0000 0000 4954`` | Visa | Highest Risk of Fraud | Radar might block the transaction depending on configuration settings. |
-| ``4000 0000 0000 0101`` | Visa | CVC Check Fails | Radar might block depending on settings. | 
-| ``5200 8282 8282 8210`` | Mastercard (Debit) | The transaction is successful. |
-| ``5555 5582 6555 4449`` | Mastercard (United Kingdom) | The transaction is successful. |
+| ``4000 0000 0000 0259`` | Visa | Fraudulent (Disputed) | The transaction succeeds with default settings, but is disputed as fraudulent. |
+| ``4000 0000 0000 4954`` | Visa | Highest Risk of Fraud (Decline) | Radar might block the transaction depending on configuration settings. |
+| ``4000 0000 0000 0101`` | Visa | CVC Check Fails (Decline) | Radar might block depending on settings. | 
+| ``5200 8282 8282 8210`` | Mastercard (Debit) | ``succeeded`` |
+| ``5555 5582 6555 4449`` | Mastercard (United Kingdom) | ``succeeded`` |
 
 Verify your results at [Transactions](https://dashboard.stripe.com/acct_1TIw4KILrYoCRvlE/test/payments) on Stripe's test mode dashboard for deeper insights on responses. 
 
