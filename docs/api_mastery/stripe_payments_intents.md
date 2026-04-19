@@ -667,7 +667,7 @@ Note: The following definitions include primary response fields. Additional fiel
 
 Indicates that the PaymentIntent is no longer functional and cannot be applied to any additional charges. Any operations made on the PaymentIntent fail and return an error. 
 
-The PaymentIntent can only be cancelled in one of the following states: ``requires_payment_method``, ``requires_capture``, ``requires_confirmation``, ``requires_action``, or rarely ``processing``.
+The PaymentIntent can only be canceled in one of the following states: ``requires_payment_method``, ``requires_capture``, ``requires_confirmation``, ``requires_action``, or rarely ``processing``.
 
 ##### Parameters Table
 
@@ -1194,7 +1194,7 @@ Fix this error by removing the unknown ``amount`` and ``currency`` parameters li
 
 #### 400 Bad Request
 
-This error occurs when Stripe receives a Cancel request for a PaymentIntent that has already succeeded. The PaymentIntent cannot be cancelled after previously confirming and succeeding. 
+This error occurs when Stripe receives a Cancel request for a PaymentIntent that has already succeeded. The PaymentIntent cannot be canceled after previously confirming and succeeding. 
 
 ```
 {
