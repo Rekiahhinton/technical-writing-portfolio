@@ -1400,6 +1400,8 @@ curl --location "https://api.stripe.com//v1/payment_methods" --header "Content-T
     "type": "card"
 }
 ```
+Copy the ``pm_`` key for the next step.
+
 
 #### 2. Create a PaymentIntent
 
