@@ -1300,7 +1300,7 @@ When initiating a transaction, the customer's payment method might decline. A de
 | ``fraudulent`` | Stripe suspects the payment method to be stolen. | Report the suspicious behavior to Stripe at [Managing Fraudulent Transactions](https://stripe.com/guides/managing-fraudulent-transactions). |
 | ``insufficient_funds`` | The payment method does not have the necessary funds to complete the transaction. |  Request for the customer to use a different payment method. |
 | ``invalid_cvc`` | The CVC number has been entered incorrectly. | Request for the customer to review the CVC number of their payment method and try the transaction again. |
-| ``processing_error`` | An unknown error occurred when attempting the transaction. | Run the payment method a second time. If the second attempt fails, contact Stripe support at [Stripe Support](https://support.stripe.com/). |
+| ``processing_error`` | An unknown error occurred when attempting the transaction. | Run the payment method a second time. If the second attempt fails, contact support at [Stripe Support](https://support.stripe.com/). |
 
 ## Getting Started - Your First Payment Intent
 
