@@ -1407,7 +1407,7 @@ Copy the ``id`` key from the JSON response for the next step. It begins with ``p
 
 #### 2. Create a PaymentIntent
 
-Using the payment method ID from the previous step, create a new request and add the ID to the request. 
+Using the payment method ID from the previous step, create a new request and add the ID to the body parameters. 
 
 In the ``Body`` tab, select ``x-www-form-urlencoded`` and add the following required parameters:
 
