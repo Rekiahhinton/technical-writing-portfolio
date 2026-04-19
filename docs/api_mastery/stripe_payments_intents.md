@@ -240,7 +240,7 @@ Returns a PaymentIntent object.
 ##### Example curl Request
 
 ```
-curl --location "https://api.stripe.com/v1/payment_intents/pi_3TJCpTILrYoCRvlE0Msv9vBA?client_secret=pi_3TJCpTILrYoCRvlE0Msv9vBA_secret_RRY7chZOsMHq7CVHNKivCjaay" --header "Authorization: Bearer sk_test_your_bearer_token"
+curl --location "https://api.stripe.com/v1/payment_intents/pi_3TJCpTILrYoCRvlE0Msv9vBA" --header "Authorization: Bearer sk_test_your_bearer_token"
 ```
 
 ##### Example JSON Response
