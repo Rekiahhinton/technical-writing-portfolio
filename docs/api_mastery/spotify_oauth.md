@@ -4,7 +4,7 @@ title: Spotify API with OAuth 2.0 Authentication
 
 ## Overview
 
-OAuth 2.0 is a universal authorization framework. It allows users to grant third-party access to their sensitive data with proper authentication. This is useful for developers who would like to access data from Spotify users.
+OAuth 2.0 is a universal authorization framework. It allows users to grant third-party access to their sensitive data with proper authentication. This is useful for developers to be able to access data from Spotify users.
 
 This guide teaches REST-familiar developers how to authenticate with the Spotify Web API using OAuth 2.0.
 
