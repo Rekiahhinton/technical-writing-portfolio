@@ -1190,7 +1190,7 @@ This error occurs when the Cancel request includes unnecessary parameters. The C
 }
 ```
 
-Fix this error by removing the unknown parameters.
+Fix this error by removing the unknown ``amount`` and ``currency`` parameters listed in the ``message``field. 
 
 #### 400 Bad Request
 
