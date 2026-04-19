@@ -1632,10 +1632,21 @@ The status should read ``succeeded``. This indicates the PaymentIntent was succe
 
 Stripe provides multiple test cards to simulate different outcomes. These cards are useful for knowing how to respond to potential errors, fraudulent activity, or successful payments in a real customer scenario.
 
+**Note:** Testing fraudulent cards may trigger [Radar](https://stripe.com/radar), Stripe's fraud prevention system. However, this is expected behavior and it does not affect your account standing in test mode. 
+
 | Card Number | Brand | Scenario | Expected Outcome |
 | ---- | ---- | ---- | ---- |
+| ``4000 0000 0000 0002`` | Visa | Generic Decline | ``card_declined`` |
 | ``4000 0000 0000 9995`` | Visa | Insufficient Funds Decline | ``card_declined`` |
+| ``4000 0000 0000 0069`` | Visa | Expired Card Decline | ``expired_card`` | 
+| ``4242 4242 4242 4241`` | Visa | Incorrect Number Decline | ``incorrect_number`` |
+| ``4000 0000 0000 0259`` | Visa | Fraudulent | The transaction succeeds with default settings, but is disputed as fraudulent. |
+| ``4000 0000 0000 4954`` | Visa | Highest Risk of Fraud | Radar might block the transaction depending on configuration settings. |
+| ``4000 0000 0000 0101`` | Visa | CVC Check Fails | Radar might block depending on settings. | 
+| ``5200 8282 8282 8210`` | Mastercard (Debit) | The transaction is successful. |
+| ``5555 5582 6555 4449`` | Mastercard (United Kingdom) | The transaction is successful. |
 
+Verify your results at [Transactions](https://dashboard.stripe.com/acct_1TIw4KILrYoCRvlE/test/payments) on Stripe's test mode dashboard for deeper insights on responses. 
 
 ## Glossary 
 
