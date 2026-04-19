@@ -1293,13 +1293,13 @@ When initiating a transaction, the customer's payment method might decline. A de
 
 | Card Decline Code | Description | Actionable Steps |
 | ---- | ---- | ---- |
-| ``authentication_required`` | The payment method requires authentication, such as 3D Secure. | Stripe will prompt the customer to authneticate their payment method through an authentication flow. If the payment method continues to decline despite successful authentication, the customer should contact their issuer for troubleshooting. |
+| ``authentication_required`` | The payment method requires authentication, such as 3D Secure. | Stripe will prompt the customer to authenticate their payment method through an authentication flow. If the payment method continues to decline despite successful authentication, the customer should contact their issuer for troubleshooting. |
 | ``card_declined``| The payment method has not succeeded; no transfer of funds has occurred. When a payment method declines, the corresponding error message will also include a ``decline_code`` attribute that gives the specific reason the payment method declined. | Request for the customer to try their payment method a second time. If the second attempt fails, the customer may need to try a different payment method. |
-| ``duplicate_transaction`` | The system has recently undergone an identical transaction with the same amount and payment method informtion. | Check your recent transactions. If there is another transaction with identical credentials, that may be worth investigating for potential fraud or other foul play. | 
+| ``duplicate_transaction`` | The system has recently undergone an identical transaction with the same amount and payment method information. | Check your recent transactions. If there is another transaction with identical credentials, that may be worth investigating for potential fraud or other suspicious activity. | 
 | ``expired_card`` | The payment method is no longer valid due to expiration. | Request for the customer to use an alternative payment method to complete the transaction. |
-| ``fraudulent`` | Stripe suspects the payment method to be stolen. | Report the suspicious behavior to Stripe. |
+| ``fraudulent`` | Stripe suspects the payment method to be stolen. | Report the suspicious behavior to Stripe at [Managing Fraudulent Transactions](https://stripe.com/guides/managing-fraudulent-transactions). |
 | ``insufficient_funds`` | The payment method does not have the necessary funds to complete the transaction. |  Request for the customer to use a different payment method. |
-| ``invalid_cvv`` | The cvv number has been entered incorrectly. | Request for the customer to review the cvv number of their payment method and try the transaction again. |
+| ``invalid_cvc`` | The CVC number has been entered incorrectly. | Request for the customer to review the CVC number of their payment method and try the transaction again. |
 | ``processing_error`` | An unknown error occurred when attempting the transaction. | Run the payment method a second time. If the second attempt fails, try again another time. |
 
 ## Getting Started - Your First Payment Intent
