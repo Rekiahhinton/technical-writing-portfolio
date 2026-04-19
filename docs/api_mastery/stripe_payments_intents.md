@@ -1318,22 +1318,21 @@ This section offers a quick and simple guide to creating your first PaymentInten
 
 #### 1. Create a Payment Method
 
-To complete the payment flow, the PaymentIntent must have a payment method to charge. In production mode, Stripe.js creates the payment method automatically when the customer add their payment information. In test mode, we simulate the act of adding a payment method by using ``card[token]`` provided by Stripe. 
+To complete the payment flow, the PaymentIntent must have a payment method to charge. In production mode, Stripe.js creates the payment method automatically when the customer adds their payment information. In test mode, we simulate the act of adding a payment method by using ``card[token]`` provided by Stripe. 
 
 In the ``Body`` tab, select ``x-www-form-urlencoded`` and add two parameters: 
 
-```
-type=card
-
-card[token]= tok_visa
-```
+| Key | Value |
+| ---- | ---- |
+| ``type`` | ``card`` |
+| ``card[token]`` | ``tok_visa`` |
 
 To create the simulated Payment Method, input the following command:
 
 ##### Postman Request
 
 ```
-POST https://api.stripe.com//v1/payment_methods
+POST https://api.stripe.com/v1/payment_methods
 ```
 
 **Note:** The secret key must be loaded into the bearer token field to authorize the request. Find the bearer token settings under the ``Authorization`` tab in Postman.
@@ -1341,7 +1340,7 @@ POST https://api.stripe.com//v1/payment_methods
 ##### curl Request
 
 ```
-curl --location "https://api.stripe.com//v1/payment_methods" --header "Content-Type: application/x-www-form-urlencoded" --header "Authorization: Bearer sk_test_your_bearer_token" --data-urlencode "type=card" --data-urlencode "card%5Btoken%5D=tok_visa"
+curl --location "https://api.stripe.com/v1/payment_methods" --header "Content-Type: application/x-www-form-urlencoded" --header "Authorization: Bearer sk_test_your_bearer_token" --data-urlencode "type=card" --data-urlencode "card%5Btoken%5D=tok_visa"
 ```
 
 ##### Example JSON Response
@@ -1400,7 +1399,7 @@ curl --location "https://api.stripe.com//v1/payment_methods" --header "Content-T
     "type": "card"
 }
 ```
-Copy the ``pm_`` key for the next step.
+Copy the ``pm_`` key from the JSON response for the next step.
 
 
 #### 2. Create a PaymentIntent
