@@ -1523,11 +1523,7 @@ Notice the ``requires_confirmation`` status. This indicates the request was succ
 
 Create a new Confirmation request using the PaymentIntent ID from the previous step. 
 
-Add the PaymentIntent ID  in the ``Query Params`` table under the ``Params`` tab. 
-
-| Key | Value |
-| ---- | ---- |
-| ``payment_intent`` | ``pi_your_id`` | 
+Append the PaymentIntent ID to the request URL.  
 
 **Note:** Stripe will return an error if this PaymentIntent is configured to accept payment methods and some may redirect the user off of the page. To bypass this, add a ``return_url`` to the body parameters:
 
