@@ -894,7 +894,7 @@ This error occurs when a PaymentIntents ID is passed into the parameters instead
 }
 ```
 
-To fix this error, input the customer ID instead. Also, be sure the ID does not belong to another Stripe account. 
+To fix this error, pass a valid customer ID beginning with ``cus``. Also, be sure the ID does not belong to another Stripe account as this will also throw a resource error. 
 
 The List All PaymentIntents endpoint has limited error scenarios because it has no required parameters.
 
