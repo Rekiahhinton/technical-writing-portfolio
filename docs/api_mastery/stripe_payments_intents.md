@@ -235,7 +235,7 @@ Returns a PaymentIntent object.
 
 | Name | Type | Required | Description |
 |---- | ---- | ---- | ---- |
-| PaymentIntent ID | string | Required | The identification key of the PaymentIntent which appends to the request URL. Never expose or log this value. |
+| PaymentIntent ID | string | Required | The identification key of the PaymentIntent which appends to the request URL. |
 
 ##### Example curl Request
 
