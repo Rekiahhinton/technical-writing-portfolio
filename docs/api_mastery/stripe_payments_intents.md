@@ -1325,6 +1325,9 @@ In the ``Body`` tab, select ``x-www-form-urlencoded`` and add two parameters:
 | Key | Value |
 | ---- | ---- |
 | ``type`` | ``card`` |
+| ``card[token]`` | ``tok_visa`` || Key | Value |
+| ---- | ---- |
+| ``type`` | ``card`` |
 | ``card[token]`` | ``tok_visa`` |
 
 To create the simulated Payment Method, send the following request:
@@ -1403,6 +1406,116 @@ Copy the ``id`` key from the JSON response for the next step. It begins with ``p
 
 
 #### 2. Create a PaymentIntent
+
+Create a new request. 
+
+In the ``Body`` tab, select ``x-www-form-urlencoded`` and add the following required parameters:
+
+| Key | Value |
+| ---- | ---- |
+| ``amount`` | ``your_value`` |
+| ``currency`` | ``usd`` | 
+| ``payment_method`` | ``pm_your_id`` |
+
+**Note:** In this example, I chose ``100`` for the amount. The ``amount`` is represented by the smallest currency unit (e.g., ``100`` means $1.00)
+
+To create a PaymentIntent, send the following request:
+
+##### Postman Request
+
+```
+POST https://api.stripe.com/v1/payment_intents
+```
+
+##### curl Request
+
+```
+curl --location "https://api.stripe.com/v1/payment_intents" --header "Content-Type: application/x-www-form-urlencoded" --header "Authorization: Bearer sk_test_your_bearer_token" --data-urlencode "amount=100" --data-urlencode "currency=usd" --data-urlencode "payment_method=pm_your_id"
+```
+
+##### Example JSON Response
+
+```
+{
+    "id": "pi_3TNzlyILrYoCRvlE13C8mYmf",
+    "object": "payment_intent",
+    "amount": 100,
+    "amount_capturable": 0,
+    "amount_details": {
+        "tip": {}
+    },
+    "amount_received": 0,
+    "application": null,
+    "application_fee_amount": null,
+    "automatic_payment_methods": {
+        "allow_redirects": "always",
+        "enabled": true
+    },
+    "canceled_at": null,
+    "cancellation_reason": null,
+    "capture_method": "automatic_async",
+    "client_secret": "pi_3TNzlyILrYoCRvlE13C8mYmf_secret_q0rkTydv2bXUoyh17JQSpE1Jn",
+    "confirmation_method": "automatic",
+    "created": 1776622126,
+    "currency": "usd",
+    "customer": null,
+    "customer_account": null,
+    "description": null,
+    "excluded_payment_method_types": null,
+    "last_payment_error": null,
+    "latest_charge": null,
+    "livemode": false,
+    "managed_payments": {
+        "enabled": false
+    },
+    "metadata": {},
+    "next_action": null,
+    "on_behalf_of": null,
+    "payment_method": "pm_1TNz6nILrYoCRvlEyrZ42OGq",
+    "payment_method_configuration_details": {
+        "id": "pmc_1TIw4vILrYoCRvlETa4kE8w3",
+        "parent": null
+    },
+    "payment_method_options": {
+        "amazon_pay": {
+            "express_checkout_element_session_id": null
+        },
+        "card": {
+            "installments": null,
+            "mandate_options": null,
+            "network": null,
+            "request_three_d_secure": "automatic"
+        },
+        "cashapp": {},
+        "klarna": {
+            "preferred_locale": null
+        },
+        "link": {
+            "persistent_token": null
+        }
+    },
+    "payment_method_types": [
+        "card",
+        "klarna",
+        "link",
+        "cashapp",
+        "amazon_pay"
+    ],
+    "processing": null,
+    "receipt_email": null,
+    "review": null,
+    "setup_future_usage": null,
+    "shipping": null,
+    "source": null,
+    "statement_descriptor": null,
+    "statement_descriptor_suffix": null,
+    "status": "requires_confirmation",
+    "transfer_data": null,
+    "transfer_group": null
+}
+```
+
+Copy the PaymentIntent ``id`` key for the next step. It begins with ``pi_``.
 
 #### 3. Confirm the PaymentIntent
 
