@@ -1201,7 +1201,7 @@ This error occurs when Stripe receives a Cancel request for a PaymentIntent that
     "error": {
         "code": "payment_intent_unexpected_state",
         "doc_url": "https://stripe.com/docs/error-codes/payment-intent-unexpected-state",
-        "message": "You cannot confirm this PaymentIntent because it has already succeeded after being previously confirmed.",
+        "message": "You cannot cancel this PaymentIntent because it has a status of succeeded. Only a PaymentIntent with one of the following statuses may be canceled: requires_payment_method, requires_capture, requires_reauthorization, requires_confirmation, requires_action, processing.",
         "payment_intent": {
             "id": "pi_3TLYfPILrYoCRvlE0lj6Xh53",
             "object": "payment_intent",
@@ -1279,7 +1279,7 @@ This error occurs when Stripe receives a Cancel request for a PaymentIntent that
             "transfer_data": null,
             "transfer_group": null
         },
-        "request_log_url": "https://dashboard.stripe.com/acct_1TIw4KILrYoCRvlE/test/workbench/logs?object=req_GxFlJAseVaYlfG",
+        "request_log_url": "https://dashboard.stripe.com/acct_1TIw4KILrYoCRvlE/test/workbench/logs?object=req_423GwXfX2uV0m0",
         "type": "invalid_request_error"
     }
 }
