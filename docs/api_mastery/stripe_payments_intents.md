@@ -857,7 +857,7 @@ To fix this error, check the URL for any spelling mistakes or trailing slashes. 
 
 #### 404 Not Found
 
-This error message occurs when Stripe does not recognize the URL. In this case, the ``client_secret`` key is passed into the URL instead of the PaymentIntent ID.
+This error occurs when Stripe does not recognize the URL. In this case, the ``client_secret`` key is passed into the URL instead of the PaymentIntent ID.
 
 ```
 {
@@ -870,7 +870,9 @@ This error message occurs when Stripe does not recognize the URL. In this case, 
 }
 ```
 
-The ``message`` field in this example reports the problem and provides relevant information on passing the PaymentIntent ID. The ``request_log_url`` field also provides a link to the developer log for this error message. 
+The ``message`` field in this example reports the problem and provides relevant information on passing the PaymentIntent ID. Replace the ``client_secret`` key with the PaymentIntent ID to fix the error. 
+
+The ``request_log_url`` field also provides a link to the developer log for this error message to examine the error further. 
 
 
 ### List All Payment Intents
