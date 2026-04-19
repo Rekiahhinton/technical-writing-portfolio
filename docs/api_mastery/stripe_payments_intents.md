@@ -1527,7 +1527,7 @@ Add the PaymentIntent ID  in the ``Query Params`` table under the ``Params`` tab
 
 | Key | Value |
 | ---- | ---- |
-| ``payment_intent`` | ``pi_3TNzlyILrYoCRvlE13C8mYmf`` | 
+| ``payment_intent`` | ``pi_your_id`` | 
 
 **Note:** Stripe will return an error if this PaymentIntent is configured to accept payment methods and some may redirect the user off of the page. To bypass this, add a ``return_url`` to the body parameters:
 
@@ -1630,7 +1630,7 @@ curl --location "https://api.stripe.com/v1/payment_intents/pi_your_id/confirm" -
 }
 ```
 
-
+The status should read ``succeeded``. This indicates the PaymentIntent was successfully confirmed. 
 
 ## Testing 
 
