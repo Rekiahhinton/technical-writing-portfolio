@@ -1285,8 +1285,8 @@ This error occurs when Stripe receives a Cancel request for a PaymentIntent that
 }
 ```
 
-Fix this error by refraining from sending any additonal Cancel requests.
-
+Only PaymentIntents that have not yet succeeded can be canceled. Valid status for cancelable PaymentIntents include: ``requires_payment_method``, ``requires_confirmation``, and ``requires_capture``.
+ 
 ## Card Decline Codes
 
 ## Getting Started - Your First Payment Intent
