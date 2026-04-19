@@ -902,7 +902,7 @@ The List All PaymentIntents endpoint has limited error scenarios because it has 
 
 #### 400 Bad Request
 
-This error occurs due to missing parameters. Once a Confirm request sends, it tries to initiate a transaction. However, if the PaymentIntent accepts payment methods, it may lead to a broswer redirect. This necessitates a ``return_url`` address for the customer to return to after completing the online payment webform. If a ``return_url`` is not provided before sending the request, Stripe throws an error:
+This error occurs due to missing parameters. Once a Confirm request is sent, it tries to initiate a transaction. However, if the PaymentIntent accepts payment methods, it may lead to a browser redirect. This necessitates a ``return_url`` address for the customer to return to after completing the online payment flow. If a ``return_url`` is not provided before sending the request, Stripe throws an error:
 
 ```
 {
@@ -988,10 +988,12 @@ This error occurs due to missing parameters. Once a Confirm request sends, it tr
         "request_log_url": "https://dashboard.stripe.com/acct_1TIw4KILrYoCRvlE/test/workbench/logs?object=req_oa7DPWVFTn4Di6",
         "type": "invalid_request_error"
     }
-}
+
 ```
 
 Fix this error by completing the steps in the ``message`` field. Assign a ``return_url`` in the Params box or reconfigure your settings for ``automatic_payment_methods`` in Setup Intents and PaymentIntents.  
+
+**Note**: Stripe returns the entire PaymentIntent object for this error. This additional information is useful for viewing the state of the PaymentIntent and finding the bottleneck. One can observe from the response that this PaymentIntent has the status "requires_payment_method." Before the PaymentIntent can be confirmed and the transaction initiated, a payment method must be provided.
 
 
 ### Cancel a Payment Intent
