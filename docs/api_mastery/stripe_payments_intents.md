@@ -1525,7 +1525,7 @@ Create a new Confirmation request using the PaymentIntent ID from the previous s
 
 Append the PaymentIntent ID to the request URL.  
 
-**Note:** If the PaymentIntent is configured to accept payment methods that cause redirects, Stripe requires a ``return_url``. In this quickstart guide, adding a placeholder ``return_url`` to the body parameters is the easiest solution to prevent an error. Add it the ``Body`` tab after selecting ``x-www-form-urlencoded``:
+**Note:** If the PaymentIntent is configured to accept payment methods that cause redirects, Stripe requires a ``return_url``. In this quickstart guide, adding a placeholder ``return_url`` to the body parameters is the easiest way to prevent an error. Add it the ``Body`` tab after selecting ``x-www-form-urlencoded``:
 
 | Key | Value |
 | ---- | ---- |
