@@ -1407,7 +1407,7 @@ Copy the ``id`` key from the JSON response for the next step. It begins with ``p
 
 #### 2. Create a PaymentIntent
 
-Create a new request. 
+Using the payment method ID from the previous step, create a new request and add the ID to the request. 
 
 In the ``Body`` tab, select ``x-www-form-urlencoded`` and add the following required parameters:
 
@@ -1417,7 +1417,7 @@ In the ``Body`` tab, select ``x-www-form-urlencoded`` and add the following requ
 | ``currency`` | ``usd`` | 
 | ``payment_method`` | ``pm_your_id`` |
 
-**Note:** In this example, I chose ``100`` for the amount. The ``amount`` is represented by the smallest currency unit (e.g., ``100`` means $1.00)
+**Note:** This example uses ``100`` for the amount. The ``amount`` is represented by the smallest currency unit (e.g., ``100`` means $1.00)
 
 To create a PaymentIntent, send the following request:
 
@@ -1516,6 +1516,8 @@ curl --location "https://api.stripe.com/v1/payment_intents" --header "Content-Ty
 ```
 
 Copy the PaymentIntent ``id`` key for the next step. It begins with ``pi_``.
+
+Notice the ``requires_confirmation`` status. This indicates the request was successful and the PaymentIntent is ready for the final confirmation stage. 
 
 #### 3. Confirm the PaymentIntent
 
