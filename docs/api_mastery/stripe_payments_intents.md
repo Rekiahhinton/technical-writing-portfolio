@@ -1302,7 +1302,110 @@ When initiating a transaction, the customer's payment method might decline. A de
 | ``invalid_cvc`` | The CVC number has been entered incorrectly. | Request for the customer to review the CVC number of their payment method and try the transaction again. |
 | ``processing_error`` | An unknown error occurred when attempting the transaction. | Run the payment method a second time. If the second attempt fails, contact support at [Stripe Support](https://support.stripe.com/). |
 
-## Getting Started - Your First Payment Intent
+## Getting Started - Your First PaymentIntent
+
+### Prerequisites
+
+* A Stripe account
+* Your test secret key
+* Postman or curl installed on your device
+
+### Overview
+
+This section offers a quick and simple guide to creating your first PaymentIntent in less than twenty minutes. By the end of this section, you will have created and confirmed your first PaymentIntent in Stripe's sandbox environment using both Postman and curl requests. 
+
+### Steps
+
+#### 1. Create a Payment Method
+
+To complete the payment flow, the PaymentIntent must have a payment method to charge. In production mode, Stripe.js creates the payment method automatically when the customer add their payment information. In test mode, we simulate the act of adding a payment method by using ``card[token]`` provided by Stripe. 
+
+In the ``Body`` tab, select ``x-www-form-urlencoded`` and add two parameters: 
+
+```
+type=card
+
+card[token]= tok_visa
+```
+
+To create the simulated Payment Method, input the following command:
+
+##### Postman Request
+
+```
+POST https://api.stripe.com//v1/payment_methods
+```
+
+**Note:** The secret key must be loaded into the bearer token field to authorize the request. Find the bearer token settings under the ``Authorization`` tab in Postman.
+
+##### curl Request
+
+```
+curl --location "https://api.stripe.com//v1/payment_methods" --header "Content-Type: application/x-www-form-urlencoded" --header "Authorization: Bearer sk_test_your_bearer_token" --data-urlencode "type=card" --data-urlencode "card%5Btoken%5D=tok_visa"
+```
+
+##### Example JSON Response
+
+```
+{
+    "id": "pm_1TNz6nILrYoCRvlEyrZ42OGq",
+    "object": "payment_method",
+    "allow_redisplay": "unspecified",
+    "billing_details": {
+        "address": {
+            "city": null,
+            "country": null,
+            "line1": null,
+            "line2": null,
+            "postal_code": null,
+            "state": null
+        },
+        "email": null,
+        "name": null,
+        "phone": null,
+        "tax_id": null
+    },
+    "card": {
+        "brand": "visa",
+        "checks": {
+            "address_line1_check": null,
+            "address_postal_code_check": null,
+            "cvc_check": "unchecked"
+        },
+        "country": "US",
+        "display_brand": "visa",
+        "exp_month": 4,
+        "exp_year": 2027,
+        "fingerprint": "ldVy9y1tipS54ClV",
+        "funding": "credit",
+        "generated_from": null,
+        "last4": "4242",
+        "networks": {
+            "available": [
+                "visa"
+            ],
+            "preferred": null
+        },
+        "regulated_status": "unregulated",
+        "three_d_secure_usage": {
+            "supported": true
+        },
+        "wallet": null
+    },
+    "created": 1776619573,
+    "customer": null,
+    "customer_account": null,
+    "livemode": false,
+    "metadata": {},
+    "type": "card"
+}
+```
+
+#### 2. Create a PaymentIntent
+
+#### 3. Confirm the PaymentIntent
+
+
 
 ## Testing 
 
