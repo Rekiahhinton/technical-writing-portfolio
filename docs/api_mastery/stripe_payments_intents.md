@@ -879,7 +879,7 @@ The ``request_log_url`` field also provides a link to the developer log for this
 
 #### 400 Bad Request
 
-This error occurs when an invalid ``customer`` ID is passed into the parameters.
+This error occurs when a PaymentIntents ID is passed into the parameters instead of customer ID.
 
 ```
 {
@@ -894,7 +894,7 @@ This error occurs when an invalid ``customer`` ID is passed into the parameters.
 }
 ```
 
-To fix this error, double-check the ``customer`` ID for typos. Also, be sure the ID does not belong to another Stripe account. 
+To fix this error, input the customer ID instead. Also, be sure the ID does not belong to another Stripe account. 
 
 The List All PaymentIntents endpoint has limited error scenarios because it has no required parameters.
 
