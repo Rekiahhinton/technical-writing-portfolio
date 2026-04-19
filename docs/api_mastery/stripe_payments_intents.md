@@ -851,9 +851,27 @@ This error occurs when Stripe does not recognize the URL. This is usually due to
 }
 ```
 
-To fix this error, check the URL for any spelling mistakes or trailing slashes. The ``message`` field always contains useful information to debugging the error. 
+To fix this error, check the URL for any spelling mistakes or trailing slashes. The ``message`` field always contains useful information for debugging the error. 
 
 ### Retrieve a Payment Intent
+
+#### 404 Not Found
+
+This error message occurs when Stripe does not recognize the URL. In this case, the ``client_secret`` key is passed into the URL instead of the PaymentIntent ID.
+
+```
+{
+    "error": {
+        "message": "You passed a string that looks like a client secret as the PaymentIntent ID, but you must provide a valid PaymentIntent ID. Please use the value in the `id` field of the PaymentIntent.",
+        "param": "intent",
+        "request_log_url": "https://dashboard.stripe.com/acct_1TIw4KILrYoCRvlE/test/workbench/logs?object=req_qXc0qoGMmN6RrW",
+        "type": "invalid_request_error"
+    }
+}
+```
+
+The ``message`` field in this example reports the problem and provides relevant information on passing the PaymentIntent ID. The ``request_log_url`` field also provides a link to the developer log for this error message. 
+
 
 ### List All Payment Intents
 
