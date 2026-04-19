@@ -898,8 +898,101 @@ To fix this error, pass a valid customer ID beginning with ``cus``. Also, be sur
 
 The List All PaymentIntents endpoint has limited error scenarios because it has no required parameters.
 
-
 ### Confirm a Payment Intent
+
+#### 400 Bad Request
+
+This error occurs due to missing parameters. Once a Confirm request sends, it tries to initiate a transaction. However, if the PaymentIntent accepts payment methods, it may lead to a broswer redirect. This necessitates a ``return_url`` address for the customer to return to after completing the online payment webform. If a ``return_url`` is not provided before sending the request, Stripe throws an error:
+
+```
+{
+    "error": {
+        "message": "This PaymentIntent is configured to accept payment methods enabled in your Dashboard. Because some of these payment methods might redirect your customer off of your page, you must provide a `return_url`. If you don't want to accept redirect-based payment methods, set `automatic_payment_methods[enabled]` to `true` and `automatic_payment_methods[allow_redirects]` to `never` when creating Setup Intents and Payment Intents.",
+        "payment_intent": {
+            "id": "pi_3TJ1tVILrYoCRvlE06CjkdFv",
+            "object": "payment_intent",
+            "amount": 2000,
+            "amount_capturable": 0,
+            "amount_details": {
+                "tip": {}
+            },
+            "amount_received": 0,
+            "application": null,
+            "application_fee_amount": null,
+            "automatic_payment_methods": {
+                "allow_redirects": "always",
+                "enabled": true
+            },
+            "canceled_at": null,
+            "cancellation_reason": null,
+            "capture_method": "automatic_async",
+            "client_secret": "pi_3TJ1tVILrYoCRvlE06CjkdFv_secret_SOph7sl7q0uCe33mtH5DVAACO",
+            "confirmation_method": "automatic",
+            "created": 1775438641,
+            "currency": "usd",
+            "customer": null,
+            "customer_account": null,
+            "description": null,
+            "excluded_payment_method_types": null,
+            "last_payment_error": null,
+            "latest_charge": null,
+            "livemode": false,
+            "managed_payments": {
+                "enabled": false
+            },
+            "metadata": {},
+            "next_action": null,
+            "on_behalf_of": null,
+            "payment_method": null,
+            "payment_method_configuration_details": {
+                "id": "pmc_1TIw4vILrYoCRvlETa4kE8w3",
+                "parent": null
+            },
+            "payment_method_options": {
+                "amazon_pay": {
+                    "express_checkout_element_session_id": null
+                },
+                "card": {
+                    "installments": null,
+                    "mandate_options": null,
+                    "network": null,
+                    "request_three_d_secure": "automatic"
+                },
+                "cashapp": {},
+                "klarna": {
+                    "preferred_locale": null
+                },
+                "link": {
+                    "persistent_token": null
+                }
+            },
+            "payment_method_types": [
+                "card",
+                "klarna",
+                "link",
+                "cashapp",
+                "amazon_pay"
+            ],
+            "processing": null,
+            "receipt_email": null,
+            "review": null,
+            "setup_future_usage": null,
+            "shipping": null,
+            "source": null,
+            "statement_descriptor": null,
+            "statement_descriptor_suffix": null,
+            "status": "requires_payment_method",
+            "transfer_data": null,
+            "transfer_group": null
+        },
+        "request_log_url": "https://dashboard.stripe.com/acct_1TIw4KILrYoCRvlE/test/workbench/logs?object=req_oa7DPWVFTn4Di6",
+        "type": "invalid_request_error"
+    }
+}
+```
+
+Fix this error by completing the steps in the ``message`` field. Assign a ``return_url`` in the Params box or reconfigure your settings for ``automatic_payment_methods`` in Setup Intents and PaymentIntents.  
+
 
 ### Cancel a Payment Intent
 
