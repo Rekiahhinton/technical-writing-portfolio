@@ -995,6 +995,101 @@ Fix this error by completing the steps in the ``message`` field. Assign a ``retu
 
 **Note**: Stripe returns the entire PaymentIntent object for this error. This additional information is useful for viewing the state of the PaymentIntent and finding the bottleneck. The response reports that this PaymentIntent has the status "requires_payment_method." Before the PaymentIntent can be confirmed and the transaction initiated, a payment method must be provided.
 
+#### 400 Bad Request
+
+A Bad Request error can also occur if a Confirm request is sent for a PaymentIntent that has already been confirmed:
+
+```
+{
+    "error": {
+        "code": "payment_intent_unexpected_state",
+        "doc_url": "https://stripe.com/docs/error-codes/payment-intent-unexpected-state",
+        "message": "You cannot confirm this PaymentIntent because it has already succeeded after being previously confirmed.",
+        "payment_intent": {
+            "id": "pi_3TLYfPILrYoCRvlE0lj6Xh53",
+            "object": "payment_intent",
+            "amount": 2000,
+            "amount_capturable": 0,
+            "amount_details": {
+                "tip": {}
+            },
+            "amount_received": 2000,
+            "application": null,
+            "application_fee_amount": null,
+            "automatic_payment_methods": {
+                "allow_redirects": "always",
+                "enabled": true
+            },
+            "canceled_at": null,
+            "cancellation_reason": null,
+            "capture_method": "automatic_async",
+            "client_secret": "pi_3TLYfPILrYoCRvlE0lj6Xh53_secret_VnRfFeluaWHVQRnOI3HvXROJ8",
+            "confirmation_method": "automatic",
+            "created": 1776041275,
+            "currency": "usd",
+            "customer": null,
+            "customer_account": null,
+            "description": null,
+            "excluded_payment_method_types": null,
+            "last_payment_error": null,
+            "latest_charge": "ch_3TLYfPILrYoCRvlE0KQfoPGh",
+            "livemode": false,
+            "managed_payments": {
+                "enabled": false
+            },
+            "metadata": {},
+            "next_action": null,
+            "on_behalf_of": null,
+            "payment_method": "pm_1TLYdKILrYoCRvlEbS42JYLi",
+            "payment_method_configuration_details": {
+                "id": "pmc_1TIw4vILrYoCRvlETa4kE8w3",
+                "parent": null
+            },
+            "payment_method_options": {
+                "amazon_pay": {
+                    "express_checkout_element_session_id": null
+                },
+                "card": {
+                    "installments": null,
+                    "mandate_options": null,
+                    "network": null,
+                    "request_three_d_secure": "automatic"
+                },
+                "cashapp": {},
+                "klarna": {
+                    "preferred_locale": null
+                },
+                "link": {
+                    "persistent_token": null
+                }
+            },
+            "payment_method_types": [
+                "card",
+                "klarna",
+                "link",
+                "cashapp",
+                "amazon_pay"
+            ],
+            "processing": null,
+            "receipt_email": null,
+            "review": null,
+            "setup_future_usage": null,
+            "shipping": null,
+            "source": null,
+            "statement_descriptor": null,
+            "statement_descriptor_suffix": null,
+            "status": "succeeded",
+            "transfer_data": null,
+            "transfer_group": null
+        },
+        "request_log_url": "https://dashboard.stripe.com/acct_1TIw4KILrYoCRvlE/test/workbench/logs?object=req_GxFlJAseVaYlfG",
+        "type": "invalid_request_error"
+    }
+}
+```
+
+The ``message`` field explains that the PaymentIntent has already been confirmed. The JSON response also shows the status of the PaymentIntent is "succeeded," which indicates the PaymentIntent has already processed a previous confirm request. 
+
 
 ### Cancel a Payment Intent
 
