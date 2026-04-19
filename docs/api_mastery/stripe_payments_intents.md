@@ -993,7 +993,7 @@ This error occurs due to missing parameters. Once a Confirm request is sent, it 
 
 Fix this error by completing the steps in the ``message`` field. Assign a ``return_url`` in the Params box or reconfigure your settings for ``automatic_payment_methods`` in Setup Intents and PaymentIntents.  
 
-**Note**: Stripe returns the entire PaymentIntent object for this error. This additional information is useful for viewing the state of the PaymentIntent and finding the bottleneck. One can observe from the response that this PaymentIntent has the status "requires_payment_method." Before the PaymentIntent can be confirmed and the transaction initiated, a payment method must be provided.
+**Note**: Stripe returns the entire PaymentIntent object for this error. This additional information is useful for viewing the state of the PaymentIntent and finding the bottleneck. The response reports that this PaymentIntent has the status "requires_payment_method." Before the PaymentIntent can be confirmed and the transaction initiated, a payment method must be provided.
 
 
 ### Cancel a Payment Intent
