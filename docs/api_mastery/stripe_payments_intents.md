@@ -531,7 +531,7 @@ Note: The following definitions include primary response fields. Additional fiel
 | Name | Type | Description |
 | ---- | ---- | ---- |
 | ``id`` | string | The identifier of the PaymentIntent specific to each PaymentIntent. |
-| ``object`` | string | The type of resource Stripe returned. For this endpoint, the value is always ''list'' **Note:** The object of each PaymentIntent listed will have the value of ``payment_intent``. |
+| ``object`` | string | The type of resource Stripe returned. For this endpoint, the value is always ``list`` **Note:** The object of each PaymentIntent listed will have the value of ``payment_intent``. |
 | ``currency`` | string | The [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), represented by three lowercase letters. |
 | ``amount`` | integer | The value the PaymentIntent expects to collect for the transaction, represented by a positive integer in the smallest currency unit. e.g., ``1000`` cents to charge $10.00 usd. The value is ``0`` when creating the PaymentIntent. |
 | ``status`` | string | The current state of the PaymentIntent. Common values include ``requires_payment_method``, ``requires_confirmation``, ``processing``, and ``succeeded``. |
