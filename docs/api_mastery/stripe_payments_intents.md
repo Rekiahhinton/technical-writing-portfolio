@@ -1289,6 +1289,19 @@ Only PaymentIntents that have not yet succeeded can be canceled. Valid status fo
  
 ## Card Decline Codes
 
+When initiating a transaction, the customer's payment method might decline. A developer must known how to resolve these errors effectively proceed with the transaction. Utilizing the table below, you can learn why particular card decline codes appear and how to take the next step in resolving them.
+
+| Card Decline Code | Description | Actionable Steps |
+| ---- | ---- | ---- |
+| ``authentication_required`` | the | the |
+| ``card_declined``| The payment method has not succeeded. When a payment method declines, the corresponding error message will also include a ``decline_code`` attribute that gives the specific reason the payment method declined. | Three |
+| ``duplicate_transaction`` | 
+| ``expired_card`` | the | the |
+| ``fraudulent`` | stealing | is wrong. |
+| ``insufficient_funds`` | broke | bitch. |
+| ``invalid_cvv`` | wrong | number. |
+| ``processing_error`` | stop | working. |
+
 ## Getting Started - Your First Payment Intent
 
 ## Testing 
