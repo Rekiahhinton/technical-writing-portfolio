@@ -1630,6 +1630,13 @@ The status should read ``succeeded``. This indicates the PaymentIntent was succe
 
 ## Testing 
 
+Stripe provides multiple test cards to simulate different outcomes. These cards are useful for knowing how to respond to potential errors, fraudulent activity, or successful payments in a real customer scenario.
+
+| Card Number | Brand | Scenario | Expected Outcome |
+| ---- | ---- | ---- | ---- |
+| ``4000 0000 0000 9995`` | Visa | Insufficient Funds Decline | ``card_declined`` |
+
+
 ## Glossary 
 
 | Term | Definition |
