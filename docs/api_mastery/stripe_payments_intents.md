@@ -781,7 +781,7 @@ Note: The following definitions include primary response fields. Additional fiel
 | ``client_secret`` | string | A unique token attached to this PaymentIntent for the purpose of obscuring sensitive financial details. Each PaymentIntent receives only one token. Never expose or log this value. |
 | ``cancellation_reason`` | string | The reason for cancelling the PaymentIntent. Possible values: ``duplicate``, ``fraudulent``, ``requested_by_customer``, or ``abandoned``. This value is ``null`` if no reason is manually added.|
 
-#### PaymentIntent Statuses 
+## PaymentIntent Statuses 
 
 The PaymentIntent follows a sequence of statuses with each request. 
 
@@ -793,7 +793,7 @@ Or it can branch to ``requires_action`` if authentication is needed, or end at `
 | ---- | ---- |
 | ``requires_payment_method`` | Indicates a PaymentMethod ID has not been added. This is required for confirmation. |
 | ``requires_confirmation`` | Indicates the PaymentIntent has been created, but not confirmed. |
-| ``processing`` | Indicates the PaymentIntent has not yet. |
+| ``processing`` | Indicates the PaymentIntent has been confirmed and the payment is still processing. |
 | ``succeeded`` | Indicates the PaymentIntent has successfully been confirmed. |
 | ``requires_action`` | Indicates the PaymentIntent needs authorization to proceed. |
 | ``canceled`` | Indicates the PaymentIntent can no longer be used to make additional transactions. |
