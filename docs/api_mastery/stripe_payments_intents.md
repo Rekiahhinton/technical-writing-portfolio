@@ -1521,6 +1521,115 @@ Notice the ``requires_confirmation`` status. This indicates the request was succ
 
 #### 3. Confirm the PaymentIntent
 
+Create a new Confirmation request using the PaymentIntent ID from the previous step. 
+
+Add the PaymentIntent ID  in the ``Query Params`` table under the ``Params`` tab. 
+
+| Key | Value |
+| ---- | ---- |
+| ``payment_intent`` | ``pi_3TNzlyILrYoCRvlE13C8mYmf`` | 
+
+**Note:** Stripe will return an error if this PaymentIntent is configured to accept payment methods and some may redirect the user off of the page. To bypass this, add a ``return_url`` to the body parameters:
+
+| Key | Value |
+| ---- | ---- |
+| ``return_url`` | ``https://example.com`` |
+
+
+##### Postman Request
+
+```
+https://api.stripe.com/v1/payment_intents/pi_your_id/confirm
+```
+
+##### curl Request
+
+```
+curl --location "https://api.stripe.com/v1/payment_intents/pi_your_id/confirm" --header "Content-Type: application/x-www-form-urlencoded" --header "Authorization: Bearer sk_test_your_bearer_token" --data-urlencode "return_url=https://example.com"
+```
+
+##### Example JSON Response
+
+```
+{
+    "id": "pi_3TNzlyILrYoCRvlE13C8mYmf",
+    "object": "payment_intent",
+    "amount": 100,
+    "amount_capturable": 0,
+    "amount_details": {
+        "tip": {}
+    },
+    "amount_received": 100,
+    "application": null,
+    "application_fee_amount": null,
+    "automatic_payment_methods": {
+        "allow_redirects": "always",
+        "enabled": true
+    },
+    "canceled_at": null,
+    "cancellation_reason": null,
+    "capture_method": "automatic_async",
+    "client_secret": "pi_3TNzlyILrYoCRvlE13C8mYmf_secret_q0rkTydv2bXUoyh17JQSpE1Jn",
+    "confirmation_method": "automatic",
+    "created": 1776622126,
+    "currency": "usd",
+    "customer": null,
+    "customer_account": null,
+    "description": null,
+    "excluded_payment_method_types": null,
+    "last_payment_error": null,
+    "latest_charge": "ch_3TNzlyILrYoCRvlE1TmzsmKT",
+    "livemode": false,
+    "managed_payments": {
+        "enabled": false
+    },
+    "metadata": {},
+    "next_action": null,
+    "on_behalf_of": null,
+    "payment_method": "pm_1TNz6nILrYoCRvlEyrZ42OGq",
+    "payment_method_configuration_details": {
+        "id": "pmc_1TIw4vILrYoCRvlETa4kE8w3",
+        "parent": null
+    },
+    "payment_method_options": {
+        "amazon_pay": {
+            "express_checkout_element_session_id": null
+        },
+        "card": {
+            "installments": null,
+            "mandate_options": null,
+            "network": null,
+            "request_three_d_secure": "automatic"
+        },
+        "cashapp": {},
+        "klarna": {
+            "preferred_locale": null
+        },
+        "link": {
+            "persistent_token": null
+        }
+    },
+    "payment_method_types": [
+        "card",
+        "klarna",
+        "link",
+        "cashapp",
+        "amazon_pay"
+    ],
+    "processing": null,
+    "receipt_email": null,
+    "review": null,
+    "setup_future_usage": null,
+    "shipping": null,
+    "source": null,
+    "statement_descriptor": null,
+    "statement_descriptor_suffix": null,
+    "status": "succeeded",
+    "transfer_data": null,
+    "transfer_group": null
+}
+```
+
 
 
 ## Testing 
