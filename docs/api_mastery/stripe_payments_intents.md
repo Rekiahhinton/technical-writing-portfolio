@@ -1090,8 +1090,202 @@ A Bad Request error can also occur if a Confirm request is sent for a PaymentInt
 
 The ``message`` field explains that the PaymentIntent has already been confirmed. The JSON response also shows the status of the PaymentIntent is "succeeded," which indicates the PaymentIntent has already processed a previous confirm request. 
 
+Fix this error by refraining from sending another confirm request on a PaymentIntent that has already succeeded.
 
 ### Cancel a Payment Intent
+
+#### 400 Bad Request
+
+This error occurs when the Cancel request includes unnecessary parameters. The Cancel a PaymentIntent endpoint does not accept ``amount`` or ``currency`` as parameters, only ``cancellation_reason``; therefore, the request is invalid and returns an error:
+
+```
+{
+    "error": {
+        "code": "parameter_unknown",
+        "doc_url": "https://stripe.com/docs/error-codes/parameter-unknown",
+        "message": "Received unknown parameters: amount, currency",
+        "param": "amount",
+        "payment_intent": {
+            "id": "pi_3TNMYgILrYoCRvlE159KaAai",
+            "object": "payment_intent",
+            "amount": 10000,
+            "amount_capturable": 0,
+            "amount_details": {
+                "tip": {}
+            },
+            "amount_received": 0,
+            "application": null,
+            "application_fee_amount": null,
+            "automatic_payment_methods": {
+                "allow_redirects": "always",
+                "enabled": true
+            },
+            "canceled_at": 1776472241,
+            "cancellation_reason": null,
+            "capture_method": "automatic_async",
+            "client_secret": "pi_3TNMYgILrYoCRvlE159KaAai_secret_khZDpcsFJabWZE0kEYmkTjRgu",
+            "confirmation_method": "automatic",
+            "created": 1776471386,
+            "currency": "usd",
+            "customer": null,
+            "customer_account": null,
+            "description": "Your transaction is secure!",
+            "excluded_payment_method_types": null,
+            "last_payment_error": null,
+            "latest_charge": null,
+            "livemode": false,
+            "managed_payments": {
+                "enabled": false
+            },
+            "metadata": {},
+            "next_action": null,
+            "on_behalf_of": null,
+            "payment_method": null,
+            "payment_method_configuration_details": {
+                "id": "pmc_1TIw4vILrYoCRvlETa4kE8w3",
+                "parent": null
+            },
+            "payment_method_options": {
+                "affirm": {},
+                "amazon_pay": {
+                    "express_checkout_element_session_id": null
+                },
+                "card": {
+                    "installments": null,
+                    "mandate_options": null,
+                    "network": null,
+                    "request_three_d_secure": "automatic"
+                },
+                "cashapp": {},
+                "klarna": {
+                    "preferred_locale": null
+                },
+                "link": {
+                    "persistent_token": null
+                }
+            },
+            "payment_method_types": [
+                "card",
+                "klarna",
+                "link",
+                "affirm",
+                "cashapp",
+                "amazon_pay"
+            ],
+            "processing": null,
+            "receipt_email": null,
+            "review": null,
+            "setup_future_usage": null,
+            "shipping": null,
+            "source": null,
+            "statement_descriptor": null,
+            "statement_descriptor_suffix": null,
+            "status": "canceled",
+            "transfer_data": null,
+            "transfer_group": null
+        },
+        "request_log_url": "https://dashboard.stripe.com/acct_1TIw4KILrYoCRvlE/test/workbench/logs?object=req_Dg958GNaOoJEeb",
+        "type": "invalid_request_error"
+    }
+}
+```
+
+Fix this error by removing the unknown parameters.
+
+#### 400 Bad Request
+
+This error occurs when Stripe receives a Cancel request for a PaymentIntent that has already succeeded. The PaymentIntent cannot be cancelled after previously confirming and succeeding. 
+
+```
+{
+    "error": {
+        "code": "payment_intent_unexpected_state",
+        "doc_url": "https://stripe.com/docs/error-codes/payment-intent-unexpected-state",
+        "message": "You cannot confirm this PaymentIntent because it has already succeeded after being previously confirmed.",
+        "payment_intent": {
+            "id": "pi_3TLYfPILrYoCRvlE0lj6Xh53",
+            "object": "payment_intent",
+            "amount": 2000,
+            "amount_capturable": 0,
+            "amount_details": {
+                "tip": {}
+            },
+            "amount_received": 2000,
+            "application": null,
+            "application_fee_amount": null,
+            "automatic_payment_methods": {
+                "allow_redirects": "always",
+                "enabled": true
+            },
+            "canceled_at": null,
+            "cancellation_reason": null,
+            "capture_method": "automatic_async",
+            "client_secret": "pi_3TLYfPILrYoCRvlE0lj6Xh53_secret_VnRfFeluaWHVQRnOI3HvXROJ8",
+            "confirmation_method": "automatic",
+            "created": 1776041275,
+            "currency": "usd",
+            "customer": null,
+            "customer_account": null,
+            "description": null,
+            "excluded_payment_method_types": null,
+            "last_payment_error": null,
+            "latest_charge": "ch_3TLYfPILrYoCRvlE0KQfoPGh",
+            "livemode": false,
+            "managed_payments": {
+                "enabled": false
+            },
+            "metadata": {},
+            "next_action": null,
+            "on_behalf_of": null,
+            "payment_method": "pm_1TLYdKILrYoCRvlEbS42JYLi",
+            "payment_method_configuration_details": {
+                "id": "pmc_1TIw4vILrYoCRvlETa4kE8w3",
+                "parent": null
+            },
+            "payment_method_options": {
+                "amazon_pay": {
+                    "express_checkout_element_session_id": null
+                },
+                "card": {
+                    "installments": null,
+                    "mandate_options": null,
+                    "network": null,
+                    "request_three_d_secure": "automatic"
+                },
+                "cashapp": {},
+                "klarna": {
+                    "preferred_locale": null
+                },
+                "link": {
+                    "persistent_token": null
+                }
+            },
+            "payment_method_types": [
+                "card",
+                "klarna",
+                "link",
+                "cashapp",
+                "amazon_pay"
+            ],
+            "processing": null,
+            "receipt_email": null,
+            "review": null,
+            "setup_future_usage": null,
+            "shipping": null,
+            "source": null,
+            "statement_descriptor": null,
+            "statement_descriptor_suffix": null,
+            "status": "succeeded",
+            "transfer_data": null,
+            "transfer_group": null
+        },
+        "request_log_url": "https://dashboard.stripe.com/acct_1TIw4KILrYoCRvlE/test/workbench/logs?object=req_GxFlJAseVaYlfG",
+        "type": "invalid_request_error"
+    }
+}
+```
+
+Fix this error by refraining from sending any additonal Cancel requests.
 
 ## Card Decline Codes
 
