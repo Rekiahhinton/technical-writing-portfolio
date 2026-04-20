@@ -22,7 +22,7 @@ By the end of this guide, developers will be able to build apps with access a Sp
 
 | Role (Spotify Context) | Description |
 | ---- | ---- |
-| Resource Owner (Spotify User) | Represents the Spotify user who grants permission for the Authorization Server to give the Client access to personal data. |
+| Resource Owner (Spotify User) | Represents the Spotify user who owns the data and grants permission for the Authorization Server to give the Client access. |
 | Client (Third Party App) | Represents the application that wants access to the Resource Owner's personal data. |
 | Authorization Server (Spotify's Authorization Server) | Represents the party who accepts the Authorization Request and Client Secret, and grants tokens to the Client. |
 | Resource Server (Spotify's Web API) | Represents the server that delivers the Spotify user's personal data to the Client. |
@@ -41,12 +41,6 @@ Once the user confirms, the Authorization Server sends an authorization code to 
 4. Third Party App Exchanges Authorization Code and Client Secret for Access Token and Refresh Token
 5. Third Party App Uses Access Token to Request Data from Spotify Web API
 6. Third Party App Uses Refresh Token When Access Token Expires
- 
-
-
-
-
-### Authorization Code Flow
 
 ### Key Concepts 
 
