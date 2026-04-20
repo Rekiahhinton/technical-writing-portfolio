@@ -29,7 +29,7 @@ By the end of this guide, developers will be able to build apps with access a Sp
 
 ### OAuth 2.0 and Spotify
 
-Spotify integrates OAuth 2.0 by taking the role of Authorization Server. When the Client (Third Party App) wants access to a Spotify user's personal information, the Client directs the user to the Authorization Server that requests permission from the user to give the third party app access. 
+Spotify integrates OAuth 2.0 by taking the role of Authorization Server. When the Client (Third Party App) wants access to a Spotify user's personal information, the Client directs the user to the Authorization Server that requests permission from the user to give the third party app access. The Authorization Server shows the Spotify user a login and consent screen, and waits for confirmation.
 
 Once the user confirms, the Authorization Server sends an authorization code to the Client who uses it and a Client Secret key to gain an access token. That token then allows the Client to view the personal data through the Resource Server (Spotify's Web API). 
 
