@@ -18,6 +18,20 @@ By the end of this guide, developers will be able to build apps with access a Sp
 
 ## How OAuth 2.0 Works 
 
+### OAuth 2.0 and Spotify
+
+Spot
+
+``Client 
+
+| 
+
+### Roles
+
+### Authorization Code Flow
+
+### Key Concepts 
+
 ## Prerequisites 
 
 ## The Authorization Code Flow 
