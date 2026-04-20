@@ -24,7 +24,7 @@ By the end of this guide, developers will be able to build apps with access a Sp
 | ---- | ---- |
 | Resource Owner (Spotify User) | Represents the Spotify user who owns the data and grants permission for the Authorization Server to give the Client access. |
 | Client (Third Party App) | Represents the application that wants access to the Resource Owner's personal data. |
-| Authorization Server (Spotify's Authorization Server) | Represents the party that receives login credentials and authorization confirmation from the user. Also represents the party who accepts the Authorization Request and Client Secret, and grants tokens to the Client. |
+| Authorization Server (Spotify's Authorization Server) | Represents the party that presents the login and consent screen to the user, verifies credentials, and issues the authorization code and access tokens to the Client. |
 | Resource Server (Spotify's Web API) | Represents the server that delivers the Spotify user's personal data to the Client. |
 
 ### OAuth 2.0 and Spotify
