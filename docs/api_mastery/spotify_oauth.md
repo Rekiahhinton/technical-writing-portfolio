@@ -29,18 +29,20 @@ By the end of this guide, developers will be able to build apps with access a Sp
 
 ### OAuth 2.0 and Spotify
 
-Spotify integrates OAuth 2.0 by taking the role of Authorization Server. When the Client (Third Party App) wants access to a Spotify user's personal information, the Client directs the user to the Authorization Server that requests permission from the user to give the third party app access. The Authorization Server shows the Spotify user a login and consent screen, and waits for confirmation.
+Spotify integrates OAuth 2.0 by acting as the Authorization Server and Resource Server. When the Client (Third Party App) wants access to a Spotify user's personal information, the Client directs the user to the Authorization Server that requests the user's permission to share their data with the Client. The Authorization Server shows the Spotify user a login and consent screen, and waits for confirmation.
 
 Once the user confirms, the Authorization Server sends an authorization code to the Client who uses it and a Client Secret key to gain an access token. That token then allows the Client to view the personal data through the Resource Server (Spotify's Web API). 
 
 #### Authorization Code Flow
 
-1. Third Party App Directs User to Authorization Server for Access
-2. Spotify User Gives Permission to Authorization Server
-3. Spotify's Authorization Server Sends Authorization Code to Third Party App
-4. Third Party App Exchanges Authorization Code and Client Secret for Access Token and Refresh Token
-5. Third Party App Uses Access Token to Request Data from Spotify Web API
-6. Third Party App Uses Refresh Token When Access Token Expires
+The Authorization Code follows these steps: 
+
+1. The Third Party App directs the Spotify User to the Authorization Server for access.
+2. The Spotify User gives permission to the Authorization Server.
+3. Spotify's Authorization Server sends authorization code to the Third Party App.
+4. The Third Party App exchanges the authorization code and Client Secret for the access tokens and refresh tokens.
+5. The Third Party App uses the access token to request data from Spotify's  Web API.
+6. The Third Party App uses the refresh token when access token expires.
 
 ### Key Concepts 
 
