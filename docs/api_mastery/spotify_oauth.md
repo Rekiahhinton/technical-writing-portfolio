@@ -46,19 +46,28 @@ The Authorization Code follows these steps:
 
 ### Key Concepts 
 
-For reference: 
+The following terms appear throughout this guide: 
 
 | Term | Description |
 | ---- | ---- |
-| Access Token | The authorization key that allows the Client to access the user's data from Spotify's Web API. This token provides scope, which provides limited access to the Spotify User's personal data. |
-| Authorization Code | The encoded authorization message the Authorization Server gives to the Client to exchange for tokens. |
+| Access Token | The authorization credential used in API requests to give the Client access to the user's data from Spotify's Web API. |
+| Authorization Code | The temporary, single-use code the Authorization Server gives to the Client to exchange for tokens. |
 | Client ID | The public identification key that the Authorization Server uses to identify the Client. |
 | Client Secret | The private key that the Authorization Server uses to verify the identity of the Client. This key should never be shared.|
-| Refresh Token | The token the Client uses for access to the user's data after the access token has expired. | 
+| Refresh Token | The token the Client uses to obtain another access token after the original access token has expired. | 
 | Scope | Indicates the permissions the Client may access. The Client does not have access to anything besides the scope. |
 
-
 ## Prerequisites 
+
+These prerequisites are necessary to run the Authorization Code Flow: 
+
+1. Spotify Developer Account - [Spotify for Developers](https://developer.spotify.com/)
+2. A Registered Spotify App - [Create an App](https://developer.spotify.com/documentation/web-api/concepts/apps) (Includes your Client ID, Client Secret, and redirect URL configuration)
+3. Postman - [Sign Up/Login](https://www.postman.com/) or curl - [Download](https://curl.se/download.html)
+4. Familiarity with REST and HTTP Requests, but no OAuth 2.0 knowledge required.
+
+
+
 
 ## The Authorization Code Flow 
 
