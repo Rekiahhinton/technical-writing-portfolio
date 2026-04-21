@@ -66,12 +66,11 @@ These prerequisites are necessary to run the Authorization Code Flow:
 3. Postman - [Sign Up/Login](https://www.postman.com/) or curl - [Download](https://curl.se/download.html)
 4. Familiarity with REST and HTTP Requests, but no OAuth 2.0 knowledge required.
 
-
-
-
 ## The Authorization Code Flow 
 
 ### Step 1: Request User Authorization
+
+The Authorization Code Flow begins by sending the user, 
 
 ### Step 2: Handle the Callback and Extract the Code 
 
