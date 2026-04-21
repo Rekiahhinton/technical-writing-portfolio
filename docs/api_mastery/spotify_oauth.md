@@ -46,6 +46,18 @@ The Authorization Code follows these steps:
 
 ### Key Concepts 
 
+For reference: 
+
+| Term | Description |
+| ---- | ---- |
+| Access Token | The authorization key that allows the Client to access the user's data from Spotify's Web API. This token provides scope, which provides limited access to the Spotify User's personal data. |
+| Authorization Code | The encoded authorization message the Authorization Server gives to the Client to exchange for tokens. |
+| Client ID | The public identification key that the Authorization Server uses to identify the Client. |
+| Client Secret | The private key that the Authorization Server uses to verify the identity of the Client. This key should never be shared.|
+| Refresh Token | The token the Client uses for access to the user's data after the access token has expired. | 
+| Scope | Indicates the permissions the Client may access. The Client does not have access to anything besides the scope. |
+
+
 ## Prerequisites 
 
 ## The Authorization Code Flow 
