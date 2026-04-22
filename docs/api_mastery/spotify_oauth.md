@@ -70,7 +70,7 @@ These prerequisites are necessary to run the Authorization Code Flow:
 
 ### Step 1: Request User Authorization
 
-The Authorization Code Flow begins by sending the user, 
+The Authorization Code Flow begins by requesting authorization from the resource owner (Spotify user). Once the resource owner grants authorization, they will have logged into Spotify's interface and the authorization code goes to your redirect URL.
 
 ### Step 2: Handle the Callback and Extract the Code 
 
