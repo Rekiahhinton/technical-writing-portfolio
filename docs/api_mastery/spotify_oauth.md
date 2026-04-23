@@ -127,7 +127,7 @@ This step involves extracting the authorization code for future use.
 1. Navigate to the return URL in the browser.
 
 ```
-curl --location "https://api.spotify.com/v1/me/player/recently-played" --header "Authorization: Bearer your_bearer_token"
+https://oauth.pstmn.io/v1/callback?code=AQD...&state=abc123
 ```
 
 2. Find the authorization code - the value of the ``code`` parameter - at the end of the return URL.
@@ -136,6 +136,12 @@ curl --location "https://api.spotify.com/v1/me/player/recently-played" --header 
 ### Step 3: Exchange Code for Tokens 
 
 ### Step 4: Make an Authenticated API Request
+
+#### curl Request
+
+```
+curl --location "https://api.spotify.com/v1/me/player/recently-played" --header "Authorization: Bearer your_bearer_token"
+```
 
 ### Step 5: Refresh the Access Token 
 
