@@ -42,7 +42,7 @@ The Authorization Code follows these steps:
 3. Spotify's Authorization Server sends authorization code to the Third Party App.
 4. The Third Party App exchanges the authorization code and Client Secret for the access tokens and refresh tokens.
 5. The Third Party App uses the access token to request data from Spotify's  Web API.
-6. The Third Party App uses the refresh token when access token expires.
+6. The Third Party App uses the refresh token to generate new access tokens when the original access token expires.
 
 ### Key Concepts 
 
@@ -72,11 +72,36 @@ These prerequisites are necessary to run the Authorization Code Flow:
 
 The Authorization Code Flow begins by requesting authorization from the resource owner (Spotify user). Once the resource owner grants authorization, they will have logged into Spotify's interface and the authorization code goes to your redirect URL.
 
+#### Parameters Table 
+
+| Parameter | Type | Required | Description |
+| ---- | ---- | ---- | ---- |
+| ``client_id`` | string | Required | The public identification key that the Authorization Server uses to identify the Client. |
+| ``redirect_uri`` | string | Required | A secure endpoint where the authorization server sends the authorization code or tokens after authentication. |
+| ``response_type`` | string | Required | Determines the type of response to send when using the ``/authorize`` endpoint. Fixed value of ``response_type=code`` for Authorization Code Flow. |
+| ``scope`` | string | Required | Defines the specific permissions of user data the Third Party has access to when authorized. Prevents excessive user data from being shared. |
+| ``show_dialog`` | boolean | Optional | A setting that controls whether or not the Authorization Server shows the authorization screen every time the user logs in. Options are ``show_dialog=true`` and ``show_dialog=false``, which is the default. |
+| ``state`` | string | Optional | A random string the Third Party App generates to verify the legitimacy of the authorization request. Prevents cross-site request forgery attacks. | 
+
+#### Constructing the Authorization URL
+
+The Authorization URL includes the Spotify authorization endpoint along with the five parameters, ``client_id``, ``response_type``, ``redirect_url``, ``scope``, and ``state``:
+
+```
+https://accounts.spotify.com/authorize?client_id=YOUR_CLIENT_ID&response_type=code&redirect_uri=YOUR_REDIRECT_URI&scope=user-read-recently-played&state=YOUR_STATE
+```
+
+The sixth parameter, ``show_dialog``, is optional and not included in the Authorization URL; however, it may be appended to the URL. The default state is ``show_dialog=false``, but developers may include ``show_dialog=true`` to prompt the consent screen on every authorization request.
+
 ### Step 2: Handle the Callback and Extract the Code 
 
 ### Step 3: Exchange Code for Tokens 
 
 ### Step 4: Make an Authenticated API Request
+
+```
+curl --location "https://api.spotify.com/v1/me/player/recently-played" --header "Authorization: Bearer your_bearer_token"
+```
 
 ### Step 5: Refresh the Access Token 
 
