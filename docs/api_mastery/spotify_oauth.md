@@ -113,10 +113,16 @@ https://oauth.pstmn.io/v1/callback?code=AQD...&state=abc123
 Complete these steps in Postman to receive the authorization code:
 
 1. Create a new request in Postman.
-2. Click the **Authorization** tab and the **Auth Type** dropdown.
-3. Scroll down and click **OAuth 2.0**.
-  [OAuth_2.0](
-4. 
+2. Add the Spotify endpoint to the request box.
+   ```
+   https://api.spotify.com/v1/me/player/recently-played
+   ```
+3. Click the **Authorization** tab and the **Auth Type** dropdown.
+4. Scroll down and click **OAuth 2.0**.
+5. Scroll down to **Configure New Token** and fill in the corresponding boxes to create a new access token.
+6. Under the **Token** dropdown, find **Manage Tokens** to view the parameters of your token. The pop-up box confirms the flow was successful and the authorization code exchanged properly. The token is ready for use.
+
+**Note:** Postman automatically attaches the token to your new requests when selecting it from the **Available Tokens** dropdown menu. 
 
 ### Step 2: Handle the Callback and Extract the Code 
 
