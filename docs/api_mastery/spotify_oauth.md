@@ -117,7 +117,7 @@ Complete these steps in Postman to receive the authorization code:
 3. Scroll down and click **OAuth 2.0**.
 4. Scroll down to **Configure New Token** and fill in the corresponding boxes to create a new access token. Choose a **Token Name**, then fill in **Auth URL**, **Access Token URL**, **Client ID**, **Client Secret**, and **Scope**. These values should match the values in the Spotify app registration. 
 5. Click **Get New Access Token** to register the token.
-6. Under the **Token** dropdown, find **Manage Tokens** to view the parameters of your token. The pop-up box confirms the flow was successful and the authorization code exchanged properly. The token is ready for use.
+6. Under the **Token** dropdown, find **Manage Tokens** to view the response fields of your token. The pop-up box confirms the flow was successful and the authorization code exchanged properly. The token is ready for use.
 
 **Note:** Postman automatically attaches the token to your new requests when selecting it from the **Available Tokens** dropdown menu. 
 
