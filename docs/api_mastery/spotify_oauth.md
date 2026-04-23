@@ -132,7 +132,10 @@ https://oauth.pstmn.io/v1/callback?code=AQD...&state=abc123
 
 2. Find the authorization code - the value of the ``code`` parameter - at the end of the return URL.
 
-3. Copy the value for use in the next step.  
+3. Copy the value for use in the next step.
+
+**Note:** The authorization code is single-use and temporary. If the code is not applied, the Authorization Code Flow must start over from the beginning. This means any error in the exchange request or delay in exchaning the code for tokens would require resetting the process.
+
 ### Step 3: Exchange Code for Tokens 
 
 ### Step 4: Make an Authenticated API Request
