@@ -93,6 +93,23 @@ https://accounts.spotify.com/authorize?client_id=YOUR_CLIENT_ID&response_type=co
 
 The sixth parameter, ``show_dialog``, is optional and not included in the Authorization URL; however, it may be appended to the URL. The default state is ``show_dialog=false``, but developers may include ``show_dialog=true`` to prompt the consent screen on every authorization request.
 
+#### Browser Workflow
+
+A successful implementation of this step will bring the developer to the redirect URL. The redirect URL will have authorization code appended to the end. 
+
+1. Paste the Authorization URL into the browser.
+2. Hit Enter.
+3. When the Spotify login and consent screen appears, enter your credentials and approve the permissions. The browser redirects to the redirect URL.
+4. Find and store the authorization code at the end of the redirect URL for the next step.
+
+The redirect URL and authorization code should resemble this example:
+
+```
+https://oauth.pstmn.io/v1/callback?code=AQD...&state=abc123
+```
+
+#### Postman Workflow
+
 ### Step 2: Handle the Callback and Extract the Code 
 
 ### Step 3: Exchange Code for Tokens 
