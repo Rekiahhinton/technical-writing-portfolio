@@ -95,12 +95,12 @@ The sixth parameter, ``show_dialog``, is optional and not included in the Author
 
 #### Browser Workflow
 
-A successful implementation of this step will bring the developer to the redirect URL. The redirect URL will have authorization code appended to the end. 
+A successful implementation of this step will send the authorization code and redirect the developer to the redirect URL in the browser. The redirect URL will have authorization code appended to the end. 
 
 1. Paste the Authorization URL into the browser.
 2. Hit Enter.
-3. When the Spotify login and consent screen appears, enter your credentials and approve the permissions. The browser redirects to the redirect URL.
-4. Find and store the authorization code at the end of the redirect URL for the next step.
+3. When the Spotify login and consent screen appears, enter your Spotify credentials and approve the permissions. The browser redirects to the redirect URL.
+4. Copy the value of the ``code`` parameter at the end of the redirect URL for use in the next step.
 
 The redirect URL and authorization code should resemble this example:
 
@@ -109,6 +109,14 @@ https://oauth.pstmn.io/v1/callback?code=AQD...&state=abc123
 ```
 
 #### Postman Workflow
+
+Complete these steps in Postman to receive the authorization code:
+
+1. Create a new request in Postman.
+2. Click the **Authorization** tab and the **Auth Type** dropdown.
+3. Scroll down and click **OAuth 2.0**.
+  [OAuth_2.0](
+4. 
 
 ### Step 2: Handle the Callback and Extract the Code 
 
