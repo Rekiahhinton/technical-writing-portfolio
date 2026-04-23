@@ -113,23 +113,29 @@ https://oauth.pstmn.io/v1/callback?code=AQD...&state=abc123
 Complete these steps in Postman to receive the authorization code:
 
 1. Create a new request in Postman.
-2. Click the **Authorization** tab and the **Auth Type** dropdown.
-3. Scroll down and click **OAuth 2.0**.
-4. Scroll down to **Configure New Token** and fill in the corresponding boxes to create a new access token. Choose a **Token Name**, then fill in **Auth URL**, **Access Token URL**, **Client ID**, **Client Secret**, and **Scope**. These values should match the values in the Spotify app registration. 
-5. Click **Get New Access Token** to register the token.
-6. Under the **Token** dropdown, find **Manage Tokens** to view the response fields of your token. The pop-up box confirms the flow was successful and the authorization code exchanged properly. The token is ready for use.
+2. Click the **Authorization** tab, open **Auth Type** dropdown, and select **OAuth 2.0**.
+3. Scroll down to **Configure New Token** and fill in the corresponding boxes to create a new access token. Choose a **Token Name**, then fill in **Auth URL**, **Access Token URL**, **Client ID**, **Client Secret**, and **Scope**. These values should match the values in the Spotify app registration. 
+4. Click **Get New Access Token** to register the token.
+5. Under the **Token** dropdown, find **Manage Tokens** to view the response fields of your token. The pop-up box confirms the flow was successful and the authorization code exchanged properly. The token is ready for use.
 
 **Note:** Postman automatically attaches the token to your new requests when selecting it from the **Available Tokens** dropdown menu. 
 
 ### Step 2: Handle the Callback and Extract the Code 
 
-### Step 3: Exchange Code for Tokens 
+This step involves extracting the authorization code for future use. 
 
-### Step 4: Make an Authenticated API Request
+1. Navigate to the return URL in the browser.
 
 ```
 curl --location "https://api.spotify.com/v1/me/player/recently-played" --header "Authorization: Bearer your_bearer_token"
 ```
+
+2. Find the authorization code - the value of the ``code`` parameter - at the end of the return URL.
+
+3. Copy the value for use in the next step.  
+### Step 3: Exchange Code for Tokens 
+
+### Step 4: Make an Authenticated API Request
 
 ### Step 5: Refresh the Access Token 
 
