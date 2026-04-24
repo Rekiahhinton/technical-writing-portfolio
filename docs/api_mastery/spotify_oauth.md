@@ -85,7 +85,7 @@ The Authorization Code Flow begins by requesting authorization from the resource
 
 #### Constructing the Authorization URL
 
-The Authorization URL includes the Spotify authorization endpoint along with the five parameters, ``client_id``, ``response_type``, ``redirect_url``, ``scope``, and ``state``:
+The Authorization URL includes the Spotify authorization endpoint along with the five parameters, ``client_id``, ``response_type``, ``redirect_uri``, ``scope``, and ``state``:
 
 ```
 https://accounts.spotify.com/authorize?client_id=YOUR_CLIENT_ID&response_type=code&redirect_uri=YOUR_REDIRECT_URI&scope=user-read-recently-played&state=YOUR_STATE
@@ -99,8 +99,8 @@ A successful implementation of this step will send the authorization code and re
 
 1. Paste the Authorization URL into the browser.
 2. Hit Enter.
-3. When the Spotify login and consent screen appears, enter your Spotify credentials and approve the permissions. The browser redirects to the redirect URL.
-4. Copy the value of the ``code`` parameter at the end of the redirect URL for use in the next step.
+3. When the Spotify login and consent screen appears, enter your Spotify credentials and approve the permissions. The browser redirects to the ``redirect_uri``.
+4. Copy the value of the ``code`` parameter at the end of the ``redirect_uri`` for use in the next step.
 
 The redirect URL and authorization code should resemble this example:
 
@@ -137,6 +137,19 @@ https://oauth.pstmn.io/v1/callback?code=AQD...&state=abc123
 **Note:** The authorization code is single-use and temporary. If the code is not applied, the Authorization Code Flow must start over from the beginning. This means any error in the exchange request or delay in exchanging the code for tokens would require resetting the process.
 
 ### Step 3: Exchange Code for Tokens 
+
+This step involves exchanging the authorization code in the previous step for access tokens from Spotify's authorization server. 
+
+#### Parameters Table 
+
+| Parameter | Type | Required | Description |
+| ---- | ---- | ---- | ---- |
+| ``client_id`` | string | Required | The public identification key that the Authorization Server uses to identify the Client.|
+| ``client_secret`` | string | Required | The private key that the Authorization Server uses to verify the identity of the Client. This key should never be shared. |
+| ``code`` | string | Required | The authorization code sent to the ``redirect_uri``. |
+| ``grant_type`` | string | Required | Determines which OAuth 2.0 flow is being used for the token exchange. For the Authorization Code Flow, the value is always ``authorization_code``. |
+| ``redirect_uri`` | string | Required | Confirms the application making the token exchange is the same application that requested the authorization request. This parameter does not redirect anything; it is merely a security measure. |
+
 
 ### Step 4: Make an Authenticated API Request
 
