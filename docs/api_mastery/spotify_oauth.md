@@ -153,7 +153,7 @@ This step involves exchanging the authorization code in the previous step for ac
 #### curl Request
 
 ```
-curl --location "https://accounts.spotify.com/api/token" --H "Content-Type: application/x-www-form-urlencoded" --H "Cookie: __Host-device_id=AQBIHTPhZS7p98Ae7BhTH2PAWjvVL5VyPY_nh0bmTYe4H5G946TzW5Mvc8udK9pnbv53-cJo4OWTqHX7hLvk5EPLIOmtS_O5-BQ; sp_tr=false" --d "grant_type=authorization_code" --d "code=YOUR_AUTHORIZATION_CODE" --d "redirect_uri=https://oauth.pstmn.io/v1/callback" --d "client_id=YOUR_CLIENT_ID" --d "client_secret=YOUR_CLIENT_SECRET" \
+curl --location "https://accounts.spotify.com/api/token" -H "Content-Type: application/x-www-form-urlencoded" -d "grant_type=authorization_code" -d "code=YOUR_AUTHORIZATION_CODE" -d "redirect_uri=https://oauth.pstmn.io/v1/callback" -d "client_id=YOUR_CLIENT_ID" -d "client_secret=YOUR_CLIENT_SECRET" \
 ```
 
 ### Step 4: Make an Authenticated API Request
