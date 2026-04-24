@@ -153,9 +153,27 @@ This step involves exchanging the authorization code in the previous step for ac
 #### curl Request
 
 ```
-curl --location "https://accounts.spotify.com/api/token" -H "Content-Type: application/x-www-form-urlencoded" -d "grant_type=authorization_code" -d "code=YOUR_AUTHORIZATION_CODE" -d "redirect_uri=https://oauth.pstmn.io/v1/callback" -d "client_id=YOUR_CLIENT_ID" -d "client_secret=YOUR_CLIENT_SECRET" \
+curl --location "https://accounts.spotify.com/api/token" -H "Content-Type: application/x-www-form-urlencoded" -d "grant_type=authorization_code" -d "code=YOUR_AUTHORIZATION_CODE" -d "redirect_uri=https://oauth.pstmn.io/v1/callback" -d "client_id=YOUR_CLIENT_ID" -d "client_secret=YOUR_CLIENT_SECRET" 
 ```
 
+#### Postman Workflow
+
+1. Create a new request in Postman.
+2. Set the request to POST https://accounts.spotify.com/api/token
+3. Confirm the authorization on the **Authorization** tab is set to **OAuth 2.0** and contains your current token.
+   **Note:** The token must be active. Tokens are set to expire within one hour of creation by default.
+5. Set the body parameters to **x-www-form-urlencoded**.
+6. Fill in the body parameters:
+   ``grant_type=authorization_code`` 
+   ``code=YOUR_AUTHORIZATION_CODE``
+   ``redirect_uri=https://oauth.pstmn.io/v1/callback``
+   ``client_id=YOUR_CLIENT_ID``
+   ``client_secret=YOUR_CLIENT_SECRET``
+
+7. Hit **Send**.
+
+
+   
 ### Step 4: Make an Authenticated API Request
 
 #### curl Request
