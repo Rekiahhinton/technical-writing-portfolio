@@ -150,6 +150,18 @@ This step involves exchanging the authorization code in the previous step for ac
 | ``grant_type`` | string | Required | Determines which OAuth 2.0 flow is being used for the token exchange. For the Authorization Code Flow, the value is always ``authorization_code``. |
 | ``redirect_uri`` | string | Required | Confirms the application making the token exchange is the same application that requested the authorization request. This parameter does not redirect anything; it is merely a security measure. |
 
+#### curl Request
+
+```
+curl --location "https://accounts.spotify.com/api/token"
+  --header "Content-Type: application/x-www-form-urlencoded"
+  --header "Cookie: __Host-device_id=AQBIHTPhZS7p98Ae7BhTH2PAWjvVL5VyPY_nh0bmTYe4H5G946TzW5Mvc8udK9pnbv53-cJo4OWTqHX7hLvk5EPLIOmtS_O5-BQ; sp_tr=false"
+  --data-urlencode "grant_type=authorization_code"
+  --data-urlencode "code=YOUR_AUTHORIZATION_CODE"
+  --data-urlencode "redirect_uri=https://oauth.pstmn.io/v1/callback"
+  --data-urlencode "client_id=YOUR_CLIENT_ID"
+  --data-urlencode "client_secret=YOUR_CLIENT_SECRET"
+```
 
 ### Step 4: Make an Authenticated API Request
 
