@@ -146,7 +146,7 @@ This step involves exchanging the authorization code in the previous step for ac
 | ---- | ---- | ---- | ---- |
 | ``client_id`` | string | Required | The public identification key that the Authorization Server uses to identify the Client.|
 | ``client_secret`` | string | Required | The private key that the Authorization Server uses to verify the identity of the Client. This key should never be shared. |
-| ``code`` | string | Required | The authorization code sent to the ``redirect_uri``. |
+| ``code`` | string | Required | The authorization code recorded from the ``redirect_uri`` and submitted to receive the access and refresh tokens. |
 | ``grant_type`` | string | Required | Determines which OAuth 2.0 flow is being used for the token exchange. For the Authorization Code Flow, the value is always ``authorization_code``. |
 | ``redirect_uri`` | string | Required | Confirms the application making the token exchange is the same application that requested the authorization request. This parameter does not redirect anything; it is merely a security measure. |
 
