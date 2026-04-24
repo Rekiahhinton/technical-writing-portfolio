@@ -201,8 +201,8 @@ This step involves making an API request to the Spotify Web API to retrieve user
 
 1. Create a new request in Postman.
 2. Set the request to ``GET https://api.spotify.com/v1/me/player/recently-played``.
-3. Copy the ``access_token`` code from the previous step.
-4. Paste the code into the Bearer Token field:
+3. Copy the ``access_token`` string from the previous step.
+4. Go to the **Authorization Code** and paste the code into the Bearer Token field from the **Auth Type** dropdown:
    ``Authorization: Bearer YOUR_ACCESS_TOKEN``
 5. Click **Send**.
 
@@ -211,6 +211,8 @@ This step involves making an API request to the Spotify Web API to retrieve user
 ```
 curl --location "https://api.spotify.com/v1/me/player/recently-played?limit=5" --H "Authorization: Bearer YOUR_BEARER_TOKEN"
 ```
+
+**Note:** This curl request limits the recently played track list to five with the parameter ``?limit=1`` for brevity. This parameter is **NOT** necessary to run the command.
 
 #### Response Object
 
@@ -228,6 +230,78 @@ curl --location "https://api.spotify.com/v1/me/player/recently-played?limit=5" -
                             },
                             "href": "https://api.spotify.com/v1/artists/39af15p0feaAOdL9DTRj3m",
                             "id": "39af15p0feaAOdL9DTRj3m",
+                            "name": "ARTIST_NAME",
+                            "type": "artist",
+                            "uri": "spotify:artist:39af15p0feaAOdL9DTRj3m"
+                        }
+                    ],
+                    "external_urls": {
+                        "spotify": "https://open.spotify.com/album/7AmtY0qyLuqkGXYu7lOLjL"
+                    },
+                    "href": "https://api.spotify.com/v1/albums/7AmtY0qyLuqkGXYu7lOLjL",
+                    "id": "7AmtY0qyLuqkGXYu7lOLjL",
+                    "images": [
+                        {
+                            "height": 640,
+                            "url": "https://i.scdn.co/image/ab67616d0000b2734a448950b26a622b4e83b704",
+                            "width": 640
+                        },
+                        {
+                            "height": 300,
+                            "url": "https://i.scdn.co/image/ab67616d00001e024a448950b26a622b4e83b704",
+                            "width": 300
+                        },
+                        {
+                            "height": 64,
+                            "url": "https://i.scdn.co/image/ab67616d000048514a448950b26a622b4e83b704",
+                            "width": 64
+                        }
+                    ],
+                    "name": "SONG_NAME",
+                    "release_date": "2024-04-26",
+                    "release_date_precision": "day",
+                    "total_tracks": 2,
+                    "type": "album",
+                    "uri": "spotify:album:7AmtY0qyLuqkGXYu7lOLjL"
+                },
+                "artists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/39af15p0feaAOdL9DTRj3m"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/39af15p0feaAOdL9DTRj3m",
+                        "id": "39af15p0feaAOdL9DTRj3m",
+                        "name": "ARTIST_NAME",
+                        "type": "artist",
+                        "uri": "spotify:artist:39af15p0feaAOdL9DTRj3m"
+                    }
+                ],
+                "disc_number": 1,
+                "duration_ms": 164074,
+                "explicit": true,
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/track/0e1KTuawmiFLiK0Lh3nNtM"
+                },
+                "href": "https://api.spotify.com/v1/tracks/0e1KTuawmiFLiK0Lh3nNtM",
+                "id": "0e1KTuawmiFLiK0Lh3nNtM",
+                "is_local": false,
+                "name": "TRACK_NAME",
+                "preview_url": null,
+                "track_number": 1,
+                "type": "track",
+                "uri": "spotify:track:0e1KTuawmiFLiK0Lh3nNtM"
+            },
+            "played_at": "2026-04-24T13:34:39.679Z",
+            "context": null
+        }
+    ],
+    "next": "https://api.spotify.com/v1/me/player/recently-played?before=1777037679679&limit=1",
+    "cursors": {
+        "after": "1777037679679",
+        "before": "1777037679679"
+    },
+    "limit": 1,
+    "href": "https://api.spotify.com/v1/me/player/recently-played?limit=1"
 ```
 
 ### Step 5: Refresh the Access Token 
