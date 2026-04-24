@@ -79,7 +79,7 @@ The Authorization Code Flow begins by requesting authorization from the resource
 | ``client_id`` | string | Required | The public identification key that the Authorization Server uses to identify the Client. |
 | ``redirect_uri`` | string | Required | A secure endpoint where the authorization server sends the authorization code or tokens after authentication. |
 | ``response_type`` | string | Required | Determines the type of response to send when using the ``/authorize`` endpoint. Fixed value of ``response_type=code`` for Authorization Code Flow. |
-| ``scope`` | string | Required | Defines the specific permissions of user data the Third Party has access to when authorized. Prevents excessive user data from being shared. |
+| ``scope`` | string | Required | Defines the specific permissions of user data the Client has access to when authorized. Prevents excessive user data from being shared. |
 | ``show_dialog`` | boolean | Optional | A setting that controls whether or not the Authorization Server shows the authorization screen every time the user logs in. Options are ``show_dialog=true`` and ``show_dialog=false``, which is the default. |
 | ``state`` | string | Optional | A random string the Third Party App generates to verify the legitimacy of the authorization request. Prevents cross-site request forgery attacks. | 
 
@@ -160,18 +160,38 @@ curl --location "https://accounts.spotify.com/api/token" -H "Content-Type: appli
 
 1. Create a new request in Postman.
 2. Set the request to POST https://accounts.spotify.com/api/token
-3. Confirm the authorization on the **Authorization** tab is set to **OAuth 2.0** and contains your current token.
-   **Note:** The token must be active. Tokens are set to expire within one hour of creation by default.
-5. Set the body parameters to **x-www-form-urlencoded**.
-6. Fill in the body parameters:
-   ``grant_type=authorization_code`` 
-   ``code=YOUR_AUTHORIZATION_CODE``
-   ``redirect_uri=https://oauth.pstmn.io/v1/callback``
-   ``client_id=YOUR_CLIENT_ID``
-   ``client_secret=YOUR_CLIENT_SECRET``
+3. Set the body parameters to **x-www-form-urlencoded**.
+4. Retrieve the authorization code from the previous step. Refer to the **Browser Workflow** above for more information.
+5. Fill in the body parameters:
+  * ``grant_type=authorization_code`` 
+  * ``code=YOUR_AUTHORIZATION_CODE``
+  * ``redirect_uri=https://oauth.pstmn.io/v1/callback``
+  * ``client_id=YOUR_CLIENT_ID``
+  * ``client_secret=YOUR_CLIENT_SECRET``
 
-7. Hit **Send**.
+6. Click **Send**.
 
+#### Response Object
+
+```
+{
+    "access_token": "BQC...",
+    "token_type": "Bearer",
+    "expires_in": 3600,
+    "refresh_token": "AQC...",
+    "scope": "user-read-recently-played"
+}
+```
+
+#### Response Field Table
+
+| Field | Type | Description |
+| ---- | ---- | ---- |
+| ``access_token`` | string | The primary authentication code that grants access to the Spotify Web API. |
+| ``token_type`` | string | The class of authentication token that grants access to secure resources. |
+| ``expires_in`` | integer | The numerical value, represented in seconds, of time to pass until the ``access_token`` is no longer valid. |
+| ``refresh_token`` | string | The secondary authentication code that allows the renewal of the ``access_token``. |
+| ``scope`` | string | Defines the specific permissions of user data the Client has access to when authorized. Prevents excessive user data from being shared. |
 
    
 ### Step 4: Make an Authenticated API Request
