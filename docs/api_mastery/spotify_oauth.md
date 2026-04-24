@@ -159,7 +159,7 @@ curl --location "https://accounts.spotify.com/api/token" -H "Content-Type: appli
 #### Postman Workflow
 
 1. Create a new request in Postman.
-2. Set the request to POST https://accounts.spotify.com/api/token
+2. Set the request to ``POST https://accounts.spotify.com/api/token``
 3. Set the body parameters to **x-www-form-urlencoded**.
 4. Retrieve the authorization code from the previous step. Refer to the **Browser Workflow** above for more information.
 5. Fill in the body parameters:
@@ -195,10 +195,39 @@ curl --location "https://accounts.spotify.com/api/token" -H "Content-Type: appli
 
 ### Step 4: Make an Authenticated API Request
 
+This step involves making an API request to the Spotify Web API to retrieve user data. This example requests **Get Recently Played Tracks**. 
+
+#### Postman Workflow
+
+1. Create a new request in Postman.
+2. Set the request to ``GET https://api.spotify.com/v1/me/player/recently-played``.
+3. Copy the ``access_token`` code from the previous step.
+4. Paste the code into the Bearer Token field:
+   ``Authorization: Bearer YOUR_ACCESS_TOKEN``
+5. Click **Send**.
+
 #### curl Request
 
 ```
-curl --location "https://api.spotify.com/v1/me/player/recently-played" --header "Authorization: Bearer your_bearer_token"
+curl --location "https://api.spotify.com/v1/me/player/recently-played?limit=5" --H "Authorization: Bearer YOUR_BEARER_TOKEN"
+```
+
+#### Response Object
+
+```
+{
+    "items": [
+        {
+            "track": {
+                "album": {
+                    "album_type": "single",
+                    "artists": [
+                        {
+                            "external_urls": {
+                                "spotify": "https://open.spotify.com/artist/39af15p0feaAOdL9DTRj3m"
+                            },
+                            "href": "https://api.spotify.com/v1/artists/39af15p0feaAOdL9DTRj3m",
+                            "id": "39af15p0feaAOdL9DTRj3m",
 ```
 
 ### Step 5: Refresh the Access Token 
@@ -207,6 +236,18 @@ curl --location "https://api.spotify.com/v1/me/player/recently-played" --header 
 
 ## Error Handling 
 
+### 401 Unauthorized
+
+```
+{
+    "error": {
+        "status": 401,
+        "message": "The access token expired"
+    }
+}
+```
+
+This error message indicates the ``access_token`` has expired and it no longer functional. 
 
 
 
