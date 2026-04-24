@@ -187,13 +187,12 @@ curl --location "https://accounts.spotify.com/api/token" -H "Content-Type: appli
 
 | Field | Type | Description |
 | ---- | ---- | ---- |
-| ``access_token`` | string | The primary authentication code that grants access to the Spotify Web API. |
-| ``token_type`` | string | The class of authentication token that grants access to secure resources. |
-| ``expires_in`` | integer | The numerical value, represented in seconds, of time to pass until the ``access_token`` is no longer valid. |
-| ``refresh_token`` | string | The secondary authentication code that allows the renewal of the ``access_token``. |
-| ``scope`` | string | Defines the specific permissions of user data the Client has access to when authorized. Prevents excessive user data from being shared. |
+| ``access_token`` | string | The primary authorization string included in every API request header that grants access to the Spotify Web API. |
+| ``token_type`` | string | The class of authorization string formatted ``Authorization: Bearer YOUR_ACCESS_TOKEN``. The field is always ``Bearer`` for the Authorization Code Flow. |
+| ``expires_in`` | integer | The numerical value in seconds representing how long the ``access_token`` remains valid. The default value is ``3600``. |
+| ``refresh_token`` | string | The secondary authorization string that allows the renewal of the ``access_token``. |
+| ``scope`` | string | Defines the specific permissions of user data the Client has access to when authorized. Prevents excessive user data from being shared. The ``scope`` response confirms which permissions were granted by the Resource Owner. |
 
-   
 ### Step 4: Make an Authenticated API Request
 
 #### curl Request
