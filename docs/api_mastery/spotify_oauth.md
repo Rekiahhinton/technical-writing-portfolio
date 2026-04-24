@@ -209,10 +209,10 @@ This step involves making an API request to the Spotify Web API to retrieve user
 #### curl Request
 
 ```
-curl --location "https://api.spotify.com/v1/me/player/recently-played?limit=5" --H "Authorization: Bearer YOUR_BEARER_TOKEN"
+curl --location "https://api.spotify.com/v1/me/player/recently-played?limit=1" --H "Authorization: Bearer YOUR_BEARER_TOKEN"
 ```
 
-**Note:** This curl request limits the recently played track list to five with the parameter ``?limit=1`` for brevity. This parameter is **NOT** necessary to run the command.
+**Note:** This curl request limits the recently played track list to one with the parameter ``?limit=1`` for brevity. This parameter is **NOT** necessary to run the command.
 
 #### Response Object
 
