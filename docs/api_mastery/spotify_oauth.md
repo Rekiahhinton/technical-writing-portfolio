@@ -306,7 +306,7 @@ curl --location "https://api.spotify.com/v1/me/player/recently-played?limit=1" -
 
 ### Step 5: Refresh the Access Token 
 
-This step involves using the ``refresh_token`` to generate a new ``access_token`` without requiring the user to log in another time.
+This step involves using the ``refresh_token`` to generate a new ``access_token`` without requiring the user to log in again.
 
 | Parameter | Type | Required | Description |
 | ---- | ---- | ---- | ---- |
@@ -317,15 +317,15 @@ This step involves using the ``refresh_token`` to generate a new ``access_token`
 
 #### curl Request
 ```
-curl --location "https://accounts.spotify.com/api/token" --data-urlencode "grant_type=refresh_token" --data-urlencode "refresh_token=YOUR_REFRESH_TOKEN" --data-urlencode "client_id=YOUR_CLIENT_ID" --data-urlencode "client_secret=YOUR_CLIENT_SECRET"
+curl --location "https://accounts.spotify.com/api/token" --d "grant_type=refresh_token" --d "refresh_token=YOUR_REFRESH_TOKEN" --data-urlencode "client_id=YOUR_CLIENT_ID" --d "client_secret=YOUR_CLIENT_SECRET"
 ```
 
 #### Postman Workflow
 
 1. Create a new request in Postman.
-2. 2. Set the request to ``POST https://accounts.spotify.com/api/token``
+2. Set the request to ``POST https://accounts.spotify.com/api/token``
 3. Set the body parameters to **x-www-form-urlencoded**.
-4. Retrieve the ``refesh_token`` string from the previous step. Refer to the **Exchange Code for Tokens** above for more information.
+4. Retrieve the ``refresh_token`` string from the previous step. Refer to the **Exchange Code for Tokens** above for more information.
 5. Fill in the body parameters:
   * ``grant_type=refresh_token`` 
   * ``refresh_token=YOUR_REFRESH_TOKEN``
@@ -342,6 +342,16 @@ curl --location "https://accounts.spotify.com/api/token" --data-urlencode "grant
     "scope": "user-read-recently-played"
 }
 ```
+
+#### Response Field Table 
+
+| Field | Type | Description |
+| ---- | ---- | ---- |
+| ``access_token`` | string | The primary authorization string included in every API request header that grants access to the Spotify Web API. |
+| ``token_type`` | string | The class of authorization string formatted ``Authorization: Bearer YOUR_ACCESS_TOKEN``. The field is always ``Bearer`` for the Authorization Code Flow. |
+| ``expires in`` | integer | The numerical value in seconds representing how long the ``access_token`` remains valid. The default value is ``3600``. |
+| ``scope`` | string | Defines the specific permissions of user data the Client has access to when authorized. Prevents excessive user data from being shared. The ``scope`` response confirms which permissions were granted by the Resource Owner. | 
+
 ## Scopes Reference
 
 ## Error Handling 
