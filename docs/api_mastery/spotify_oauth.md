@@ -349,8 +349,10 @@ curl --location "https://accounts.spotify.com/api/token" --d "grant_type=refresh
 | ---- | ---- | ---- |
 | ``access_token`` | string | The primary authorization string included in every API request header that grants access to the Spotify Web API. |
 | ``token_type`` | string | The class of authorization string formatted ``Authorization: Bearer YOUR_ACCESS_TOKEN``. The field is always ``Bearer`` for the Authorization Code Flow. |
-| ``expires in`` | integer | The numerical value in seconds representing how long the ``access_token`` remains valid. The default value is ``3600``. |
+| ``expires_in`` | integer | The numerical value in seconds representing how long the ``access_token`` remains valid. The default value is ``3600``. |
 | ``scope`` | string | Defines the specific permissions of user data the Client has access to when authorized. Prevents excessive user data from being shared. The ``scope`` response confirms which permissions were granted by the Resource Owner. | 
+
+**Note:** The Spotify authorization server does not always include a ``refresh_token`` in the response. If omitted, continue using the existing ``refresh_token``.
 
 ## Scopes Reference
 
