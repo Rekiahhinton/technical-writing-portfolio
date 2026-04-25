@@ -306,6 +306,42 @@ curl --location "https://api.spotify.com/v1/me/player/recently-played?limit=1" -
 
 ### Step 5: Refresh the Access Token 
 
+This step involves using the ``refresh_token`` to generate a new ``access_token`` without requiring the user to log in another time.
+
+| Parameter | Type | Required | Description |
+| ---- | ---- | ---- | ---- |
+| ``client_id`` | string | Required | The public identification key that the Authorization Server uses to identify the Client. |
+| ``client_secret`` | string | Required | The private key that the Authorization Server uses to verify the identity of the Client. This key should never be shared. |
+| ``grant_type`` | string | Required |  Determines which OAuth 2.0 flow is being used for the token exchange. For the refresh token request, the value is always ``refresh_token``.
+| ``refresh_token`` | string | Required | The secondary authorization string that allows the renewal of the ``access_token``. |
+
+#### curl Request
+```
+curl --location "https://accounts.spotify.com/api/token" --data-urlencode "grant_type=refresh_token" --data-urlencode "refresh_token=YOUR_REFRESH_TOKEN" --data-urlencode "client_id=YOUR_CLIENT_ID" --data-urlencode "client_secret=YOUR_CLIENT_SECRET"
+```
+
+#### Postman Workflow
+
+1. Create a new request in Postman.
+2. 2. Set the request to ``POST https://accounts.spotify.com/api/token``
+3. Set the body parameters to **x-www-form-urlencoded**.
+4. Retrieve the ``refesh_token`` string from the previous step. Refer to the **Exchange Code for Tokens** above for more information.
+5. Fill in the body parameters:
+  * ``grant_type=refresh_token`` 
+  * ``refresh_token=YOUR_REFRESH_TOKEN``
+  * ``client_id=YOUR_CLIENT_ID``
+  * ``client_secret=YOUR_CLIENT_SECRET``
+5. Click **Send**.
+
+#### Response Object
+```
+{
+    "access_token": "BQB...",
+    "token_type": "Bearer",
+    "expires_in": 3600,
+    "scope": "user-read-recently-played"
+}
+```
 ## Scopes Reference
 
 ## Error Handling 
