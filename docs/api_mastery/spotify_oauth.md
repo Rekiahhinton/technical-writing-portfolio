@@ -376,8 +376,6 @@ curl --location "https://accounts.spotify.com/api/token" --d "grant_type=refresh
 
 The following errors may occur during the Authorization Code Flow. Use the resolution column to troubleshoot failed requests.
 
-### 401 Unauthorized
-
 | Status Code | Error | Cause | Resolution | 
 | ---- | ---- | ---- | ---- |
 | ``400 Bad Request`` |``invalid_client`` | The Spotify Authorization Server could not verify the Client's identity based on the inputted credentials. | Review your body parameters for typos or malformed values. |
