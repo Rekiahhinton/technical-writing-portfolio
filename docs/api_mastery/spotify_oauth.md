@@ -356,6 +356,22 @@ curl --location "https://accounts.spotify.com/api/token" --d "grant_type=refresh
 
 ## Scopes Reference
 
+| Scope | Access | Description |
+| ---- | ---- | ---- |
+| ``user-read-currently-playing`` | Reads user data. | Returns the track, episode, or podcast the user is currently playing, including playback device and progress. | 
+| ``user-top-read``| Reads top user data. | Displays user's most frequently played artists, tracks, and content. |
+| ``user-library-read`` | Reads user library data. | Displays user's primary saved content from main playlist. |
+| ``user-read-private`` | Reads private user data. | Displays user's private subscription information. |
+| ``user-follow-read`` | Reads user's follows. | Displays user's list of artists and other accounts the user is following. |
+| ``user-modify-playback-state`` | Writes user's playback state. | Modifies user's current audio session, including the active track, playback position, device, and shuffle/repeat status. | 
+| ``playlist-modify-private`` | Writes user's private playlist. | Modifies user's private playlists tracks and settings. |
+| ``playlist-modify-public`` | Writes user's public playlist. | Modifies user's public playlists tracks and settings. | 
+| ``user-library-modify`` | Writes user's library data. | Modifies user's primary saved content from main playlist. |
+| ``user-follow-modify`` | Writes access to user's follows. | Modifies user's list of artists and other accounts the user is following. | 
+ 
+
+**Note:** Spotify's Web API documentation hosts the exhaustive [list](https://developer.spotify.com/documentation/web-api/concepts/scopes) of scopes. 
+
 ## Error Handling 
 
 ### 401 Unauthorized
