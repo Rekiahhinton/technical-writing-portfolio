@@ -380,8 +380,8 @@ The following errors may occur during the Authorization Code Flow. Use the resol
 | ---- | ---- | ---- | ---- |
 | ``400 Bad Request`` |``invalid_client`` | The Spotify Authorization Server could not verify the Client's identity based on the provided credentials. | Review your body parameters for typos or malformed values. |
 | ``400 Bad Request`` |``invalid_grant`` | The authorization code has already been used or expired. | Request a new authorization code. Refer to **Request User Authorization** for more information. |
-| ``401 Unauthorized`` | ``expired_token`` | The ``access_token`` has run out of time to remain functional and valid. | Use the ``refresh_token`` to request a new ``access_token``. Refer to **Refresh the Access Token** for more information. | 
-| ``403 Forbidden`` | ``insufficient_scope`` | The ``access_token`` does not have the permissions necessary for the endpoint being called.  | Add the relevant ``scope`` parameter to the request. Refer to **Scopes Reference** for suggestions. |
+| ``401 Unauthorized`` | ``expired_token`` | The ``access_token`` has exceeded the validity period and is no longer valid. | Use the ``refresh_token`` to request a new ``access_token``. Refer to **Refresh the Access Token** for more information. | 
+| ``403 Forbidden`` | ``insufficient_scope`` | The ``access_token`` does not have the permissions necessary for the endpoint being called.  | Restart the Authorization Code Flow with new ``scope`` parameters. Refer to **Request User Authorization** for more information. |
 
 
 
