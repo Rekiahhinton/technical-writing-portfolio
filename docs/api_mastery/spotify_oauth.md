@@ -374,19 +374,16 @@ curl --location "https://accounts.spotify.com/api/token" --d "grant_type=refresh
 
 ## Error Handling 
 
+The following errors may occur during the Authorization Code Flow. Use the resolution column to troubleshoot failed requests.
+
 ### 401 Unauthorized
 
-```
-{
-    "error": {
-        "status": 401,
-        "message": "The access token expired"
-    }
-}
-```
-
-This error message indicates the ``access_token`` has expired and it no longer functional. 
-
+| Status Code | Error | Cause | Resolution | 
+| ---- | ---- | ---- | ---- |
+| ``400 Bad Request`` |``invalid_client`` | The Spotify Authorization Server could not verify the Client's identity based on the inputted credentials. | Review your body parameters for typos or malformed values. |
+| ``400 Bad Request`` |``invalid_grant`` | The authorization code has run out of time to remain functional and valid. | Request a new authorization code. Refer to **Request User Authorization** for more information. |
+| ``401 Unauthorized`` | ``expired_token`` | The ``access_token`` has run out of time to remain functional and valid. | Use the ``refresh_token`` to request a new ``access_token``. Refer to **Refresh the Access Token** for more information. | 
+| ``403 Forbidden`` | ``insufficient_scope`` | The ``scope`` was not inputted into the ``access_token`` request. | Add the ``scope`` parameter to the request. Refer to **Scopes Reference** for suggestions. |
 
 
 
