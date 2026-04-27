@@ -6,6 +6,12 @@ title: Portfolio
 # My Technical Writing Portfolio 
 Learn More [About Me](about)
 
+## API Mastery
+
+### Complete API Reference
+
+- [Stripe PaymentIntents API Reference](api_mastery/stripe_payments_intents.md)
+
 ## Advanced AI Augmentation + Efficiency Gains
 
 ### A Typical Day 
