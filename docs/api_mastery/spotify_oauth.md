@@ -4,7 +4,7 @@ title: Spotify API with OAuth 2.0 Authentication
 
 ## Overview
 
-OAuth 2.0 is a universal authorization framework. It allow users to grant third-party access to their sensitive data with proper authentication. This enables developers to access data on behalf of their Spotify users.
+OAuth 2.0 is a universal authorization framework. It allows users to grant third-party access to their sensitive data with proper authentication. This enables developers to access data on behalf of their Spotify users.
 
 This guide teaches REST-familiar developers how to authenticate with the Spotify Web API using OAuth 2.0.
 
@@ -202,14 +202,14 @@ This step involves making an API request to the Spotify Web API to retrieve user
 1. Create a new request in Postman.
 2. Set the request to ``GET https://api.spotify.com/v1/me/player/recently-played``.
 3. Copy the ``access_token`` string from the previous step.
-4. Go to the **Authorization** tab and paste the code into the Bearer Token field from the **Auth Type** dropdown:
+4. Go to the **Authorization** tab and paste the token string into the Bearer Token field from the **Auth Type** dropdown:
    ``Authorization: Bearer YOUR_ACCESS_TOKEN``
 5. Click **Send**.
 
 #### curl Request
 
 ```
-curl --location "https://api.spotify.com/v1/me/player/recently-played?limit=1" -H "Authorization: Bearer YOUR_BEARER_TOKEN"
+curl --location "https://api.spotify.com/v1/me/player/recently-played?limit=1" -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
 
 **Note:** This curl request limits the recently played track list to one with the parameter ``?limit=1`` for brevity. This parameter is **NOT** necessary to run the command.
@@ -271,7 +271,7 @@ This step involves using the ``refresh_token`` to generate a new ``access_token`
 
 #### curl Request
 ```
-curl --location "https://accounts.spotify.com/api/token" -d "grant_type=refresh_token" -d "refresh_token=YOUR_REFRESH_TOKEN" -d "client_id=YOUR_CLIENT_ID" --d "client_secret=YOUR_CLIENT_SECRET"
+curl --location "https://accounts.spotify.com/api/token" -d "grant_type=refresh_token" -d "refresh_token=YOUR_REFRESH_TOKEN" -d "client_id=YOUR_CLIENT_ID" -d "client_secret=YOUR_CLIENT_SECRET"
 ```
 
 #### Postman Workflow
