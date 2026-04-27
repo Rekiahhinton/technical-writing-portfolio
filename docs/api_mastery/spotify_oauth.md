@@ -153,7 +153,7 @@ This step involves exchanging the authorization code in the previous step for ac
 #### curl Request
 
 ```
-curl --location "https://accounts.spotify.com/api/token" -H "Content-Type: application/x-www-form-urlencoded" -d "grant_type=authorization_code" -d "code=YOUR_AUTHORIZATION_CODE" -d "redirect_uri=https://oauth.pstmn.io/v1/callback" -d "client_id=YOUR_CLIENT_ID" -d "client_secret=YOUR_CLIENT_SECRET" 
+curl "https://accounts.spotify.com/api/token" -H "Content-Type: application/x-www-form-urlencoded" -d "grant_type=authorization_code" -d "code=YOUR_AUTHORIZATION_CODE" -d "redirect_uri=https://oauth.pstmn.io/v1/callback" -d "client_id=YOUR_CLIENT_ID" -d "client_secret=YOUR_CLIENT_SECRET" 
 ```
 
 #### Postman Workflow
@@ -209,7 +209,7 @@ This step involves making an API request to the Spotify Web API to retrieve user
 #### curl Request
 
 ```
-curl --location "https://api.spotify.com/v1/me/player/recently-played?limit=1" -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
+curl "https://api.spotify.com/v1/me/player/recently-played?limit=1" -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
 
 **Note:** This curl request limits the recently played track list to one with the parameter ``?limit=1`` for brevity. This parameter is **NOT** necessary to run the command.
@@ -271,7 +271,7 @@ This step involves using the ``refresh_token`` to generate a new ``access_token`
 
 #### curl Request
 ```
-curl --location "https://accounts.spotify.com/api/token" -d "grant_type=refresh_token" -d "refresh_token=YOUR_REFRESH_TOKEN" -d "client_id=YOUR_CLIENT_ID" -d "client_secret=YOUR_CLIENT_SECRET"
+curl "https://accounts.spotify.com/api/token" -d "grant_type=refresh_token" -d "refresh_token=YOUR_REFRESH_TOKEN" -d "client_id=YOUR_CLIENT_ID" -d "client_secret=YOUR_CLIENT_SECRET"
 ```
 
 #### Postman Workflow
