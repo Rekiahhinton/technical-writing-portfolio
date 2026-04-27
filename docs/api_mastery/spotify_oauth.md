@@ -70,7 +70,7 @@ These prerequisites are necessary to run the Authorization Code Flow:
 
 ### Step 1: Request User Authorization
 
-The Authorization Code Flow begins by requesting authorization from the resource owner (Spotify user). Once the resource owner grants authorization, they will have logged into Spotify's interface and the authorization code goes to your redirect URL.
+The Authorization Code Flow begins by requesting authorization from the resource owner (Spotify user). Once the resource owner grants authorization, they will have logged into Spotify's interface and the authorization code goes to your redirect URI.
 
 #### Parameters Table 
 
@@ -95,14 +95,14 @@ The sixth parameter, ``show_dialog``, is optional and not included in the Author
 
 #### Browser Workflow
 
-A successful implementation of this step will send the authorization code and redirect the developer to the redirect URL in the browser. The redirect URL will have authorization code appended to the end. 
+A successful implementation of this step will send the authorization code and redirect the developer to the redirect URI in the browser. The redirect URI will have authorization code appended to the end. 
 
 1. Paste the Authorization URL into the browser.
 2. Hit Enter.
 3. When the Spotify login and consent screen appears, enter your Spotify credentials and approve the permissions. The browser redirects to the ``redirect_uri``.
 4. Copy the value of the ``code`` parameter at the end of the ``redirect_uri`` for use in the next step.
 
-The redirect URL and authorization code should resemble this example:
+The redirect URI and authorization code should resemble this example:
 
 ```
 https://oauth.pstmn.io/v1/callback?code=AQD...&state=abc123
@@ -124,13 +124,13 @@ Complete these steps in Postman to receive the authorization code:
 
 This step involves extracting the authorization code for future use. 
 
-1. Navigate to the return URL in the browser.
+1. Navigate to the return URI in the browser.
 
 ```
 https://oauth.pstmn.io/v1/callback?code=AQD...&state=abc123
 ```
 
-2. Find the authorization code - the value of the ``code`` parameter - at the end of the return URL.
+2. Find the authorization code - the value of the ``code`` parameter - at the end of the return URI.
 
 3. Copy the value for use in the next step.
 
