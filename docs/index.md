@@ -14,6 +14,7 @@ Learn More [About Me](about)
     - [How PaymentIntents Works](api_mastery/stripe_ref#how-paymentintents-works)
     - [Endpoint Reference](api_mastery/stripe_ref#endpoint-reference)
     - [Getting Started - Your First PaymentIntent](api_mastery/stripe_ref#getting-started---your-first-paymentintent)
+    - [Glossary](api_mastery/stripe_ref#glossary)
 
 ## Advanced AI Augmentation + Efficiency Gains
 
