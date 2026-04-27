@@ -31,7 +31,7 @@ By the end of this guide, developers will be able to build apps with access to a
 
 Spotify integrates OAuth 2.0 by acting as the Authorization Server and Resource Server. When the Client (Third Party App) wants access to a Spotify user's personal information, the Client directs the user to the Authorization Server that requests the user's permission to share their data with the Client. The Authorization Server shows the Spotify user a login and consent screen, and waits for confirmation.
 
-Once the user confirms, the Authorization Server sends an authorization code to the Client who uses it and a Client Secret key to gain an access token. That token then allows the Client to view the personal data through the Resource Server (Spotify's Web API). 
+Once the user confirms, the Authorization Server sends an authorization code to the Client, who uses it with a Client Secret key to generate an access token. That token then allows the Client to view the personal data through the Resource Server (Spotify's Web API). 
 
 #### Authorization Code Flow
 
@@ -53,7 +53,7 @@ The following terms appear throughout this guide:
 | Access Token | The authorization credential used in API requests to give the Client access to the user's data from Spotify's Web API. |
 | Authorization Code | The temporary, single-use code the Authorization Server gives to the Client to exchange for tokens. |
 | Client ID | The public identification key that the Authorization Server uses to identify the Client. |
-| Client Secret | The private key that the Authorization Server uses to verify the identity of the Client. This key should never be shared.|
+| Client Secret | The private key that the Authorization Server uses to verify the identity of the Client. This key should never be shared. |
 | Refresh Token | The token the Client uses to obtain another access token after the original access token has expired. | 
 | Scope | Indicates the permissions the Client may access. The Client does not have access to anything besides the scope. |
 
@@ -95,7 +95,7 @@ The sixth parameter, ``show_dialog``, is optional and not included in the Author
 
 #### Browser Workflow
 
-In this step, Spotify sends the authorization code to the redirect URI and the browser redirects automatically. The redirect URI will have the authorization code appended to the end. 
+Once the developer submits the Authorization URL, Spotify sends the authorization code to the redirect URI with the authorization code appended to the end.
 
 1. Paste the Authorization URL into the browser.
 2. Hit Enter.
@@ -148,12 +148,12 @@ This step involves exchanging the authorization code in the previous step for ac
 | ``client_secret`` | string | Required | The private key that the Authorization Server uses to verify the identity of the Client. This key should never be shared. |
 | ``code`` | string | Required | The authorization code recorded from the ``redirect_uri`` and submitted to receive the access and refresh tokens. |
 | ``grant_type`` | string | Required | Determines which OAuth 2.0 flow is being used for the token exchange. For the Authorization Code Flow, the value is always ``authorization_code``. |
-| ``redirect_uri`` | string | Required | Confirms the application making the token exchange is the same application that requested the authorization request. This parameter does not redirect anything; it is merely a security measure. |
+| ``redirect_uri`` | string | Required | Confirms the application making the token exchange is the same application that initiated the authorization flow. This parameter does not redirect anything; it is merely a security measure. |
 
 #### curl Request
 
 ```
-curl "https://accounts.spotify.com/api/token" -H "Content-Type: application/x-www-form-urlencoded" -d "grant_type=authorization_code" -d "code=YOUR_AUTHORIZATION_CODE" -d "redirect_uri=https://oauth.pstmn.io/v1/callback" -d "client_id=YOUR_CLIENT_ID" -d "client_secret=YOUR_CLIENT_SECRET" 
+curl -X Post "https://accounts.spotify.com/api/token" -H "Content-Type: application/x-www-form-urlencoded" -d "grant_type=authorization_code" -d "code=YOUR_AUTHORIZATION_CODE" -d "redirect_uri=https://oauth.pstmn.io/v1/callback" -d "client_id=YOUR_CLIENT_ID" -d "client_secret=YOUR_CLIENT_SECRET" 
 ```
 
 #### Postman Workflow
@@ -256,6 +256,7 @@ curl "https://api.spotify.com/v1/me/player/recently-played?limit=1" -H "Authoriz
     },
     "limit": 1,
     "href": "https://api.spotify.com/v1/me/player/recently-played?limit=1"
+    }
 ```
 
 ### Step 5: Refresh the Access Token 
@@ -266,12 +267,12 @@ This step involves using the ``refresh_token`` to generate a new ``access_token`
 | ---- | ---- | ---- | ---- |
 | ``client_id`` | string | Required | The public identification key that the Authorization Server uses to identify the Client. |
 | ``client_secret`` | string | Required | The private key that the Authorization Server uses to verify the identity of the Client. This key should never be shared. |
-| ``grant_type`` | string | Required |  Determines which OAuth 2.0 flow is being used for the token exchange. For the refresh token request, the value is always ``refresh_token``.
+| ``grant_type`` | string | Required |  Determines which OAuth 2.0 flow is being used for the token exchange. For the refresh token request, the value is always ``refresh_token``. |
 | ``refresh_token`` | string | Required | The secondary authorization string that allows the renewal of the ``access_token``. |
 
 #### curl Request
 ```
-curl "https://accounts.spotify.com/api/token" -d "grant_type=refresh_token" -d "refresh_token=YOUR_REFRESH_TOKEN" -d "client_id=YOUR_CLIENT_ID" -d "client_secret=YOUR_CLIENT_SECRET"
+curl - X Post "https://accounts.spotify.com/api/token" -d "grant_type=refresh_token" -d "refresh_token=YOUR_REFRESH_TOKEN" -d "client_id=YOUR_CLIENT_ID" -d "client_secret=YOUR_CLIENT_SECRET"
 ```
 
 #### Postman Workflow
@@ -318,8 +319,8 @@ curl "https://accounts.spotify.com/api/token" -d "grant_type=refresh_token" -d "
 | ``user-read-private`` | Reads private user data. | Displays user's private subscription level, country, and profile information. |
 | ``user-follow-read`` | Reads user's follows. | Displays user's list of artists and other accounts the user is following. |
 | ``user-modify-playback-state`` | Writes user's playback state. | Modifies user's current audio session, including the active track, playback position, device, and shuffle/repeat status. | 
-| ``playlist-modify-private`` | Writes user's private playlist. | Modifies user's private playlists tracks and settings. |
-| ``playlist-modify-public`` | Writes user's public playlist. | Modifies user's public playlists tracks and settings. | 
+| ``playlist-modify-private`` | Writes user's private playlist. | Modifies user's private playlist tracks and settings. |
+| ``playlist-modify-public`` | Writes user's public playlist. | Modifies user's public playlist tracks and settings. | 
 | ``user-library-modify`` | Writes user's library data. | Modifies user's tracks, albums, and podcasts saved in user's library. |
 | ``user-follow-modify`` | Writes user's follows. | Modifies user's list of artists and other accounts the user is following. | 
  
