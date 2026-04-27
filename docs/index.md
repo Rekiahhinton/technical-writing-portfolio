@@ -18,7 +18,7 @@ Learn More [About Me](about)
  
 ### Spotify OAuth 2.0 
 
-- [Spotify OAuth 2.0](api_mastery/spotify_oauth)
+- [Spotify Web API: OAuth 2.0 Authorization Code Flow](api_mastery/spotify_oauth)
 
 ## Advanced AI Augmentation + Efficiency Gains
 
