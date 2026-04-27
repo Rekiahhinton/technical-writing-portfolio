@@ -138,7 +138,7 @@ https://oauth.pstmn.io/v1/callback?code=AQD...&state=abc123
 
 ### Step 3: Exchange Code for Tokens 
 
-This step involves exchanging the authorization code in the previous step for access tokens from Spotify's authorization server. 
+This step involves exchanging the authorization code in the previous step for access and refresh tokens from Spotify's authorization server. 
 
 #### Parameters Table 
 
