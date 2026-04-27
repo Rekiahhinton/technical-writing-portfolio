@@ -4,7 +4,7 @@ title: Spotify API with OAuth 2.0 Authentication
 
 ## Overview
 
-OAuth 2.0 is a universal authorization framework. It allows users to grant third-party access to their sensitive data with proper authentication. This enables developers to access data on behalf of their Spotify users.
+OAuth 2.0 is a universal authorization framework. It allows users to grant third-party access to their sensitive data without sharing their login credentials directly with the application. This enables developers to access data on behalf of their Spotify users.
 
 This guide teaches REST-familiar developers how to authenticate with the Spotify Web API using OAuth 2.0.
 
@@ -41,7 +41,7 @@ The Authorization Code Flow follows these steps:
 2. The Spotify User gives permission to the Authorization Server.
 3. Spotify's Authorization Server sends an authorization code to the Third Party App.
 4. The Third Party App exchanges the authorization code and Client Secret for the access tokens and refresh tokens.
-5. The Third Party App uses the access token to request data from Spotify's  Web API.
+5. The Third Party App uses the access token to request data from Spotify's Web API.
 6. The Third Party App uses the refresh token to generate new access tokens when the original access token expires.
 
 ### Key Concepts 
