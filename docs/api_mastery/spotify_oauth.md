@@ -202,14 +202,14 @@ This step involves making an API request to the Spotify Web API to retrieve user
 1. Create a new request in Postman.
 2. Set the request to ``GET https://api.spotify.com/v1/me/player/recently-played``.
 3. Copy the ``access_token`` string from the previous step.
-4. Go to the **Authorization Code** and paste the code into the Bearer Token field from the **Auth Type** dropdown:
+4. Go to the **Authorization** tab and paste the code into the Bearer Token field from the **Auth Type** dropdown:
    ``Authorization: Bearer YOUR_ACCESS_TOKEN``
 5. Click **Send**.
 
 #### curl Request
 
 ```
-curl --location "https://api.spotify.com/v1/me/player/recently-played?limit=1" --H "Authorization: Bearer YOUR_BEARER_TOKEN"
+curl --location "https://api.spotify.com/v1/me/player/recently-played?limit=1" -H "Authorization: Bearer YOUR_BEARER_TOKEN"
 ```
 
 **Note:** This curl request limits the recently played track list to one with the parameter ``?limit=1`` for brevity. This parameter is **NOT** necessary to run the command.
@@ -246,54 +246,8 @@ curl --location "https://api.spotify.com/v1/me/player/recently-played?limit=1" -
                             "url": "https://i.scdn.co/image/ab67616d0000b2734a448950b26a622b4e83b704",
                             "width": 640
                         },
-                        {
-                            "height": 300,
-                            "url": "https://i.scdn.co/image/ab67616d00001e024a448950b26a622b4e83b704",
-                            "width": 300
-                        },
-                        {
-                            "height": 64,
-                            "url": "https://i.scdn.co/image/ab67616d000048514a448950b26a622b4e83b704",
-                            "width": 64
-                        }
-                    ],
-                    "name": "SONG_NAME",
-                    "release_date": "2024-04-26",
-                    "release_date_precision": "day",
-                    "total_tracks": 2,
-                    "type": "album",
-                    "uri": "spotify:album:7AmtY0qyLuqkGXYu7lOLjL"
-                },
-                "artists": [
-                    {
-                        "external_urls": {
-                            "spotify": "https://open.spotify.com/artist/39af15p0feaAOdL9DTRj3m"
-                        },
-                        "href": "https://api.spotify.com/v1/artists/39af15p0feaAOdL9DTRj3m",
-                        "id": "39af15p0feaAOdL9DTRj3m",
-                        "name": "ARTIST_NAME",
-                        "type": "artist",
-                        "uri": "spotify:artist:39af15p0feaAOdL9DTRj3m"
-                    }
-                ],
-                "disc_number": 1,
-                "duration_ms": 164074,
-                "explicit": true,
-                "external_urls": {
-                    "spotify": "https://open.spotify.com/track/0e1KTuawmiFLiK0Lh3nNtM"
-                },
-                "href": "https://api.spotify.com/v1/tracks/0e1KTuawmiFLiK0Lh3nNtM",
-                "id": "0e1KTuawmiFLiK0Lh3nNtM",
-                "is_local": false,
-                "name": "TRACK_NAME",
-                "preview_url": null,
-                "track_number": 1,
-                "type": "track",
-                "uri": "spotify:track:0e1KTuawmiFLiK0Lh3nNtM"
-            },
-            "played_at": "2026-04-24T13:34:39.679Z",
-            "context": null
-        }
+    ...
+                 
     ],
     "next": "https://api.spotify.com/v1/me/player/recently-played?before=1777037679679&limit=1",
     "cursors": {
@@ -317,7 +271,7 @@ This step involves using the ``refresh_token`` to generate a new ``access_token`
 
 #### curl Request
 ```
-curl --location "https://accounts.spotify.com/api/token" --d "grant_type=refresh_token" --d "refresh_token=YOUR_REFRESH_TOKEN" --data-urlencode "client_id=YOUR_CLIENT_ID" --d "client_secret=YOUR_CLIENT_SECRET"
+curl --location "https://accounts.spotify.com/api/token" -d "grant_type=refresh_token" -d "refresh_token=YOUR_REFRESH_TOKEN" -d "client_id=YOUR_CLIENT_ID" --d "client_secret=YOUR_CLIENT_SECRET"
 ```
 
 #### Postman Workflow
@@ -331,7 +285,7 @@ curl --location "https://accounts.spotify.com/api/token" --d "grant_type=refresh
   * ``refresh_token=YOUR_REFRESH_TOKEN``
   * ``client_id=YOUR_CLIENT_ID``
   * ``client_secret=YOUR_CLIENT_SECRET``
-5. Click **Send**.
+6. Click **Send**.
 
 #### Response Object
 ```
@@ -382,12 +336,3 @@ The following errors may occur during the Authorization Code Flow. Use the resol
 | ``400 Bad Request`` |``invalid_grant`` | The authorization code has already been used or expired. | Request a new authorization code. Refer to **Request User Authorization** for more information. |
 | ``401 Unauthorized`` | ``expired_token`` | The ``access_token`` has exceeded the validity period and is no longer valid. | Use the ``refresh_token`` to request a new ``access_token``. Refer to **Refresh the Access Token** for more information. | 
 | ``403 Forbidden`` | ``insufficient_scope`` | The ``access_token`` does not have the permissions necessary for the endpoint being called.  | Restart the Authorization Code Flow with new ``scope`` parameters. Refer to **Request User Authorization** for more information. |
-
-
-
-
-
-
-
-
-
