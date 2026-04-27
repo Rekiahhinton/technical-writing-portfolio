@@ -1,5 +1,5 @@
 ---
-title: Open AI Chat Completions API - Developer Reference
+title: Open AI Chat Completions API - Endpoint Reference and Troubleshooting Guide
 ---
 
 ## Overview
