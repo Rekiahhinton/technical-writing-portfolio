@@ -11,8 +11,8 @@ Learn More [About Me](about)
 ### Stripe PaymentIntents API Reference
 
 - [Stripe PaymentIntents API Reference](api_mastery/stripe_ref)
-    - [How PaymentIntents Works](stripe_ref#how-paymentintents-works)
-    - [Endpoint Reference](stripe_ref#endpoint-reference)
+    - [How PaymentIntents Works](api_mastery/stripe_ref#how-paymentintents-works)
+    - [Endpoint Reference](api_mastery/stripe_ref#endpoint-reference)
 
 ## Advanced AI Augmentation + Efficiency Gains
 
