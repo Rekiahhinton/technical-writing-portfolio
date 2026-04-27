@@ -16,7 +16,7 @@ Learn More [About Me](about)
     - [Getting Started - Your First PaymentIntent](api_mastery/stripe_ref#getting-started---your-first-paymentintent)
     - [Glossary](api_mastery/stripe_ref#glossary)
  
-### Spotify OAuth 2.0 
+### Authenticating with OAuth 2.0 
 
 - [Spotify Web API: OAuth 2.0 Authorization Code Flow](api_mastery/spotify_oauth)
 
