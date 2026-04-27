@@ -95,7 +95,7 @@ The sixth parameter, ``show_dialog``, is optional and not included in the Author
 
 #### Browser Workflow
 
-A successful implementation of this step will send the authorization code and redirect the developer to the redirect URI in the browser. The redirect URI will have authorization code appended to the end. 
+In this step, Spotify sends the authorization code to the redirect URI and the browser redirects automatically. The redirect URI will have the authorization code appended to the end. 
 
 1. Paste the Authorization URL into the browser.
 2. Hit Enter.
@@ -202,7 +202,7 @@ This step involves making an API request to the Spotify Web API to retrieve user
 1. Create a new request in Postman.
 2. Set the request to ``GET https://api.spotify.com/v1/me/player/recently-played``.
 3. Copy the ``access_token`` string from the previous step.
-4. Go to the **Authorization** tab and paste the token string into the Bearer Token field from the **Auth Type** dropdown:
+4. Go to the **Authorization** tab and paste the ``access_token`` into the Bearer Token field from the **Auth Type** dropdown:
    ``Authorization: Bearer YOUR_ACCESS_TOKEN``
 5. Click **Send**.
 
