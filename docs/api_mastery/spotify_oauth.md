@@ -153,7 +153,7 @@ This step involves exchanging the authorization code in the previous step for ac
 #### curl Request
 
 ```
-curl -X Post "https://accounts.spotify.com/api/token" -H "Content-Type: application/x-www-form-urlencoded" -d "grant_type=authorization_code" -d "code=YOUR_AUTHORIZATION_CODE" -d "redirect_uri=https://oauth.pstmn.io/v1/callback" -d "client_id=YOUR_CLIENT_ID" -d "client_secret=YOUR_CLIENT_SECRET" 
+curl -X POST "https://accounts.spotify.com/api/token" -H "Content-Type: application/x-www-form-urlencoded" -d "grant_type=authorization_code" -d "code=YOUR_AUTHORIZATION_CODE" -d "redirect_uri=https://oauth.pstmn.io/v1/callback" -d "client_id=YOUR_CLIENT_ID" -d "client_secret=YOUR_CLIENT_SECRET" 
 ```
 
 #### Postman Workflow
@@ -272,7 +272,7 @@ This step involves using the ``refresh_token`` to generate a new ``access_token`
 
 #### curl Request
 ```
-curl - X Post "https://accounts.spotify.com/api/token" -d "grant_type=refresh_token" -d "refresh_token=YOUR_REFRESH_TOKEN" -d "client_id=YOUR_CLIENT_ID" -d "client_secret=YOUR_CLIENT_SECRET"
+curl - X POST "https://accounts.spotify.com/api/token" -d "grant_type=refresh_token" -d "refresh_token=YOUR_REFRESH_TOKEN" -d "client_id=YOUR_CLIENT_ID" -d "client_secret=YOUR_CLIENT_SECRET"
 ```
 
 #### Postman Workflow
