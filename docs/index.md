@@ -10,7 +10,7 @@ Learn More [About Me](about)
 
 ### Stripe PaymentIntents API Reference
 
-- [Stripe PaymentIntents API Reference](api_mastery/stripe_ref.md)
+- [Stripe PaymentIntents API Reference](api_mastery/stripe_ref)
     - [How PaymentIntents Works](stripe_ref#how-paymentintents-works)
     - [Endpoint Reference](stripe_ref#endpoint-reference)
 
