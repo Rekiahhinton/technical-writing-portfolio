@@ -12,7 +12,7 @@ Learn More [About Me](about)
 
 - [Stripe PaymentIntents API Reference](api_mastery/stripe_ref.md)
     - [How PaymentIntents Works](stripe_ref#how-paymentintents-works)
-    - [Endpoint Reference](stripe_ref#endpoint_reference)
+    - [Endpoint Reference](stripe_ref#endpoint-reference)
 
 ## Advanced AI Augmentation + Efficiency Gains
 
