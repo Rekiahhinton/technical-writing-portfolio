@@ -321,7 +321,7 @@ curl --location "https://accounts.spotify.com/api/token" -d "grant_type=refresh_
 | ``playlist-modify-private`` | Writes user's private playlist. | Modifies user's private playlists tracks and settings. |
 | ``playlist-modify-public`` | Writes user's public playlist. | Modifies user's public playlists tracks and settings. | 
 | ``user-library-modify`` | Writes user's library data. | Modifies user's tracks, albums, and podcasts saved in user's library. |
-| ``user-follow-modify`` | Writes access to user's follows. | Modifies user's list of artists and other accounts the user is following. | 
+| ``user-follow-modify`` | Writes user's follows. | Modifies user's list of artists and other accounts the user is following. | 
  
 
 **Note:** Spotify's Web API documentation hosts the exhaustive [list](https://developer.spotify.com/documentation/web-api/concepts/scopes) of scopes. 
