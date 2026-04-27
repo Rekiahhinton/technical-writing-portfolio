@@ -8,10 +8,10 @@ Learn More [About Me](about)
 
 ## API Documentation Mastery
 
-### Complete API Reference
+### Stripe PaymentIntents API Reference
 
 - [Stripe PaymentIntents API Reference](api_mastery/stripe_ref.md)
-- [Stripe PaymentIntents API - How PaymentIntents Works](stripe_ref#how-paymentintents-works)
+    - [How PaymentIntents Works](stripe_ref#how-paymentintents-works)
 
 ## Advanced AI Augmentation + Efficiency Gains
 
