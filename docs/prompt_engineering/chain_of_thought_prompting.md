@@ -71,13 +71,13 @@ The final step is to request a cheat sheet for the beginner Markdown user.
 
 The language model renders a downloadable file:
 
-[Markdown Cheatsheet](docs/sample-documents/markdown-cheatsheet.html)
+[Markdown Cheatsheet](docs/sample-documents/markdown-cheatsheet)
 
 ### Conclusion 
 Chain-of-Thought (CoT) prompting turns complex logical sequences into small tasks, while keeping the language model engaged with the most relevant task at hand, which helps to prevent hallucinations and excessive bias that would distort the output. This skill is especially useful in technical writing for breaking down information in large repositories into digestible fragments for iteration.
 
 ### Resources 
-This example borrows the [Markdown Help](docs/sample-documents/Markdown.md) document from the [Favorite Medium](https://github.com/favoritemedium) Mattermost repository. The document lists helpful tips and examples for learning Markdown.
+This example borrows the [Markdown Help](docs/sample-documents/Markdown) document from the [Favorite Medium](https://github.com/favoritemedium) Mattermost repository. The document lists helpful tips and examples for learning Markdown.
 
 
 
