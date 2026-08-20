@@ -39,17 +39,17 @@ The Hydra Token is an API token that expires after each use and immediately repl
 
 #### Section 1: Configuring KitchenSync (Edited)
 
-The KitchenSync tool offers many configuration options, including the option to choose the color of the kitchen you are syncing. To change the color, open the configuration screen by selecting the **Configure** button on the home screen. Then, select your color by entering the color code into the appropriate field for syncing. 
+The KitchenSync tool offers many configuration options, including the option to choose the color of the kitchen to sync. To change the color, open the configuration screen by selecting the **Configure** button on the home screen. Then, select your color by entering the color code into the appropriate field. 
 
 Choose the connection type for the syncing using the **Connection** dropdown menu. To finalize your changes, click the **Finish** button near the bottom of the page. To save your changes, click the **Save** button on the following page.
 
 #### Section 2: Configuring Templates (Edited)
 
-The KitchenSync Migration offers a FOO tool that allows users to reuse templates for FOO Domains that share similar configurations. The templates contain critical policy requirements and KitchenSync environment configurations for each type of ``kitchensync`` object. Check the current FOO Domain Configurations during application migration to create a template that contains the same Artifacts in KitchenSync.
+The KitchenSync Migration offers a FOO tool that allows users to reuse templates for FOO Domains that share similar configurations. The templates contain critical policy requirements and KitchenSync environment configurations for each type of KitchenSync object. Check the current FOO Domain Configurations during application migration to create a template that contains the same Artifacts in KitchenSync.
 
 #### Section 3: Thought Process
 
-##### Configuring KitchenSync:
+##### Configuring KitchenSync
 
 I rewrote this section by excluding language that did not contribute to the ideas of the section, thus making the revision more concise. I also centered task-oriented language so the section would be easy to understand and immediately actionable to the user. 
 
@@ -65,11 +65,11 @@ Session Lockout prevents unauthorized access by temporarily blocking login attem
 
 ##### Default Behavior
 
-After five failed login attempts, Session Lockout prevents the user from attempting to login for **15 minutes**. During the lockout period, the system rejects all login attempts with a specific error message.  
+After five failed login attempts, Session Lockout prevents the user from attempting to log in for **15 minutes**. During the lockout period, the system rejects all login attempts with a specific error message.  
 
 ##### Administrator Configuration 
 
-Administrators can configure **Attempts** and **Duration** for each policy:
+Administrators can configure **attempts** and **duration** for each policy:
 
 * Attempts: The number of failed attempts the system will allow before lockout.
 * Duration: The length of time the account remains locked during a lockout.
@@ -80,7 +80,7 @@ All lockout events appear in the security audit log.
 
 #### PR Review Comment
 
-Thank you for drafting this PR. I have made several revisions before approving.
+Thank you for opening this PR. I have made several revisions before approving.
 
 ##### Key Changes
 
@@ -91,7 +91,7 @@ Thank you for drafting this PR. I have made several revisions before approving.
 
 ##### Suggested Guidelines for Using AI
 
-* AI produces better responses when prompts include specific feature behavior. Always validate against the spec to ensure your AI outputs include them in the response. Ex. five consecutive failed login attempts lock the account for 15 minutes. 
+* AI produces better responses when prompts include specific feature behavior. Always validate against the spec to ensure specific feature behaviors are clearly represented. Ex. five consecutive failed login attempts lock the account for 15 minutes. 
 * AI responses need human oversight to produce strong writing contributions. Make sure to review and edit AI output before opening a PR.
 
 #### AI Usage
