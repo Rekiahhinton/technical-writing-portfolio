@@ -65,7 +65,7 @@ Session Lockout prevents unauthorized access by temporarily blocking login attem
 
 ##### Default Behavior
 
-After five failed login attempts, Session Lockout prevents the user from attempting to log in for **15 minutes**. During the lockout period, the system rejects all login attempts with a specific error message.  
+After five consecutive failed login attempts, Session Lockout prevents the user from attempting to log in for **15 minutes**. During the lockout period, the system rejects all login attempts with a specific error message.  
 
 ##### Administrator Configuration 
 
@@ -96,6 +96,6 @@ Thank you for opening this PR. I have made several revisions before approving.
 
 #### AI Usage
 
-I utilized AI to help edit this section. Then, I reviewed the final content and checked for accuracy between the output and the spec before submitting. 
+I utilized AI to help edit for this exercise. Then, I reviewed the final content and checked for accuracy between the output and the spec before submitting. 
 
 
